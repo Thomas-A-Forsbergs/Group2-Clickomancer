@@ -12,6 +12,7 @@ public class SoulCount : MonoBehaviour
     public int soulsPerClick = 1;
     public int upgradeMultiplier = 0;
     public int upgradeLevel;
+    public int upgradeCost;
     public int Souls
     {
         get => PlayerPrefs.GetInt("Souls", 0);
