@@ -11,10 +11,12 @@ public class SoulCount : MonoBehaviour
     [Header("Configurable values")]
     public int soulsPerClick = 1;
     public float upgradeMultiplier = 1.5f;
-    public int upgradeLevel;
-    public int upgradeCost;
-
-    private bool IsAffordable => Souls >= this.upgradeCost;
+    public int upgradeLevel = 0;
+    public int upgradeCost = 100;
+    public float upgradeCostMultiplier = 1.1f;
+    private int totalCost;
+    
+    private bool IsAffordable => Souls >= totalCost;
     
     
     public int Souls
@@ -24,21 +26,27 @@ public class SoulCount : MonoBehaviour
     }
     public void Update()
     {
+        CalculateTotalCost();
         soulText.text = "Souls:" + Souls;
     }
 
     public void Click()
     {
-        //Souls +=  Mathf.RoundToInt(soulsPerClick * (upgradeLevel * upgradeMultiplier));
         Souls +=  Mathf.RoundToInt( 1 * (this.soulsPerClick * Mathf.Pow(upgradeMultiplier, upgradeLevel)));
 
     }
     public void PurchaseUpgrade()
     {
-        if (IsAffordable)
+        if (!IsAffordable)
         {
-            upgradeLevel++;
-            Souls -= upgradeCost;
+            return;
         }
+        upgradeLevel++;
+        Souls -= totalCost;
+    }
+
+    private void CalculateTotalCost()
+    {
+        totalCost = Mathf.RoundToInt(upgradeCost * Mathf.Pow(upgradeCostMultiplier, upgradeLevel));
     }
 }
