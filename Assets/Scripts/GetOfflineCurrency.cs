@@ -38,13 +38,15 @@ public class GetOfflineCurrency : MonoBehaviour
         var currentTime = DateTime.Now;
         var offlineTime = Convert.ToDateTime(OfflineTime);
         var interval = currentTime - offlineTime;
-
+        
+        var totalProduction = zombieRef.CalculateTotalProduction();
+        
         int totalOfflineProduction =
-            Mathf.RoundToInt((float) interval.TotalSeconds) * (zombieRef.productionRate * zombieRef.Count);
+            Mathf.RoundToInt((float) interval.TotalSeconds) * totalProduction;
         soulsRef.Souls += totalOfflineProduction;
 
         offlineTimeText.text =
-            $"{offlineTimeTextString} {interval.Days}d, {interval.Hours}h, {interval.Minutes}m, {interval.Seconds}s!";
+            $"{offlineTimeTextString} {interval.Days}d, {interval.Hours}h, {interval.Minutes}m, {(int)interval.TotalSeconds}s!";
         offlineProductionText.text = $"{offlineProductionTextString} {totalOfflineProduction}!";
     }
 }
