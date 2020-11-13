@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,7 +14,7 @@ public class Rebirth : MonoBehaviour
     public TMPro.TMP_Text RebirthText;
     public TMPro.TMP_Text BonusText;
     public int rebirth;
-    public float  rebirthmodifer = 1;
+    public float  rebirthmodifer = 1f;
 
     public int Reborn
     {
@@ -24,9 +25,7 @@ public class Rebirth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RebirthText.text = "Rebirth:" + Reborn;
-        BonusText.text = "Bonus:" + rebirthmodifer;
-        
+        Display();
     }
     // Update is called once per frame
     public void  RebirthButton()
@@ -35,14 +34,24 @@ public class Rebirth : MonoBehaviour
         calculateRebirthModifer();
         
     }
-    
+    void Start()
+    {
+        Display();
+    }
     private void calculateRebirthModifer()
     {
         int amountofsouls = Soulref.Souls;
-        rebirthmodifer += amountofsouls * 1;
+        rebirthmodifer +=  amountofsouls * 1;
+        Display();
         Soulref.Souls = 0;
         Soulref.UpgradeLevel = 0;
         Zombieref.Count = 0;
         Zombieref.Level = 0;
+    }
+    
+    private void Display()
+    {
+        RebirthText.text = "Rebirth:" + Reborn;
+        BonusText.text = "Bonus:" + rebirthmodifer;
     }
 }
