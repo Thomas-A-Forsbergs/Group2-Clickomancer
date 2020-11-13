@@ -839,8 +839,9 @@ GameObject:
   - component: {fileID: 1076023513}
   - component: {fileID: 1076023512}
   - component: {fileID: 1076023511}
+  - component: {fileID: 1076023514}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Rebirth Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -908,7 +909,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1076023512}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 104276147}
+        m_TargetAssemblyTypeName: Rebirth, Assembly-CSharp
+        m_MethodName: RebirthButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1076023512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,6 +960,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076023509}
   m_CullTransparentMesh: 0
+--- !u!114 &1076023514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076023509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ac7d10bb249e344b9292a449420413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RebirthText: {fileID: 521281541}
+  BonusText: {fileID: 1118707137}
+  rebirth: 0
 --- !u!1 &1118707135
 GameObject:
   m_ObjectHideFlags: 0

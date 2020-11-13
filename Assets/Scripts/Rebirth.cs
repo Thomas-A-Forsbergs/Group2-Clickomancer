@@ -11,6 +11,7 @@ public class Rebirth : MonoBehaviour
     public TMPro.TMP_Text RebirthText;
     public TMPro.TMP_Text BonusText;
     public int rebirth;
+    
 
     
     
@@ -29,5 +30,10 @@ public class Rebirth : MonoBehaviour
     void Update()
     {
         RebirthText.text = "Rebirth:" + Reborn;
+    }
+    // Update is called once per frame
+    public void  RebirthButton()
+    {
+        Reborn++;
     }
 }
