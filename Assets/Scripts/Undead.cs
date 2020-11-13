@@ -10,17 +10,27 @@ public class Undead : MonoBehaviour
     [Header("Drag and Drop references here")]
     public SoulCount soulRef;
     public TextMeshProUGUI TMP_statusText;
-    public TextMeshProUGUI TMP_costsText;
+    public TextMeshProUGUI TMP_purchaseCostsText;
+    public TextMeshProUGUI TMP_upgradeCostsText;
+    public TextMeshProUGUI TMP_totalproductionText;
     [SerializeField] private Sprite sprite;
 
     [Header("Configurable values")]
-    public int currentCurrency = 250;
-
     [SerializeField] private string name = "Zombie";
     [SerializeField] private int cost = 100;
     public int productionRate = 1;
     [SerializeField] private int count = 0;
     [SerializeField] private int level = 0;
+    [SerializeField] private float purchaseCostMultiplier = 1.05f;
+    [SerializeField] private float upgradeCostMultiplier = 1.05f;
+    
+    [SerializeField] public float upgradeProductionMultiplier = 1.05f;
+
+    public int totalProduction;
+    private int totalPurchaseCost;
+    private int totalUpgradeCost;
+    
+
 
     
     public float undeadProductionPerSecond = 1f;
@@ -31,30 +41,42 @@ public class Undead : MonoBehaviour
         get => PlayerPrefs.GetInt("Owned"+name, 0);
         set => PlayerPrefs.SetInt("Owned"+name, value);
     }
+
+    public int Level
+    {
+        get => PlayerPrefs.GetInt("Level" + name, 0);
+        set => PlayerPrefs.SetInt("Level" + name, value);
+    }
     
     
-    public bool IsAffordable => soulRef.Souls >= this.cost; 
+    public bool PurchaseIsAffordable => soulRef.Souls >= this.totalPurchaseCost; 
+    public bool UpgradeIsAffordable => soulRef.Souls >= this.totalUpgradeCost; 
     
     public void DisplayTexts()
     {
-        this.TMP_statusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{level})";
-        this.TMP_costsText.text = $"Zombie costs: {this.cost} souls";
+        this.TMP_statusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
+        this.TMP_purchaseCostsText.text = $"Zombie Purchase costs: {this.totalPurchaseCost} souls";
+        this.TMP_upgradeCostsText.text = $"Zombie Upgrade costs: {this.totalUpgradeCost} souls";
+        this.TMP_totalproductionText.text = "Total production: " + this.totalProduction + " Souls/s";
     }
     
     // Start is called before the first frame update
     void Start()
     {
+        CalculateTotalCost();
+        CalculateTotalProduction();
         DisplayTexts();
     }
 
     // Update is called once per frame
     void Update()
     {
+        ProductionTimer();
+        CalculateTotalCost();
         DisplayTexts();
-        UpdateProduction();
     }
 
-    void UpdateProduction() {
+    void ProductionTimer() {
         this.elapsedTime += Time.deltaTime;
         if (this.elapsedTime >= this.undeadProductionPerSecond) {
             UndeadProduction();
@@ -63,24 +85,57 @@ public class Undead : MonoBehaviour
     }
     
     private void CreateUndead() {
-        if (!IsAffordable)
+        if (!PurchaseIsAffordable)
         {
             return;
         }
         Count += 1;
-        soulRef.Souls -= cost;
+        soulRef.Souls -= totalPurchaseCost;
         DisplayTexts();
         Debug.Log("CurrentCurrency:"+soulRef.Souls);
         Debug.Log("Count:"+Count);
     }
 
-    public void UndeadProduction() {
-        //TODO: Make Mathf.Pow to multiply total productionRate with upgradeMultiplier
-        soulRef.Souls += this.productionRate * this.Count;
-        Debug.Log("Production Rate:"+productionRate);
+    private void UpgradeUndead()
+    {
+        if (!UpgradeIsAffordable)
+        {
+            return;
+        }
+        Level += 1;
+        soulRef.Souls -= totalUpgradeCost;
+        DisplayTexts();
+        Debug.Log("CurrentCurrency:"+soulRef.Souls);
+        Debug.Log("Count:"+Level);
     }
 
+    public void UndeadProduction() {
+        CalculateTotalProduction();
+        soulRef.Souls += totalProduction;
+        Debug.Log("Production Rate:"+productionRate);
+        Debug.Log("Total Rate:"+totalProduction);
+    }
+
+    public void CalculateTotalCost()
+    {
+        totalPurchaseCost = Mathf.RoundToInt(this.cost * Mathf.Pow(purchaseCostMultiplier, Count));
+        totalUpgradeCost = Mathf.RoundToInt(this.cost * Mathf.Pow(upgradeCostMultiplier, Level));
+    }
+    
+    public int CalculateTotalProduction()
+    {
+        totalProduction =  Mathf.RoundToInt( this.Count * (this.productionRate * Mathf.Pow(upgradeProductionMultiplier, Level)));
+        return totalProduction;
+    }
+    
+    
+    
     public void CreateUndeadButton() {
         CreateUndead();
+    }
+
+    public void UpgradeUndeadButton()
+    {
+        UpgradeUndead();
     }
 }
