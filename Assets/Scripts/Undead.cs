@@ -109,9 +109,9 @@ public class Undead : MonoBehaviour {
     public int CalculateTotalProduction() {
         totalProduction =
             Mathf.RoundToInt(this.Count * (this.productionRate * Mathf.Pow(upgradeProductionMultiplier, Level)));
-        if (rebirthRef.rebirthModifier != 0)
+        if (rebirthRef.RebirthModifier != 0)
         {
-            totalProduction *= Mathf.RoundToInt(rebirthRef.rebirthModifier);
+            totalProduction *= Mathf.RoundToInt(rebirthRef.RebirthModifier);
         }
         return totalProduction;
     }

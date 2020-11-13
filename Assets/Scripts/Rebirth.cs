@@ -18,10 +18,19 @@ public class Rebirth : MonoBehaviour
 
     public float modifierFactor = 1f;
 
+    public int rebirthThreshold = 0;
+    
+    
     public int Reborn
     {
         get => PlayerPrefs.GetInt("Rebirth", 0);
         set => PlayerPrefs.SetInt("Rebirth", value);
+    }
+    
+    public float RebirthModifier
+    {
+        get => PlayerPrefs.GetFloat("RebirthModifier", 0);
+        set => PlayerPrefs.SetFloat("RebirthModifier", value);
     }
 
     // Update is called once per frame
@@ -32,9 +41,7 @@ public class Rebirth : MonoBehaviour
     // Update is called once per frame
     public void  RebirthButton()
     {
-        Reborn++;
         calculateRebirthModifer();
-        
     }
     void Start()
     {
@@ -43,17 +50,21 @@ public class Rebirth : MonoBehaviour
     private void calculateRebirthModifer()
     {
         int amountofsouls = Soulref.Souls;
-        rebirthModifier +=  amountofsouls * modifierFactor;
-        Display();
-        Soulref.Souls = 0;
-        Soulref.UpgradeLevel = 0;
-        Zombieref.Count = 0;
-        Zombieref.Level = 0;
+        if (rebirthThreshold < amountofsouls )
+        {
+            Reborn++;
+            RebirthModifier +=  amountofsouls * modifierFactor;
+            Display();
+            Soulref.Souls = 0;
+            Soulref.UpgradeLevel = 0;
+            Zombieref.Count = 0;
+            Zombieref.Level = 0;
+        }
     }
     
     private void Display()
     {
         RebirthText.text = "Rebirth:" + Reborn;
-        BonusText.text = "Bonus:" + rebirthModifier;
+        BonusText.text = "Bonus:" + RebirthModifier;
     }
 }
