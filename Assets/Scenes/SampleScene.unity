@@ -166,9 +166,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ac7d10bb249e344b9292a449420413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Soulref: {fileID: 1950711161}
+  Zombieref: {fileID: 0}
   RebirthText: {fileID: 521281541}
   BonusText: {fileID: 1118707137}
   rebirth: 0
+  rebirthmodifer: 1
 --- !u!1 &105284646
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,9 +975,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ac7d10bb249e344b9292a449420413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Soulref: {fileID: 0}
+  Zombieref: {fileID: 0}
   RebirthText: {fileID: 521281541}
   BonusText: {fileID: 1118707137}
   rebirth: 0
+  rebirthmodifer: 1
 --- !u!1 &1118707135
 GameObject:
   m_ObjectHideFlags: 0
