@@ -10,6 +10,8 @@ public class SoulCount : MonoBehaviour
     [Header("Configurable values")]
     public int souls;
     public int soulsPerClick = 1;
+    public int upgradeMultiplier = 0;
+    public int upgradeLevel;
     public int Souls
     {
         get => PlayerPrefs.GetInt("Souls", 0);
@@ -22,6 +24,6 @@ public class SoulCount : MonoBehaviour
 
     public void Click()
     {
-        Souls += soulsPerClick;
+         Souls += soulsPerClick * upgradeMultiplier;
     }
 }
