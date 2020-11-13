@@ -655,7 +655,7 @@ GameObject:
   - component: {fileID: 1522491423}
   - component: {fileID: 1522491422}
   m_Layer: 5
-  m_Name: UpgradeWell
+  m_Name: Upgrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -726,7 +726,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1950711161}
         m_TargetAssemblyTypeName: SoulCount, Assembly-CSharp
-        m_MethodName: Click
+        m_MethodName: PurchaseUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1089,8 +1089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soulText: {fileID: 1631749397}
-  souls: 0
   soulsPerClick: 1
-  upgradeMultiplier: 1
-  upgradeLevel: 1
-  upgradeCost: 0
+  upgradeMultiplier: 1.5
+  upgradeLevel: 0
+  upgradeCost: 10

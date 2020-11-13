@@ -43,8 +43,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/AddSouls.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Undead.cs" />
         <option value="$PROJECT_DIR$/Assets/SoulCount.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SoulCount.cs" />
         <option value="$USER_HOME$/Downloads/IdleRPG-main/IdleRPG-main/Assets/Scripts/Clicker/Purchasable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SoulCount.cs" />
       </list>
     </option>
   </component>
@@ -102,7 +102,7 @@
       <workItem from="1605174155136" duration="6000" />
       <workItem from="1605184305221" duration="3544000" />
       <workItem from="1605259295382" duration="4080000" />
-      <workItem from="1605264831698" duration="461000" />
+      <workItem from="1605264831698" duration="5808000" />
     </task>
     <servers />
   </component>
@@ -118,9 +118,9 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-294" y="159" width="672" height="678" key="search.everywhere.popup" timestamp="1605187024274">
+    <state x="1525" y="1034" width="672" height="678" key="search.everywhere.popup" timestamp="1605272084776">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="-294" y="159" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605187024274" />
+    <state x="1525" y="1034" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605272084776" />
   </component>
 </project>
