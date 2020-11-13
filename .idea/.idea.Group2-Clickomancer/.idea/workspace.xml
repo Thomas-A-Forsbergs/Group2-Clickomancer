@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f24a15b5-be68-4f9d-81cd-0b11710faf7c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Group2-Clickomancer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Group2-Clickomancer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +32,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/Downloads/IdleRPG-main/IdleRPG-main/Assets/Scripts/Clicker/ResourceProduction/ResourceProducer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Undead.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/Downloads/IdleRPG-main/IdleRPG-main/Assets/Scripts/Clicker/Purchasable.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -45,6 +45,7 @@
         <option value="$PROJECT_DIR$/Assets/SoulCount.cs" />
         <option value="$USER_HOME$/Downloads/IdleRPG-main/IdleRPG-main/Assets/Scripts/Clicker/Purchasable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SoulCount.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" />
       </list>
     </option>
   </component>
@@ -112,6 +113,15 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
