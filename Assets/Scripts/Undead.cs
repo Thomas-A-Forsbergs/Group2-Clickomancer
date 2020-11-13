@@ -15,14 +15,12 @@ public class Undead : MonoBehaviour
     [SerializeField] private Sprite sprite;
 
     [Header("Configurable values")]
-    public int currentCurrency = 250;
-
     [SerializeField] private string name = "Zombie";
     [SerializeField] private int cost = 100;
     public int productionRate = 1;
     [SerializeField] private int count = 0;
     [SerializeField] private int level = 0;
-    [SerializeField] private int upgradeMultiplier;
+    [SerializeField] public float upgradeMultiplier = 1f;
 
     public int totalProduction;
     
@@ -111,7 +109,7 @@ public class Undead : MonoBehaviour
 
     public int CalculateTotalProduction()
     {
-        totalProduction =  Mathf.RoundToInt( this.Count * (this.productionRate * Mathf.Pow(2f, Level)));
+        totalProduction =  Mathf.RoundToInt( this.Count * (this.productionRate * Mathf.Pow(upgradeMultiplier, Level)));
         return totalProduction;
     }
     
