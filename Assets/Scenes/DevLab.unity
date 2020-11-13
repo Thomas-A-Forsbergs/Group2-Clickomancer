@@ -584,7 +584,8 @@ MonoBehaviour:
   RebirthText: {fileID: 585670437}
   BonusText: {fileID: 205629845}
   rebirth: 0
-  rebirthmodifer: 1
+  rebirthModifier: 0
+  modifierFactor: 0.1
 --- !u!114 &338119864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1282,6 +1283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soulRef: {fileID: 2006190522}
+  rebirthRef: {fileID: 338119863}
   TMP_statusText: {fileID: 1453093325}
   TMP_purchaseCostsText: {fileID: 1581375901}
   TMP_upgradeCostsText: {fileID: 199541289}

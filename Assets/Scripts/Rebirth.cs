@@ -14,7 +14,9 @@ public class Rebirth : MonoBehaviour
     public TMPro.TMP_Text RebirthText;
     public TMPro.TMP_Text BonusText;
     public int rebirth;
-    public float  rebirthmodifer = 1f;
+    public float  rebirthModifier = 0f;
+
+    public float modifierFactor = 1f;
 
     public int Reborn
     {
@@ -41,7 +43,7 @@ public class Rebirth : MonoBehaviour
     private void calculateRebirthModifer()
     {
         int amountofsouls = Soulref.Souls;
-        rebirthmodifer +=  amountofsouls * 1;
+        rebirthModifier +=  amountofsouls * modifierFactor;
         Display();
         Soulref.Souls = 0;
         Soulref.UpgradeLevel = 0;
@@ -52,6 +54,6 @@ public class Rebirth : MonoBehaviour
     private void Display()
     {
         RebirthText.text = "Rebirth:" + Reborn;
-        BonusText.text = "Bonus:" + rebirthmodifer;
+        BonusText.text = "Bonus:" + rebirthModifier;
     }
 }
