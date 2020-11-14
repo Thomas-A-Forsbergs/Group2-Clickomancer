@@ -9,6 +9,8 @@ public class Undead : MonoBehaviour {
     [Header("Drag and Drop references here")]
     public SoulCount soulRef;
 
+    public Rebirth rebirthRef;
+
     // Trying TextMeshProUGUI 
     public TextMeshProUGUI TMP_statusText;
     public TextMeshProUGUI TMP_purchaseCostsText;
@@ -107,6 +109,10 @@ public class Undead : MonoBehaviour {
     public int CalculateTotalProduction() {
         totalProduction =
             Mathf.RoundToInt(this.Count * (this.productionRate * Mathf.Pow(upgradeProductionMultiplier, Level)));
+        if (rebirthRef.RebirthModifier != 0)
+        {
+            totalProduction *= Mathf.RoundToInt(rebirthRef.RebirthModifier);
+        }
         return totalProduction;
     }
 
