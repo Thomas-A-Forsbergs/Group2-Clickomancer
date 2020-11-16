@@ -29,7 +29,7 @@ public class Undead : MonoBehaviour {
     [SerializeField] private float upgradeCostMultiplier = 1.05f;
     [SerializeField] public float upgradeProductionMultiplier = 1.05f;
 
-    public int totalProduction;
+    public double totalProduction;
     private int totalPurchaseCost;
     private int totalUpgradeCost;
 
@@ -46,8 +46,8 @@ public class Undead : MonoBehaviour {
         set => PlayerPrefs.SetInt("Level" + name, value);
     }
 
-    public bool PurchaseIsAffordable => soulRef.Souls >= this.totalPurchaseCost;
-    public bool UpgradeIsAffordable => soulRef.Souls >= this.totalUpgradeCost;
+    //public bool PurchaseIsAffordable => soulRef.Souls >= this.totalPurchaseCost;
+    //public bool UpgradeIsAffordable => soulRef.Souls >= this.totalUpgradeCost;
 
     public void DisplayTexts() {
         this.TMP_statusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
@@ -63,7 +63,7 @@ public class Undead : MonoBehaviour {
     }
 
     void Update() {
-        ProductionTimer();
+        //ProductionTimer();
         CalculateTotalCost();
         DisplayTexts();
     }
@@ -77,22 +77,22 @@ public class Undead : MonoBehaviour {
     }
 
     private void CreateUndead() {
-        if (!PurchaseIsAffordable) {
-            return;
-        }
+        //if (!PurchaseIsAffordable) {
+        //    return;
+        //}
 
         Count += 1;
-        soulRef.Souls -= totalPurchaseCost;
+        //soulRef.Souls -= totalPurchaseCost;
         DisplayTexts();
     }
 
     private void UpgradeUndead() {
-        if (!UpgradeIsAffordable) {
-            return;
-        }
+        //if (!UpgradeIsAffordable) {
+        //    return;
+        //}
 
         Level += 1;
-        soulRef.Souls -= totalUpgradeCost;
+        //soulRef.Souls -= totalUpgradeCost;
         DisplayTexts();
     }
 
@@ -107,12 +107,13 @@ public class Undead : MonoBehaviour {
         totalUpgradeCost = Mathf.RoundToInt(this.cost * Mathf.Pow(upgradeCostMultiplier, Level));
     }
 
-    public int CalculateTotalProduction() {
+    public double CalculateTotalProduction() {
         totalProduction =
             Mathf.RoundToInt(this.Count * (this.productionRate * Mathf.Pow(upgradeProductionMultiplier, Level)));
-        if (rebirthRef.RebirthModifier != 0)
+        var tempDouble = soulRef.StringToDouble(rebirthRef.RebirthModifier);
+        if (tempDouble != 0)
         {
-            totalProduction *= Mathf.RoundToInt(rebirthRef.RebirthModifier);
+            totalProduction *= tempDouble;
         }
         return totalProduction;
     }

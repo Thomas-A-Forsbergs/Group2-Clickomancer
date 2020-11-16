@@ -47,8 +47,8 @@ public class GetOfflineCurrency : MonoBehaviour {
 
         var totalProduction = zombieRef.CalculateTotalProduction();
 
-        int totalOfflineProduction =
-            Mathf.RoundToInt((float) interval.TotalSeconds) * totalProduction;
+        double totalOfflineProduction =
+            (float) interval.TotalSeconds * totalProduction;
         soulsRef.Souls += totalOfflineProduction;
         soulsRef.TotalSoulsOwned += totalOfflineProduction;
 

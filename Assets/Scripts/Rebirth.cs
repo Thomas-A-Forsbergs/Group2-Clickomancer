@@ -27,10 +27,10 @@ public class Rebirth : MonoBehaviour
         set => PlayerPrefs.SetInt("Rebirth", value);
     }
     
-    public float RebirthModifier
+    public string RebirthModifier
     {
-        get => PlayerPrefs.GetFloat("RebirthModifier", 0);
-        set => PlayerPrefs.SetFloat("RebirthModifier", value);
+        get => PlayerPrefs.GetString("RebirthModifier", "0");
+        set => PlayerPrefs.SetString("RebirthModifier", value);
     }
     
     
@@ -51,14 +51,16 @@ public class Rebirth : MonoBehaviour
     }
     private void calculateRebirthModifer()
     {
-        int amountofsouls = Soulref.TotalSoulsOwned;
+        double amountofsouls = Soulref.StringToDouble(Soulref.TotalSoulsOwned);
         if (rebirthThreshold < amountofsouls )
         {
             Reborn++;
             RebirthModifier +=  amountofsouls * modifierFactor;
             Display();
-            Soulref.Souls = 0;
-            Soulref.TotalSoulsOwned = 0;
+            //Soulref.Souls = 0;
+            Soulref.DoubleToString(Soulref.Souls, 0);
+            Soulref.DoubleToString(Soulref.TotalSoulsOwned, 0);
+            //Soulref.TotalSoulsOwned = 0;
             Soulref.UpgradeLevel = 0;
             Zombieref.Count = 0;
             Zombieref.Level = 0;
