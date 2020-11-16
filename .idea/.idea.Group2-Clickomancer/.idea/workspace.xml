@@ -32,16 +32,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/anton/Desktop/Github Forsbergs/Group2-Clickomancer/Assets/Scripts/SoulCount.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/anton/Desktop/Github Forsbergs/Group2-Clickomancer/Assets/Scripts/SoulCount.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/anton/Desktop/Github Forsbergs/Group2-Clickomancer/Assets/Scripts/SoulCount.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/anton/Desktop/Github Forsbergs/Group2-Clickomancer/Assets/Scripts/SoulCount.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/anton/Desktop/Github Forsbergs/Group2-Clickomancer/Assets/Scripts/SoulCount.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Downloads/IdleRPG-main/IdleRPG-main/Assets/Scripts/Clicker/ResourceProduction/ResourceProducer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/anton/Desktop/Github Forsbergs/Group2-Clickomancer/Assets/Scripts/SoulCount.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Undead.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/anton/Desktop/Github Forsbergs/Group2-Clickomancer/Assets/Scripts/SoulCount.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Downloads/IdleRPG-main/IdleRPG-main/Assets/Scripts/Clicker/Purchasable.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -55,6 +48,7 @@
         <option value="$USER_HOME$/Downloads/IdleRPG-main/IdleRPG-main/Assets/Scripts/Clicker/Purchasable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SoulCount.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ManaBar.cs" />
       </list>
     </option>
   </component>
@@ -113,6 +107,7 @@
       <workItem from="1605184305221" duration="3544000" />
       <workItem from="1605259295382" duration="4080000" />
       <workItem from="1605264831698" duration="9983000" />
+      <workItem from="1605529651438" duration="2248000" />
     </task>
     <servers />
   </component>
