@@ -7,18 +7,33 @@ public class SoulCount : MonoBehaviour
 {
     
     [Header("Drag and Drop reference here")]
+    public HelperClass _helperClassRef;
     public TMPro.TMP_Text soulText;
     public TMPro.TMP_Text upgradeText;
     public TMPro.TMP_Text soulsPerClickText;
     [Header("Configurable values")]
-    public int soulsPerClick = 1;
+    public double soulsPerClick = 1;
     public float upgradeMultiplier = 1.5f;
     public int upgradeLevel = 0; 
     public int upgradeCost = 100;
     public float upgradeCostMultiplier = 1.1f;
     private int totalCost;
     
-    private bool IsAffordable => Souls >= totalCost;
+    private int IsAffordable
+    {
+        get
+        {
+            var tempDouble = _helperClassRef.StringToDouble(Souls);
+            if (tempDouble >= totalCost)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+    } 
 
     public void Start()
     {
@@ -31,16 +46,16 @@ public class SoulCount : MonoBehaviour
         get => PlayerPrefs.GetInt("UpgradeLevel", 0);
         set => PlayerPrefs.SetInt("UpgradeLevel", value);
     }
-    public int Souls
+    public string Souls
     {
-        get => PlayerPrefs.GetInt("Souls", 0);
-        set => PlayerPrefs.SetInt("Souls", value);
+        get => PlayerPrefs.GetString("Souls", "0");
+        set => PlayerPrefs.SetString("Souls", value);
     }
 
-    public int TotalSoulsOwned
+    public string TotalSoulsOwned
     {
-        get => PlayerPrefs.GetInt("TotalSouls", 0);
-        set => PlayerPrefs.SetInt("TotalSouls", value);
+        get => PlayerPrefs.GetString("TotalSoulsOwned", "0");
+        set => PlayerPrefs.SetString("TotalSoulsOwned", value);
     }
     
     public void Update()
@@ -51,20 +66,27 @@ public class SoulCount : MonoBehaviour
 
     public void Click()
     {
-        Souls +=  Mathf.RoundToInt( 1 * (this.soulsPerClick * Mathf.Pow(upgradeMultiplier, UpgradeLevel)));
-        TotalSoulsOwned +=  Mathf.RoundToInt( 1 * (this.soulsPerClick * Mathf.Pow(upgradeMultiplier, UpgradeLevel)));
-
+        double tempSoulDouble = _helperClassRef.StringToDouble(Souls);
+        double tempTotalDouble = _helperClassRef.StringToDouble(TotalSoulsOwned);
+        tempSoulDouble +=  1 * (this.soulsPerClick * Mathf.Pow(upgradeMultiplier, UpgradeLevel));
+        tempTotalDouble +=  1 * (this.soulsPerClick * Mathf.Pow(upgradeMultiplier, UpgradeLevel));
+        _helperClassRef.DoubleToString(tempSoulDouble, "Souls");
+        _helperClassRef.DoubleToString(tempTotalDouble, "TotalSoulsOwned");
     }
+    
     public void PurchaseUpgrade()
     {
-        if (!IsAffordable)
+        if (IsAffordable == 0)
         {
             return;
         }
         UpgradeLevel++;
-        Souls -= totalCost;
+        double tempDouble = _helperClassRef.StringToDouble(Souls);
+        tempDouble -= totalCost;
+        _helperClassRef.DoubleToString(tempDouble, "Souls");
         Display();
     }
+    
     private void CalculateTotalCost()
     {
         totalCost = Mathf.RoundToInt(upgradeCost * Mathf.Pow(upgradeCostMultiplier, UpgradeLevel));
@@ -73,7 +95,7 @@ public class SoulCount : MonoBehaviour
     private void Display()
     {
         upgradeText.text = $"Upgrade to level {UpgradeLevel +1 } Soul leech \nCost: {totalCost}";
-        soulsPerClickText.text = "Souls per click : " + Mathf.RoundToInt( 1 * (this.soulsPerClick * Mathf.Pow(upgradeMultiplier, UpgradeLevel)));
+        soulsPerClickText.text = "Souls per click : " + 1 * (this.soulsPerClick * Mathf.Pow(upgradeMultiplier, UpgradeLevel));
         soulText.text = "Souls:" + Souls;
     }
 }

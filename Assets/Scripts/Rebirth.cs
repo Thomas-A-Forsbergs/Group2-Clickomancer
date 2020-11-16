@@ -9,56 +9,57 @@ using UnityEngine.PlayerLoop;
 public class Rebirth : MonoBehaviour
 {
     [Header("Drag and Drop reference here")]
+    public HelperClass _helperClassRef;
     public SoulCount Soulref;
     public Undead Zombieref;
+ 
     public TMPro.TMP_Text RebirthText;
     public TMPro.TMP_Text BonusText;
     public int rebirth;
-    public float  rebirthModifier = 0f;
 
-    public float modifierFactor = 1f;
-
+    public double modifierFactor = 1f;
     public int rebirthThreshold = 0;
-    
-    
+
     public int Reborn
     {
         get => PlayerPrefs.GetInt("Rebirth", 0);
         set => PlayerPrefs.SetInt("Rebirth", value);
     }
     
-    public float RebirthModifier
+    public string RebirthModifier
     {
-        get => PlayerPrefs.GetFloat("RebirthModifier", 0);
-        set => PlayerPrefs.SetFloat("RebirthModifier", value);
+        get => PlayerPrefs.GetString("RebirthModifier", "0");
+        set => PlayerPrefs.SetString("RebirthModifier", value);
     }
     
-    
-
-    // Update is called once per frame
     void Update()
     {
         Display();
     }
-    // Update is called once per frame
+
     public void  RebirthButton()
     {
         calculateRebirthModifer();
     }
+    
     void Start()
     {
         Display();
     }
+    
     private void calculateRebirthModifer()
     {
-        int amountofsouls = Soulref.TotalSoulsOwned;
+        double amountofsouls = _helperClassRef.StringToDouble(Soulref.TotalSoulsOwned);
         if (rebirthThreshold < amountofsouls )
         {
             Reborn++;
-            RebirthModifier +=  amountofsouls * modifierFactor;
+            double modToAdd =  amountofsouls * modifierFactor;
+            double currentMod = _helperClassRef.StringToDouble(RebirthModifier);
+            double totalModToAdd = currentMod + modToAdd;
+            _helperClassRef.DoubleToString(totalModToAdd, "RebirthModifier");
             Display();
-            Soulref.Souls = 0;
-            Soulref.TotalSoulsOwned = 0;
+            _helperClassRef.DoubleToString(0, "Souls");
+            _helperClassRef.DoubleToString(0, "TotalSoulsOwned");
             Soulref.UpgradeLevel = 0;
             Zombieref.Count = 0;
             Zombieref.Level = 0;
