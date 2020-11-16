@@ -672,6 +672,7 @@ GameObject:
   - component: {fileID: 338119865}
   - component: {fileID: 338119864}
   - component: {fileID: 338119863}
+  - component: {fileID: 338119867}
   m_Layer: 5
   m_Name: Rebirth Button
   m_TagString: Untagged
@@ -713,12 +714,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ac7d10bb249e344b9292a449420413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _helperClassRef: {fileID: 338119867}
   Soulref: {fileID: 2006190522}
   Zombieref: {fileID: 673052961}
   RebirthText: {fileID: 585670437}
   BonusText: {fileID: 205629845}
   rebirth: 0
-  rebirthModifier: 0
   modifierFactor: 0.1
   rebirthThreshold: 250
 --- !u!114 &338119864
@@ -814,6 +815,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338119861}
   m_CullTransparentMesh: 0
+--- !u!114 &338119867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338119861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c608fe34345de4e94273b04eb39544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soulsRef: {fileID: 2006190522}
+  rebirthRef: {fileID: 338119863}
 --- !u!1 &562630495
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,6 +1295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 673052962}
   - component: {fileID: 673052961}
+  - component: {fileID: 673052963}
   m_Layer: 0
   m_Name: TestZombie
   m_TagString: Untagged
@@ -1299,6 +1315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d4d8148eeaf0d4995ee747fd2effe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _helperClassRef: {fileID: 673052963}
   soulRef: {fileID: 2006190522}
   rebirthRef: {fileID: 338119863}
   TMP_statusText: {fileID: 1453093325}
@@ -1330,6 +1347,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &673052963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673052960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c608fe34345de4e94273b04eb39544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soulsRef: {fileID: 2006190522}
+  rebirthRef: {fileID: 338119863}
 --- !u!1 &862871182
 GameObject:
   m_ObjectHideFlags: 0
@@ -3140,6 +3171,7 @@ GameObject:
   - component: {fileID: 2006190521}
   - component: {fileID: 2006190520}
   - component: {fileID: 2006190522}
+  - component: {fileID: 2006190523}
   m_Layer: 0
   m_Name: SoulCount
   m_TagString: Untagged
@@ -3191,6 +3223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4f6daed92533240b7807ab8801055b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _helperClassRef: {fileID: 2006190523}
   soulText: {fileID: 1606802110}
   upgradeText: {fileID: 253456836}
   soulsPerClickText: {fileID: 571439983}
@@ -3199,6 +3232,20 @@ MonoBehaviour:
   upgradeLevel: 0
   upgradeCost: 100
   upgradeCostMultiplier: 1.1
+--- !u!114 &2006190523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006190519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c608fe34345de4e94273b04eb39544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soulsRef: {fileID: 2006190522}
+  rebirthRef: {fileID: 338119863}
 --- !u!1 &2014704021
 GameObject:
   m_ObjectHideFlags: 0

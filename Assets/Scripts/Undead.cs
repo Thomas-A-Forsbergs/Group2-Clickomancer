@@ -7,9 +7,10 @@ using UnityEngine.PlayerLoop;
 
 public class Undead : MonoBehaviour {
     [Header("Drag and Drop references here")]
+    public HelperClass _helperClassRef;
     public SoulCount soulRef;
-
     public Rebirth rebirthRef;
+
 
     // Trying TextMeshProUGUI 
     public TextMeshProUGUI TMP_statusText;
@@ -56,7 +57,8 @@ public class Undead : MonoBehaviour {
         this.TMP_totalproductionText.text = $"Total production: {this.totalProduction} souls/second";
     }
 
-    void Start() {
+    void Start()
+    {
         CalculateTotalCost();
         CalculateTotalProduction();
         DisplayTexts();
@@ -98,8 +100,8 @@ public class Undead : MonoBehaviour {
 
     public void UndeadProduction() {
         CalculateTotalProduction();
-        soulRef.Souls += totalProduction;
-        soulRef.TotalSoulsOwned += totalProduction;
+        //soulRef.Souls += totalProduction;
+        //soulRef.TotalSoulsOwned += totalProduction;
     }
 
     public void CalculateTotalCost() {
@@ -110,7 +112,7 @@ public class Undead : MonoBehaviour {
     public double CalculateTotalProduction() {
         totalProduction =
             Mathf.RoundToInt(this.Count * (this.productionRate * Mathf.Pow(upgradeProductionMultiplier, Level)));
-        var tempDouble = soulRef.StringToDouble(rebirthRef.RebirthModifier);
+        var tempDouble = _helperClassRef.StringToDouble(rebirthRef.RebirthModifier);
         if (tempDouble != 0)
         {
             totalProduction *= tempDouble;

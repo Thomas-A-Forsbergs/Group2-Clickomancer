@@ -9,16 +9,20 @@ using UnityEngine.PlayerLoop;
 public class Rebirth : MonoBehaviour
 {
     [Header("Drag and Drop reference here")]
+    public HelperClass _helperClassRef;
     public SoulCount Soulref;
     public Undead Zombieref;
+ 
     public TMPro.TMP_Text RebirthText;
     public TMPro.TMP_Text BonusText;
     public int rebirth;
-    public float  rebirthModifier = 0f;
+    //public float  rebirthModifier = 0f;
 
-    public float modifierFactor = 1f;
+    public double modifierFactor = 1f;
 
     public int rebirthThreshold = 0;
+    
+    
     
     
     public int Reborn
@@ -51,16 +55,21 @@ public class Rebirth : MonoBehaviour
     }
     private void calculateRebirthModifer()
     {
-        double amountofsouls = Soulref.StringToDouble(Soulref.TotalSoulsOwned);
+        double amountofsouls = _helperClassRef.StringToDouble(Soulref.TotalSoulsOwned);
         if (rebirthThreshold < amountofsouls )
         {
             Reborn++;
-            RebirthModifier +=  amountofsouls * modifierFactor;
+            double modToAdd =  amountofsouls * modifierFactor;
+            double currentMod = _helperClassRef.StringToDouble(RebirthModifier);
+            double totalModToAdd = currentMod + modToAdd;
+            Debug.Log("Amount: " + amountofsouls);
+            Debug.Log("Modifier: " + modifierFactor);
+            Debug.Log("ModToAdd: " + modToAdd);
+            _helperClassRef.DoubleToString(totalModToAdd, "RebirthModifier");
+            
             Display();
-            //Soulref.Souls = 0;
-            Soulref.DoubleToString(Soulref.Souls, 0);
-            Soulref.DoubleToString(Soulref.TotalSoulsOwned, 0);
-            //Soulref.TotalSoulsOwned = 0;
+            _helperClassRef.DoubleToString(0, "Souls");
+            _helperClassRef.DoubleToString(0, "TotalSoulsOwned");
             Soulref.UpgradeLevel = 0;
             Zombieref.Count = 0;
             Zombieref.Level = 0;
@@ -70,6 +79,7 @@ public class Rebirth : MonoBehaviour
     private void Display()
     {
         RebirthText.text = "Rebirth:" + Reborn;
+        Debug.Log("Bonus: " + RebirthModifier);
         BonusText.text = "Bonus:" + RebirthModifier;
     }
 }
