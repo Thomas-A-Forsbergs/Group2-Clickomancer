@@ -713,12 +713,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ac7d10bb249e344b9292a449420413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _helperClassRef: {fileID: 0}
   Soulref: {fileID: 2006190522}
   Zombieref: {fileID: 673052961}
   RebirthText: {fileID: 585670437}
   BonusText: {fileID: 205629845}
   rebirth: 0
-  rebirthModifier: 0
   modifierFactor: 1
   rebirthThreshold: 0
 --- !u!114 &338119864
@@ -1402,6 +1402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 673052962}
   - component: {fileID: 673052961}
+  - component: {fileID: 673052963}
   m_Layer: 0
   m_Name: TestZombie
   m_TagString: Untagged
@@ -1421,6 +1422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d4d8148eeaf0d4995ee747fd2effe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _helperClassRef: {fileID: 673052963}
   soulRef: {fileID: 2006190522}
   rebirthRef: {fileID: 338119863}
   TMP_statusText: {fileID: 1453093325}
@@ -1452,6 +1454,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &673052963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673052960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c608fe34345de4e94273b04eb39544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soulsRef: {fileID: 2006190522}
+  rebirthRef: {fileID: 338119863}
 --- !u!1 &862871182
 GameObject:
   m_ObjectHideFlags: 0
@@ -2529,6 +2545,8 @@ MonoBehaviour:
   currentMana: 100
   SpellCost: 20
   MaxMana: 100
+  manaPerSec: 1
+  manaRegen: 1
 --- !u!1 &1479179680
 GameObject:
   m_ObjectHideFlags: 0
@@ -3721,8 +3739,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e70d286580eaec4e9d3afdd0e850509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulsRef: {fileID: 2006190522}
+  soulRef: {fileID: 2006190522}
   zombieRef: {fileID: 673052961}
+  _helperClassRef: {fileID: 673052963}
   offlineTimeText: {fileID: 1111739416}
   offlineTimeTextString: 'You were offline for '
   offlineProductionText: {fileID: 862871184}
@@ -3753,6 +3772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4f6daed92533240b7807ab8801055b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _helperClassRef: {fileID: 0}
   soulText: {fileID: 1606802110}
   upgradeText: {fileID: 253456836}
   soulsPerClickText: {fileID: 571439983}
