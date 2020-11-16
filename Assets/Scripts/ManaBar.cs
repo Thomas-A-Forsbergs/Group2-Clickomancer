@@ -8,9 +8,12 @@ using UnityEngine.UI;
 public class ManaBar : MonoBehaviour
 {
     public TMPro.TMP_Text ManaText;
-    public int currentMana = 100;
+    public float currentMana = 100f;
     public int SpellCost = 80;
-    public int MaxMana = 100;
+    public float MaxMana = 100f;
+    public float manaPerSec = 1f;
+    float elapsedTime;
+    public float manaRegen = 1f;
     private bool IsAffordable => currentMana >= SpellCost;
 
     public void UseSpell()
@@ -30,12 +33,24 @@ public class ManaBar : MonoBehaviour
 
     private void Update()
     {
+        this.elapsedTime += Time.deltaTime;
+        if (this.elapsedTime >= this.manaRegen)
+        {
+            if (currentMana >= MaxMana)
+            {
+                currentMana = MaxMana;
+                this.elapsedTime -= manaRegen;
+                return;
+                
+            }
+            this.currentMana += manaPerSec;
+            this.elapsedTime -= manaRegen;
+        }
         Display();
-    } 
+    }
     private void Display()
     {
         ManaText.text = "Mana:" + currentMana + "/" + MaxMana;
     }
+
 }
-
-
