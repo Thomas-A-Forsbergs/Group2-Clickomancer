@@ -33,6 +33,7 @@ public class GetOfflineCurrency : MonoBehaviour {
         {
             CalculateOfflineProduction();
         }
+        
         FirstTimePlaying = 0;
     }
 
