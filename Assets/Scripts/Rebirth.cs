@@ -32,6 +32,8 @@ public class Rebirth : MonoBehaviour
         get => PlayerPrefs.GetFloat("RebirthModifier", 0);
         set => PlayerPrefs.SetFloat("RebirthModifier", value);
     }
+    
+    
 
     // Update is called once per frame
     void Update()

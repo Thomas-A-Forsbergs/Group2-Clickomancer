@@ -36,6 +36,13 @@ public class SoulCount : MonoBehaviour
         get => PlayerPrefs.GetInt("Souls", 0);
         set => PlayerPrefs.SetInt("Souls", value);
     }
+
+    public int TotalSoulsOwned
+    {
+        get => PlayerPrefs.GetInt("TotalSouls", 0);
+        set => PlayerPrefs.SetInt("TotalSouls", value);
+    }
+    
     public void Update()
     {
         Display();
