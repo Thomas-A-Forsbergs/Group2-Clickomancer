@@ -22,9 +22,18 @@ public class GetOfflineCurrency : MonoBehaviour {
         get => PlayerPrefs.GetString("SoulsEarnedOffline", "0000-00-00");
         private set => PlayerPrefs.SetString("SoulsEarnedOffline", value.ToString());
     }
+    
+    public int FirstTimePlaying {
+        get => PlayerPrefs.GetInt("FirstTimePlaying", 1);
+        private set => PlayerPrefs.SetInt("FirstTimePlaying", value);
+    }
 
     private void Awake() {
-        CalculateOfflineProduction();
+        if (FirstTimePlaying != 1)
+        {
+            CalculateOfflineProduction();
+        }
+        FirstTimePlaying = 0;
     }
 
     private void OnApplicationQuit() {
@@ -41,6 +50,7 @@ public class GetOfflineCurrency : MonoBehaviour {
         int totalOfflineProduction =
             Mathf.RoundToInt((float) interval.TotalSeconds) * totalProduction;
         soulsRef.Souls += totalOfflineProduction;
+        soulsRef.TotalSoulsOwned += totalOfflineProduction;
 
         offlineTimeText.text =
             $"{offlineTimeTextString} {interval.Days}d, {interval.Hours}h, {interval.Minutes}m, {(int) interval.TotalSeconds}s!";
