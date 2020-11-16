@@ -32,10 +32,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GetOfflineCurrency.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HelperClass.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/IdleRPG-main/IdleRPG-main/Assets/Scripts/Clicker/ResourceProduction/ResourceProducer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Undead.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/IdleRPG-main/IdleRPG-main/Assets/Scripts/Clicker/Purchasable.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -43,13 +43,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/TestScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NewBehaviourScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AddSouls.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Undead.cs" />
         <option value="$PROJECT_DIR$/Assets/SoulCount.cs" />
         <option value="$USER_HOME$/Downloads/IdleRPG-main/IdleRPG-main/Assets/Scripts/Clicker/Purchasable.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SoulCount.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GetOfflineCurrency.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/HelperClass.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Undead.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SoulCount.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ManaBar.cs" />
       </list>
     </option>
   </component>
@@ -108,6 +107,7 @@
       <workItem from="1605184305221" duration="3544000" />
       <workItem from="1605259295382" duration="4080000" />
       <workItem from="1605264831698" duration="9983000" />
+      <workItem from="1605529651438" duration="6335000" />
     </task>
     <servers />
   </component>
@@ -132,81 +132,13 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1431" height="304" key="GridCell.Tab.0.bottom" timestamp="1605281811399">
-      <screen x="0" y="0" width="1474" height="864" />
-    </state>
-    <state width="1431" height="304" key="GridCell.Tab.0.bottom/0.0.1474.864@0.0.1474.864" timestamp="1605281811399" />
-    <state width="1431" height="304" key="GridCell.Tab.0.center" timestamp="1605281811398">
-      <screen x="0" y="0" width="1474" height="864" />
-    </state>
-    <state width="1431" height="304" key="GridCell.Tab.0.center/0.0.1474.864@0.0.1474.864" timestamp="1605281811398" />
-    <state width="1431" height="304" key="GridCell.Tab.0.left" timestamp="1605281811398">
-      <screen x="0" y="0" width="1474" height="864" />
-    </state>
-    <state width="1431" height="304" key="GridCell.Tab.0.left/0.0.1474.864@0.0.1474.864" timestamp="1605281811398" />
-    <state width="1431" height="304" key="GridCell.Tab.0.right" timestamp="1605281811398">
-      <screen x="0" y="0" width="1474" height="864" />
-    </state>
-    <state width="1431" height="304" key="GridCell.Tab.0.right/0.0.1474.864@0.0.1474.864" timestamp="1605281811398" />
-    <state width="1431" height="304" key="GridCell.Tab.1.bottom" timestamp="1605281811399">
-      <screen x="0" y="0" width="1474" height="864" />
-    </state>
-    <state width="1431" height="304" key="GridCell.Tab.1.bottom/0.0.1474.864@0.0.1474.864" timestamp="1605281811399" />
-    <state width="1431" height="304" key="GridCell.Tab.1.center" timestamp="1605281811399">
-      <screen x="0" y="0" width="1474" height="864" />
-    </state>
-    <state width="1431" height="304" key="GridCell.Tab.1.center/0.0.1474.864@0.0.1474.864" timestamp="1605281811399" />
-    <state width="1431" height="304" key="GridCell.Tab.1.left" timestamp="1605281811399">
-      <screen x="0" y="0" width="1474" height="864" />
-    </state>
-    <state width="1431" height="304" key="GridCell.Tab.1.left/0.0.1474.864@0.0.1474.864" timestamp="1605281811399" />
-    <state width="1431" height="304" key="GridCell.Tab.1.right" timestamp="1605281811399">
-      <screen x="0" y="0" width="1474" height="864" />
-    </state>
-    <state width="1431" height="304" key="GridCell.Tab.1.right/0.0.1474.864@0.0.1474.864" timestamp="1605281811399" />
-    <state width="1431" height="304" key="GridCell.Tab.2.bottom" timestamp="1605281811399">
-      <screen x="0" y="0" width="1474" height="864" />
-    </state>
-    <state width="1431" height="304" key="GridCell.Tab.2.bottom/0.0.1474.864@0.0.1474.864" timestamp="1605281811399" />
-    <state width="1431" height="304" key="GridCell.Tab.2.center" timestamp="1605281811399">
-      <screen x="0" y="0" width="1474" height="864" />
-    </state>
-    <state width="1431" height="304" key="GridCell.Tab.2.center/0.0.1474.864@0.0.1474.864" timestamp="1605281811399" />
-    <state width="1431" height="304" key="GridCell.Tab.2.left" timestamp="1605281811399">
-      <screen x="0" y="0" width="1474" height="864" />
-    </state>
-    <state width="1431" height="304" key="GridCell.Tab.2.left/0.0.1474.864@0.0.1474.864" timestamp="1605281811399" />
-    <state width="1431" height="304" key="GridCell.Tab.2.right" timestamp="1605281811399">
-      <screen x="0" y="0" width="1474" height="864" />
-    </state>
-    <state width="1431" height="304" key="GridCell.Tab.2.right/0.0.1474.864@0.0.1474.864" timestamp="1605281811399" />
-    <state width="1431" height="304" key="GridCell.Tab.3.bottom" timestamp="1605281811399">
-      <screen x="0" y="0" width="1474" height="864" />
-    </state>
-    <state width="1431" height="304" key="GridCell.Tab.3.bottom/0.0.1474.864@0.0.1474.864" timestamp="1605281811399" />
-    <state width="1431" height="304" key="GridCell.Tab.3.center" timestamp="1605281811399">
-      <screen x="0" y="0" width="1474" height="864" />
-    </state>
-    <state width="1431" height="304" key="GridCell.Tab.3.center/0.0.1474.864@0.0.1474.864" timestamp="1605281811399" />
-    <state width="1431" height="304" key="GridCell.Tab.3.left" timestamp="1605281811399">
-      <screen x="0" y="0" width="1474" height="864" />
-    </state>
-    <state width="1431" height="304" key="GridCell.Tab.3.left/0.0.1474.864@0.0.1474.864" timestamp="1605281811399" />
-    <state width="1431" height="304" key="GridCell.Tab.3.right" timestamp="1605281811399">
-      <screen x="0" y="0" width="1474" height="864" />
-    </state>
-    <state width="1431" height="304" key="GridCell.Tab.3.right/0.0.1474.864@0.0.1474.864" timestamp="1605281811399" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1605277209947">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605277209947" />
-    <state x="394" y="197" key="run.anything.popup" timestamp="1605520980372">
-      <screen x="0" y="0" width="1474" height="864" />
-    </state>
-    <state x="394" y="197" key="run.anything.popup/0.0.1474.864@0.0.1474.864" timestamp="1605520980372" />
-    <state x="1525" y="1034" width="672" height="678" key="search.everywhere.popup" timestamp="1605272084776">
+    <state x="1248" y="980" width="672" height="678" key="search.everywhere.popup" timestamp="1605532864994">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1525" y="1034" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605272084776" />
+    <state x="1248" y="980" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605532864994" />
   </component>
 </project>
