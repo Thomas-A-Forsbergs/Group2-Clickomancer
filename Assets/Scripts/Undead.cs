@@ -99,6 +99,7 @@ public class Undead : MonoBehaviour {
     public void UndeadProduction() {
         CalculateTotalProduction();
         soulRef.Souls += totalProduction;
+        soulRef.TotalSoulsOwned += totalProduction;
     }
 
     public void CalculateTotalCost() {
