@@ -80,9 +80,6 @@ public class Undead : MonoBehaviour {
         }
     } 
     
-    //public bool PurchaseIsAffordable => soulRef.Souls >= this.totalPurchaseCost;
-    //public bool UpgradeIsAffordable => soulRef.Souls >= this.totalUpgradeCost;
-    
     public void DisplayTexts() {
         this.TMP_statusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
         this.TMP_purchaseCostsText.text = $"Zombie Purchase costs: {this.totalPurchaseCost} souls";
@@ -137,9 +134,6 @@ public class Undead : MonoBehaviour {
     public void UndeadProduction() {
         CalculateTotalProduction();
 
-        //soulRef.Souls += totalProduction;
-        //soulRef.TotalSoulsOwned += totalProduction;
-        
         double amountOfSouls = _helperClassRef.StringToDouble(soulRef.Souls);
         double totalAmountOfSouls = _helperClassRef.StringToDouble(soulRef.TotalSoulsOwned);
         
@@ -158,7 +152,7 @@ public class Undead : MonoBehaviour {
     public double CalculateTotalProduction() {
         totalProduction =
             Mathf.RoundToInt(this.Count * (this.productionRate * Mathf.Pow(upgradeProductionMultiplier, Level)));
-        var tempDouble = _helperClassRef.StringToDouble(rebirthRef.RebirthModifier);
+        double tempDouble = _helperClassRef.StringToDouble(rebirthRef.RebirthModifier);
         if (tempDouble != 0)
         {
             totalProduction *= tempDouble;

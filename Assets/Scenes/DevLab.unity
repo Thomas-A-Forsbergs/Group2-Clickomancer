@@ -3191,8 +3191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e70d286580eaec4e9d3afdd0e850509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulsRef: {fileID: 2006190522}
+  soulRef: {fileID: 2006190522}
   zombieRef: {fileID: 673052961}
+  _helperClassRef: {fileID: 2006190523}
   offlineTimeText: {fileID: 1111739416}
   offlineTimeTextString: 'You were offline for '
   offlineProductionText: {fileID: 862871184}

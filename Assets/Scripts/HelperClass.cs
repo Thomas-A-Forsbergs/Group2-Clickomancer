@@ -27,7 +27,6 @@ public class HelperClass : MonoBehaviour
         }
         else if (tempString == "RebirthModifier")
         {
-            Debug.Log("I am rebirthing");
             rebirthRef.RebirthModifier = doubleValue;
         }
     }

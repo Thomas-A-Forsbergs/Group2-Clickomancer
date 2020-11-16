@@ -4,9 +4,9 @@ using TMPro;
 
 public class GetOfflineCurrency : MonoBehaviour {
     [Header("Drag and Drop references here")]
-    public SoulCount soulsRef;
-
+    public SoulCount soulRef;
     public Undead zombieRef;
+    public HelperClass _helperClassRef;
 
     [Header("Text reference for Offline Time")]
     public TextMeshProUGUI offlineTimeText;
@@ -45,13 +45,19 @@ public class GetOfflineCurrency : MonoBehaviour {
         var offlineTime = Convert.ToDateTime(OfflineTime);
         var interval = currentTime - offlineTime;
 
-        var totalProduction = zombieRef.CalculateTotalProduction();
+        double totalProduction = zombieRef.CalculateTotalProduction();
 
-        double totalOfflineProduction =
-            (float) interval.TotalSeconds * totalProduction;
-        soulsRef.Souls += totalOfflineProduction;
-        soulsRef.TotalSoulsOwned += totalOfflineProduction;
-
+        double totalOfflineProduction = (int)interval.TotalSeconds * totalProduction;
+        
+        double amountOfSouls = _helperClassRef.StringToDouble(soulRef.Souls);
+        double totalAmountOfSouls = _helperClassRef.StringToDouble(soulRef.TotalSoulsOwned);
+        
+        var tempSoulDouble = amountOfSouls + totalOfflineProduction;
+        var tempTotalDouble = totalAmountOfSouls + totalOfflineProduction;
+        
+        _helperClassRef.DoubleToString(tempSoulDouble, "Souls");
+        _helperClassRef.DoubleToString(tempTotalDouble, "TotalSoulsOwned");
+        
         offlineTimeText.text =
             $"{offlineTimeTextString} {interval.Days}d, {interval.Hours}h, {interval.Minutes}m, {interval.Seconds}s!";
         offlineProductionText.text = $"{offlineProductionTextString} {totalOfflineProduction}!";

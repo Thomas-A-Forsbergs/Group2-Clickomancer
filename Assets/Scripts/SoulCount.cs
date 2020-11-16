@@ -18,9 +18,6 @@ public class SoulCount : MonoBehaviour
     public int upgradeCost = 100;
     public float upgradeCostMultiplier = 1.1f;
     private int totalCost;
-
-
- 
     
     private int IsAffordable
     {
