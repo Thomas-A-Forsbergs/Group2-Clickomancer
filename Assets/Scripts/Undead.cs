@@ -47,9 +47,42 @@ public class Undead : MonoBehaviour {
         set => PlayerPrefs.SetInt("Level" + name, value);
     }
 
+    
+    private int PurchaseIsAffordable
+    {
+        get
+        {
+            var tempDouble = _helperClassRef.StringToDouble(soulRef.Souls);
+            if (tempDouble >= totalPurchaseCost)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+    } 
+    
+    private int UpgradeIsAffordable
+    {
+        get
+        {
+            var tempDouble = _helperClassRef.StringToDouble(soulRef.Souls);
+            if (tempDouble >= totalUpgradeCost)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+    } 
+    
     //public bool PurchaseIsAffordable => soulRef.Souls >= this.totalPurchaseCost;
     //public bool UpgradeIsAffordable => soulRef.Souls >= this.totalUpgradeCost;
-
+    
     public void DisplayTexts() {
         this.TMP_statusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
         this.TMP_purchaseCostsText.text = $"Zombie Purchase costs: {this.totalPurchaseCost} souls";
@@ -65,7 +98,7 @@ public class Undead : MonoBehaviour {
     }
 
     void Update() {
-        //ProductionTimer();
+        ProductionTimer();
         CalculateTotalCost();
         DisplayTexts();
     }
@@ -79,29 +112,42 @@ public class Undead : MonoBehaviour {
     }
 
     private void CreateUndead() {
-        //if (!PurchaseIsAffordable) {
-        //    return;
-        //}
-
+        if (PurchaseIsAffordable == 0) {
+            return;
+        }
         Count += 1;
-        //soulRef.Souls -= totalPurchaseCost;
+        double tempDouble = _helperClassRef.StringToDouble(soulRef.Souls);
+        tempDouble -= totalPurchaseCost;
+        _helperClassRef.DoubleToString(tempDouble, "Souls");
         DisplayTexts();
     }
 
     private void UpgradeUndead() {
-        //if (!UpgradeIsAffordable) {
-        //    return;
-        //}
+        if (UpgradeIsAffordable == 0) {
+            return;
+        }
 
         Level += 1;
-        //soulRef.Souls -= totalUpgradeCost;
+        double tempDouble = _helperClassRef.StringToDouble(soulRef.Souls);
+        tempDouble -= totalUpgradeCost;
+        _helperClassRef.DoubleToString(tempDouble, "Souls");
         DisplayTexts();
     }
 
     public void UndeadProduction() {
         CalculateTotalProduction();
+
         //soulRef.Souls += totalProduction;
         //soulRef.TotalSoulsOwned += totalProduction;
+        
+        double amountOfSouls = _helperClassRef.StringToDouble(soulRef.Souls);
+        double totalAmountOfSouls = _helperClassRef.StringToDouble(soulRef.TotalSoulsOwned);
+        
+        var tempSoulDouble = amountOfSouls + totalProduction;
+        var tempTotalDouble = totalAmountOfSouls + totalProduction;
+        
+        _helperClassRef.DoubleToString(tempSoulDouble, "Souls");
+        _helperClassRef.DoubleToString(tempTotalDouble, "TotalSoulsOwned");
     }
 
     public void CalculateTotalCost() {

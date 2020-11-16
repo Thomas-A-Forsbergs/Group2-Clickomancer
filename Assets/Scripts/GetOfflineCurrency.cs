@@ -53,7 +53,7 @@ public class GetOfflineCurrency : MonoBehaviour {
         soulsRef.TotalSoulsOwned += totalOfflineProduction;
 
         offlineTimeText.text =
-            $"{offlineTimeTextString} {interval.Days}d, {interval.Hours}h, {interval.Minutes}m, {(int) interval.TotalSeconds}s!";
+            $"{offlineTimeTextString} {interval.Days}d, {interval.Hours}h, {interval.Minutes}m, {interval.Seconds}s!";
         offlineProductionText.text = $"{offlineProductionTextString} {totalOfflineProduction}!";
     }
 }

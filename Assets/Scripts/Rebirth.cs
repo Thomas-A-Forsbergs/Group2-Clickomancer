@@ -62,11 +62,7 @@ public class Rebirth : MonoBehaviour
             double modToAdd =  amountofsouls * modifierFactor;
             double currentMod = _helperClassRef.StringToDouble(RebirthModifier);
             double totalModToAdd = currentMod + modToAdd;
-            Debug.Log("Amount: " + amountofsouls);
-            Debug.Log("Modifier: " + modifierFactor);
-            Debug.Log("ModToAdd: " + modToAdd);
             _helperClassRef.DoubleToString(totalModToAdd, "RebirthModifier");
-            
             Display();
             _helperClassRef.DoubleToString(0, "Souls");
             _helperClassRef.DoubleToString(0, "TotalSoulsOwned");
