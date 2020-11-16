@@ -52,6 +52,7 @@ public class SoulCount : MonoBehaviour
     public void Click()
     {
         Souls +=  Mathf.RoundToInt( 1 * (this.soulsPerClick * Mathf.Pow(upgradeMultiplier, UpgradeLevel)));
+        TotalSoulsOwned +=  Mathf.RoundToInt( 1 * (this.soulsPerClick * Mathf.Pow(upgradeMultiplier, UpgradeLevel)));
 
     }
     public void PurchaseUpgrade()
