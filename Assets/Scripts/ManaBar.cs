@@ -14,8 +14,9 @@ public class ManaBar : MonoBehaviour
     public float manaPerSec = 1f;
     float elapsedTime;
     public float manaRegen = 1f;
+    [SerializeField] private Image meterImage;
     private bool IsAffordable => currentMana >= SpellCost;
-    
+
     public void UseSpell()
     {
         if (!IsAffordable)
@@ -29,10 +30,14 @@ public class ManaBar : MonoBehaviour
     public void Click()
     {
         UseSpell();
+       // Debug.Log((currentMana - MaxMana) / 100);
+       // meterImage.fillAmount = MaxMana - currentMana / 100;
+
     }
 
     private void Update()
     {
+        meterImage.fillAmount = currentMana / MaxMana;
         this.elapsedTime += Time.deltaTime;
         if (this.elapsedTime >= this.manaRegen)
         {
@@ -41,23 +46,19 @@ public class ManaBar : MonoBehaviour
                 currentMana = MaxMana;
                 this.elapsedTime -= manaRegen;
                 return;
-                
+
             }
+
             this.currentMana += manaPerSec;
             this.elapsedTime -= manaRegen;
         }
+
         Display();
     }
+
     private void Display()
     {
         ManaText.text = "Mana:" + currentMana + "/" + MaxMana;
     }
-    private Image meterImage;
 
-    private void Awake()
-    {
-        meterImage = transform.Find("meter").GetComponent<Image>();
-
-        meterImage.fillAmount = currentMana;
-    }
 }
