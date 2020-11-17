@@ -6,7 +6,7 @@ public class HelperClass : MonoBehaviour
     public SoulCount soulRef;
     public Rebirth rebirthRef;
     public UndeadManager undeadRef;
-    //public ManaBar manaRef;
+    public ManaBar manaRef;
     public Library libraryRef;
 
     public double StringToDouble(string tempString)
