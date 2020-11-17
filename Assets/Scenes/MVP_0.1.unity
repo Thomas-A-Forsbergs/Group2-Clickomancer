@@ -1258,6 +1258,81 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &667424854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 667424855}
+  - component: {fileID: 667424857}
+  - component: {fileID: 667424856}
+  m_Layer: 5
+  m_Name: background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &667424855
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667424854}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1657914023}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 410, y: 35}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &667424856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667424854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &667424857
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667424854}
+  m_CullTransparentMesh: 0
 --- !u!1 &671138375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,6 +1477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 673052962}
   - component: {fileID: 673052961}
+  - component: {fileID: 673052963}
   m_Layer: 0
   m_Name: TestZombie
   m_TagString: Untagged
@@ -1421,24 +1497,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d4d8148eeaf0d4995ee747fd2effe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _helperClassRef: {fileID: 0}
+  _helperClassRef: {fileID: 673052963}
   soulRef: {fileID: 2006190522}
   rebirthRef: {fileID: 338119863}
   TMP_statusText: {fileID: 1453093325}
   TMP_purchaseCostsText: {fileID: 1581375901}
   TMP_upgradeCostsText: {fileID: 199541289}
   TMP_totalproductionText: {fileID: 1993355473}
-  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   name: Zombie
+  spriteImage: {fileID: 0}
   cost: 100
   productionRate: 1
-  count: 0
-  level: 0
+  totalProduction: 0
+  undeadProductionPerSecond: 1
   purchaseCostMultiplier: 1.1
   upgradeCostMultiplier: 1.1
   upgradeProductionMultiplier: 1.2
-  totalProduction: 0
-  undeadProductionPerSecond: 1
 --- !u!4 &673052962
 Transform:
   m_ObjectHideFlags: 0
@@ -1453,6 +1527,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &673052963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673052960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c608fe34345de4e94273b04eb39544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soulsRef: {fileID: 2006190522}
+  rebirthRef: {fileID: 338119863}
 --- !u!1 &862871182
 GameObject:
   m_ObjectHideFlags: 0
@@ -2530,9 +2618,10 @@ MonoBehaviour:
   ManaText: {fileID: 1551989409}
   currentMana: 100
   SpellCost: 20
-  MaxMana: 100
+  MaxMana: 200
   manaPerSec: 1
   manaRegen: 1
+  meterImage: {fileID: 1628307351}
 --- !u!1 &1479179680
 GameObject:
   m_ObjectHideFlags: 0
@@ -3099,7 +3188,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1657914023}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3171,6 +3260,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.84999996, y: 0.84999996, z: 0.84999996}
   m_Children:
+  - {fileID: 667424855}
   - {fileID: 1628307350}
   m_Father: {fileID: 1468794680}
   m_RootOrder: 2
@@ -3817,6 +3907,7 @@ GameObject:
   - component: {fileID: 2006190521}
   - component: {fileID: 2006190520}
   - component: {fileID: 2006190522}
+  - component: {fileID: 2006190523}
   m_Layer: 0
   m_Name: SoulCount
   m_TagString: Untagged
@@ -3836,9 +3927,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e70d286580eaec4e9d3afdd0e850509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulRef: {fileID: 0}
+  soulRef: {fileID: 2006190522}
   zombieRef: {fileID: 673052961}
-  _helperClassRef: {fileID: 0}
+  _helperClassRef: {fileID: 2006190523}
   offlineTimeText: {fileID: 1111739416}
   offlineTimeTextString: 'You were offline for '
   offlineProductionText: {fileID: 862871184}
@@ -3869,7 +3960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4f6daed92533240b7807ab8801055b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _helperClassRef: {fileID: 0}
+  _helperClassRef: {fileID: 2006190523}
   soulText: {fileID: 1606802110}
   upgradeText: {fileID: 253456836}
   soulsPerClickText: {fileID: 571439983}
@@ -3878,6 +3969,20 @@ MonoBehaviour:
   upgradeLevel: 0
   upgradeCost: 100
   upgradeCostMultiplier: 1.1
+--- !u!114 &2006190523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006190519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c608fe34345de4e94273b04eb39544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soulsRef: {fileID: 2006190522}
+  rebirthRef: {fileID: 338119863}
 --- !u!1 &2014704021
 GameObject:
   m_ObjectHideFlags: 0
