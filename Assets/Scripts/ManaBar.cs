@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class ManaBar : MonoBehaviour {
     // public TMPro.TMP_Text ManaText;
-    public HelperClass helperClassRef;
+    private HelperClass helperClassRef;
     public float currentMana = 100f;
     public int spellCost = 20;
     public float maxMana = 100f;
@@ -18,11 +18,10 @@ public class ManaBar : MonoBehaviour {
     [SerializeField] private Image meterImage;
     private bool IsAffordable => currentMana >= spellCost;
 
-    private void Awake()
-    {
+    private void Awake() {
         helperClassRef = GetComponentInParent<HelperClass>();
     }
-    
+
     private void Update() {
         meterImage.fillAmount = currentMana / maxMana;
         this.elapsedTime += Time.deltaTime;
@@ -39,7 +38,7 @@ public class ManaBar : MonoBehaviour {
 
         Display();
     }
-    
+
     public void UseSpell() {
         if (!IsAffordable) {
             return;
