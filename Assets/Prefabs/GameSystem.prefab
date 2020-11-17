@@ -94,7 +94,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ac7d10bb249e344b9292a449420413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helperClassRef: {fileID: 6503794761601077054}
   soulRef: {fileID: 6503794763304264831}
   zombieRef: {fileID: 6503794762271823076}
   modifierFactor: 0.1
@@ -142,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d4d8148eeaf0d4995ee747fd2effe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helperClassRef: {fileID: 6503794761601077054}
+  helperClassRef: {fileID: 0}
   soulRef: {fileID: 6503794763304264831}
   rebirthRef: {fileID: 6503794761929951945}
   name: Zombie
@@ -298,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e70d286580eaec4e9d3afdd0e850509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helperClassRef: {fileID: 6503794761601077054}
+  helperClassRef: {fileID: 0}
   soulRef: {fileID: 6503794763304264831}
   zombieRef: {fileID: 6503794762271823076}
   offlineTimeText: {fileID: 0}
@@ -317,7 +316,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4f6daed92533240b7807ab8801055b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helperClassRef: {fileID: 0}
   soulsPerClick: 100
   upgradeMultiplier: 3
   upgradeCost: 100

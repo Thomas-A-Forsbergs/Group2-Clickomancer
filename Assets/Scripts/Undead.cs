@@ -4,6 +4,7 @@
 // using TMPro;
 // using UnityEngine.PlayerLoop;
 
+using System;
 using UnityEngine;
 
 public class Undead : MonoBehaviour {
@@ -71,8 +72,12 @@ public class Undead : MonoBehaviour {
         }
     }
 
-    void Start() {
+    private void Awake()
+    {
         helperClassRef = GetComponentInParent<HelperClass>();
+    }
+
+    void Start() {
         CalculateTotalCost();
         CalculateTotalProduction();
         DisplayTexts();
@@ -139,6 +144,10 @@ public class Undead : MonoBehaviour {
     public double CalculateTotalProduction() {
         totalProduction =
             Mathf.RoundToInt(this.Count * (this.productionRate * Mathf.Pow(upgradeProductionMultiplier, Level)));
+        
+        //Debug.Log(helperClassRef.rebirthRef.RebirthModifier);
+        //Debug.Log(helperClassRef.StringToDouble(helperClassRef.rebirthRef.RebirthModifier));
+        
         double tempDouble = helperClassRef.StringToDouble(rebirthRef.RebirthModifier);
         if (tempDouble != 0) {
             totalProduction *= tempDouble;
