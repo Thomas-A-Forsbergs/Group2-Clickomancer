@@ -48,7 +48,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8315b0f9aba2ab74d941469dcd18ae11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helperClassRef: {fileID: 0}
   currentMana: 100
   spellCost: 20
   maxMana: 100
@@ -106,6 +105,7 @@ MonoBehaviour:
   soulRef: {fileID: 6503794763304264831}
   rebirthRef: {fileID: 6503794761929951945}
   undeadRef: {fileID: 6294146639574611035}
+  manaRef: {fileID: 4753950939613270838}
   libraryRef: {fileID: 2667484432612191040}
 --- !u!1 &6503794761929951948
 GameObject:
@@ -247,7 +247,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b99acf202be70eb4b8763d791e2b9882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helperClassRef: {fileID: 6503794761601077054}
   soulText: {fileID: 0}
   upgradeText: {fileID: 0}
   soulsPerClickText: {fileID: 0}

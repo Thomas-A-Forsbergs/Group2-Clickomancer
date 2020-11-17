@@ -1248,6 +1248,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 6503794761601077054, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+      propertyPath: manaRef
+      value: 
+      objectReference: {fileID: 1672917698}
     - target: {fileID: 6503794761601077055, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
       propertyPath: m_RootOrder
       value: 3
