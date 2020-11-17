@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class Rebirth : MonoBehaviour {
     [Header("Drag and Drop reference here")]
-    public HelperClass helperClassRef;
+    private HelperClass helperClassRef;
 
     public SoulCount soulRef;
     public Undead zombieRef;
@@ -39,6 +39,7 @@ public class Rebirth : MonoBehaviour {
     }
 
     void Start() {
+        helperClassRef = GetComponentInParent<HelperClass>();
         Display();
     }
 

@@ -4,7 +4,7 @@ using TMPro;
 
 public class GetOfflineCurrency : MonoBehaviour {
     [Header("Drag and Drop references here")]
-    public HelperClass helperClassRef;
+    private HelperClass helperClassRef;
 
     public SoulCount soulRef;
     public Undead zombieRef;
@@ -35,6 +35,11 @@ public class GetOfflineCurrency : MonoBehaviour {
         }
 
         FirstTimePlaying = 0;
+    }
+
+    private void Start()
+    {
+        helperClassRef = GetComponentInParent<HelperClass>();
     }
 
     private void OnApplicationQuit() {

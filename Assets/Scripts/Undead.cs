@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class Undead : MonoBehaviour {
     [Header("Drag and Drop references here")]
-    public HelperClass helperClassRef;
+    private HelperClass helperClassRef;
 
     public SoulCount soulRef;
     public Rebirth rebirthRef;
@@ -72,6 +72,7 @@ public class Undead : MonoBehaviour {
     }
 
     void Start() {
+        helperClassRef = GetComponentInParent<HelperClass>();
         CalculateTotalCost();
         CalculateTotalProduction();
         DisplayTexts();

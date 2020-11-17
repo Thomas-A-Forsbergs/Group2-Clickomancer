@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class SoulCount : MonoBehaviour {
     [Header("Drag and Drop reference here")]
-    public HelperClass helperClassRef;
+    private HelperClass helperClassRef;
 
     // public TMPro.TMP_Text soulText;
     // public TMPro.TMP_Text upgradeText;
@@ -28,7 +28,9 @@ public class SoulCount : MonoBehaviour {
         }
     }
 
-    public void Start() {
+    public void Start()
+    {
+        helperClassRef = GetComponentInParent<HelperClass>();
         Display();
         CalculateTotalCost();
     }
