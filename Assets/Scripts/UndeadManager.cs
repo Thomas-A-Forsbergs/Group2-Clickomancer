@@ -30,9 +30,6 @@ public class UndeadManager : MonoBehaviour {
         for (int i = 0; i < undeadChildren.Length; i++) {
             totalProductionValue += undeadChildren[i].CalculateTotalProduction();
         }
-
-        //TODO: Change Debug.Log to an In-Scene text-reference to show Total passive production value somewhere
-        //Debug.Log("Total Child production is: " + totalProductionValue);
         helperClassRef.libraryRef.totalUndeadProductionText.text = $"Total production: {totalProductionValue}";
 
         return totalProductionValue;
