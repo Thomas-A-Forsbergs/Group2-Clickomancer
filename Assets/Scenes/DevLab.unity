@@ -4627,6 +4627,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2667484432612191040, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+      propertyPath: soulText
+      value: 
+      objectReference: {fileID: 1606802110}
+    - target: {fileID: 2667484432612191040, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+      propertyPath: BonusText
+      value: 
+      objectReference: {fileID: 205629845}
+    - target: {fileID: 2667484432612191040, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+      propertyPath: RebirthText
+      value: 
+      objectReference: {fileID: 585670437}
+    - target: {fileID: 2667484432612191040, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+      propertyPath: upgradeText
+      value: 
+      objectReference: {fileID: 253456836}
+    - target: {fileID: 2667484432612191040, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+      propertyPath: TMP_statusText
+      value: 
+      objectReference: {fileID: 1453093325}
+    - target: {fileID: 2667484432612191040, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+      propertyPath: helperClassRef
+      value: 
+      objectReference: {fileID: 270050043}
+    - target: {fileID: 2667484432612191040, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+      propertyPath: soulsPerClickText
+      value: 
+      objectReference: {fileID: 571439983}
+    - target: {fileID: 2667484432612191040, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+      propertyPath: TMP_purchaseCostsText
+      value: 
+      objectReference: {fileID: 1581375901}
+    - target: {fileID: 2667484432612191040, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+      propertyPath: TMP_totalproductionText
+      value: 
+      objectReference: {fileID: 1993355473}
     - target: {fileID: 6503794761601077052, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
       propertyPath: m_Name
       value: GameSystem
