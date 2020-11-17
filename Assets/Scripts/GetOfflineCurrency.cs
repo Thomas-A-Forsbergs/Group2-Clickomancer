@@ -6,8 +6,8 @@ public class GetOfflineCurrency : MonoBehaviour {
     [Header("Drag and Drop references here")]
     private HelperClass helperClassRef;
 
-    public SoulCount soulRef;
-    public Undead zombieRef;
+    // public SoulCount soulRef;
+    // public Undead zombieRef;
 
     [Header("Text reference for Offline Time")]
     public TextMeshProUGUI offlineTimeText;
@@ -19,6 +19,15 @@ public class GetOfflineCurrency : MonoBehaviour {
 
     public string offlineProductionTextString;
 
+    private void Awake() {
+        helperClassRef = GetComponentInParent<HelperClass>();
+        if (FirstTimePlaying != 1) {
+            CalculateOfflineProduction();
+        }
+
+        FirstTimePlaying = 0;
+    }
+    
     public string OfflineTime {
         get => PlayerPrefs.GetString("SoulsEarnedOffline", "0000-00-00");
         private set => PlayerPrefs.SetString("SoulsEarnedOffline", value);
@@ -27,19 +36,6 @@ public class GetOfflineCurrency : MonoBehaviour {
     public int FirstTimePlaying {
         get => PlayerPrefs.GetInt("FirstTimePlaying", 1);
         private set => PlayerPrefs.SetInt("FirstTimePlaying", value);
-    }
-
-    private void Awake() {
-        if (FirstTimePlaying != 1) {
-            CalculateOfflineProduction();
-        }
-
-        FirstTimePlaying = 0;
-    }
-
-    private void Start()
-    {
-        helperClassRef = GetComponentInParent<HelperClass>();
     }
 
     private void OnApplicationQuit() {
@@ -51,12 +47,15 @@ public class GetOfflineCurrency : MonoBehaviour {
         var offlineTime = Convert.ToDateTime(OfflineTime);
         var interval = currentTime - offlineTime;
 
-        double totalProduction = zombieRef.CalculateTotalProduction();
+        //double totalProduction = zombieRef.CalculateTotalProduction();
+        //double totalProduction = helperClassRef.undeadRef.CalculateTotalUndeadProduction();
 
+        double totalProduction = 1;
+        
         double totalOfflineProduction = (int) interval.TotalSeconds * totalProduction;
 
-        double amountOfSouls = helperClassRef.StringToDouble(soulRef.Souls);
-        double totalAmountOfSouls = helperClassRef.StringToDouble(soulRef.TotalSoulsOwned);
+        double amountOfSouls = helperClassRef.StringToDouble(helperClassRef.soulRef.Souls);
+        double totalAmountOfSouls = helperClassRef.StringToDouble(helperClassRef.soulRef.TotalSoulsOwned);
 
         var tempSoulDouble = amountOfSouls + totalOfflineProduction;
         var tempTotalDouble = totalAmountOfSouls + totalOfflineProduction;

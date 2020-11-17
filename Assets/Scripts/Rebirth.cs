@@ -11,8 +11,8 @@ public class Rebirth : MonoBehaviour {
     [Header("Drag and Drop reference here")]
     private HelperClass helperClassRef;
 
-    public SoulCount soulRef;
-    public Undead zombieRef;
+    // public SoulCount soulRef;
+    // public Undead zombieRef;
 
     // public TMPro.TMP_Text rebirthText;
     // public TMPro.TMP_Text bonusText;
@@ -34,17 +34,17 @@ public class Rebirth : MonoBehaviour {
         Display();
     }
 
-    public void RebirthButton() {
-        CalculateRebirthModifer();
+    private void Awake()
+    {
+        helperClassRef = GetComponentInParent<HelperClass>();
     }
 
     void Start() {
-        helperClassRef = GetComponentInParent<HelperClass>();
         Display();
     }
 
     private void CalculateRebirthModifer() {
-        double amountofsouls = helperClassRef.StringToDouble(soulRef.TotalSoulsOwned);
+        double amountofsouls = helperClassRef.StringToDouble(helperClassRef.soulRef.TotalSoulsOwned);
         if (rebirthThreshold < amountofsouls) {
             Reborn++;
             double modToAdd = amountofsouls * modifierFactor;
@@ -54,9 +54,13 @@ public class Rebirth : MonoBehaviour {
             Display();
             helperClassRef.DoubleToString(0, "Souls");
             helperClassRef.DoubleToString(0, "TotalSoulsOwned");
-            soulRef.UpgradeLevel = 0;
+            helperClassRef.soulRef.UpgradeLevel = 0;
             helperClassRef.undeadRef.ResetUndeadChildCountLevel();
         }
+    }
+    
+    public void RebirthButton() {
+        CalculateRebirthModifer();
     }
 
     private void Display() {

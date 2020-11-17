@@ -27,10 +27,18 @@ public class SoulCount : MonoBehaviour {
             }
         }
     }
-
-    public void Start()
+    
+    private void Awake()
     {
         helperClassRef = GetComponentInParent<HelperClass>();
+    }
+
+    public void Start() {
+        Display();
+        CalculateTotalCost();
+    }
+    
+    public void Update() {
         Display();
         CalculateTotalCost();
     }
@@ -50,18 +58,13 @@ public class SoulCount : MonoBehaviour {
         set => PlayerPrefs.SetString("TotalSoulsOwned", value);
     }
 
-    public void Update() {
-        Display();
-        CalculateTotalCost();
-    }
-
     public void Click() {
-        double tempSoulDouble = helperClassRef.StringToDouble(Souls);
-        double tempTotalDouble = helperClassRef.StringToDouble(TotalSoulsOwned);
-        tempSoulDouble += 1 * (this.soulsPerClick * Mathf.Pow(upgradeMultiplier, UpgradeLevel));
-        tempTotalDouble += 1 * (this.soulsPerClick * Mathf.Pow(upgradeMultiplier, UpgradeLevel));
-        helperClassRef.DoubleToString(tempSoulDouble, "Souls");
-        helperClassRef.DoubleToString(tempTotalDouble, "TotalSoulsOwned");
+        double tempSouls = helperClassRef.StringToDouble(Souls);
+        double tempTotalSouls = helperClassRef.StringToDouble(TotalSoulsOwned);
+        tempSouls += 1 * (this.soulsPerClick * Mathf.Pow(upgradeMultiplier, UpgradeLevel));
+        tempTotalSouls += 1 * (this.soulsPerClick * Mathf.Pow(upgradeMultiplier, UpgradeLevel));
+        helperClassRef.DoubleToString(tempSouls, "Souls");
+        helperClassRef.DoubleToString(tempTotalSouls, "TotalSoulsOwned");
     }
 
     public void PurchaseUpgrade() {
@@ -83,9 +86,9 @@ public class SoulCount : MonoBehaviour {
     private void Display() {
         helperClassRef.libraryRef.upgradeText.text =
             $"Upgrade to level {UpgradeLevel + 1} Soul leech \nCost: {totalCost}";
-        helperClassRef.libraryRef.soulsPerClickText.text = "Souls per click : " +
-                                                           1 * (this.soulsPerClick * Mathf.Pow(upgradeMultiplier,
-                                                               UpgradeLevel));
+        helperClassRef.libraryRef.soulsPerClickText.text = "Souls per click : " + 1 * (this.soulsPerClick * Mathf.Pow(
+            upgradeMultiplier,
+            UpgradeLevel));
         helperClassRef.libraryRef.soulText.text = "Souls:" + Souls;
     }
 }
