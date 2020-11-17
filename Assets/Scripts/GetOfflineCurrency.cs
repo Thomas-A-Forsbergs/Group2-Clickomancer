@@ -21,13 +21,17 @@ public class GetOfflineCurrency : MonoBehaviour {
 
     private void Awake() {
         helperClassRef = GetComponentInParent<HelperClass>();
+ 
+    }
+
+    private void Start()
+    {
         if (FirstTimePlaying != 1) {
             CalculateOfflineProduction();
         }
-
         FirstTimePlaying = 0;
     }
-    
+
     public string OfflineTime {
         get => PlayerPrefs.GetString("SoulsEarnedOffline", "0000-00-00");
         private set => PlayerPrefs.SetString("SoulsEarnedOffline", value);
@@ -46,11 +50,9 @@ public class GetOfflineCurrency : MonoBehaviour {
         var currentTime = DateTime.Now;
         var offlineTime = Convert.ToDateTime(OfflineTime);
         var interval = currentTime - offlineTime;
-
-        //double totalProduction = zombieRef.CalculateTotalProduction();
-        //double totalProduction = helperClassRef.undeadRef.CalculateTotalUndeadProduction();
-
-        double totalProduction = 1;
+        
+        double totalProduction = helperClassRef.undeadRef.CalculateTotalUndeadProduction();
+        //Debug.Log(helperClassRef.undeadRef.CalculateTotalUndeadProduction());
         
         double totalOfflineProduction = (int) interval.TotalSeconds * totalProduction;
 

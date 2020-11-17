@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 1478955680653789095}
   - component: {fileID: 5880110902089517068}
   m_Layer: 5
-  m_Name: Buy Zombie Button
+  m_Name: Buy Undead Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
