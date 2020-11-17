@@ -1,12 +1,13 @@
 ﻿using System;
-using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class HelperClass : MonoBehaviour
 {
     public SoulCount soulsRef;
     public Rebirth rebirthRef;
+    public Undead Zombieref;
+    //public ManaBar manaRef;
+    public Library libraryRef;
 
     public double StringToDouble(string tempString)
     {

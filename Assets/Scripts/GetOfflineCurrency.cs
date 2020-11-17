@@ -6,7 +6,7 @@ public class GetOfflineCurrency : MonoBehaviour {
     [Header("Drag and Drop references here")]
     public SoulCount soulRef;
     public Undead zombieRef;
-    public HelperClass _helperClassRef;
+    public HelperClass helperClassRef;
 
     [Header("Text reference for Offline Time")]
     public TextMeshProUGUI offlineTimeText;
@@ -50,14 +50,14 @@ public class GetOfflineCurrency : MonoBehaviour {
 
         double totalOfflineProduction = (int)interval.TotalSeconds * totalProduction;
         
-        double amountOfSouls = _helperClassRef.StringToDouble(soulRef.Souls);
-        double totalAmountOfSouls = _helperClassRef.StringToDouble(soulRef.TotalSoulsOwned);
+        double amountOfSouls = helperClassRef.StringToDouble(soulRef.Souls);
+        double totalAmountOfSouls = helperClassRef.StringToDouble(soulRef.TotalSoulsOwned);
         
         var tempSoulDouble = amountOfSouls + totalOfflineProduction;
         var tempTotalDouble = totalAmountOfSouls + totalOfflineProduction;
         
-        _helperClassRef.DoubleToString(tempSoulDouble, "Souls");
-        _helperClassRef.DoubleToString(tempTotalDouble, "TotalSoulsOwned");
+        helperClassRef.DoubleToString(tempSoulDouble, "Souls");
+        helperClassRef.DoubleToString(tempTotalDouble, "TotalSoulsOwned");
         
         offlineTimeText.text =
             $"{offlineTimeTextString} {interval.Days}d, {interval.Hours}h, {interval.Minutes}m, {interval.Seconds}s!";
