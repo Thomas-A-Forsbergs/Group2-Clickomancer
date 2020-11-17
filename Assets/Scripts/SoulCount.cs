@@ -7,10 +7,7 @@ using UnityEngine;
 public class SoulCount : MonoBehaviour {
     [Header("Drag and Drop reference here")]
     private HelperClass helperClassRef;
-
-    // public TMPro.TMP_Text soulText;
-    // public TMPro.TMP_Text upgradeText;
-    // public TMPro.TMP_Text soulsPerClickText;
+    
     [Header("Configurable values")] public double soulsPerClick = 1;
     public float upgradeMultiplier = 1.5f;
     public int upgradeCost = 100;

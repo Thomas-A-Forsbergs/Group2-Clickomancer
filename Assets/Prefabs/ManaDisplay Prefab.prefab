@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5505669300686744201}
   m_Layer: 5
-  m_Name: ManaBar
+  m_Name: Mana Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 5505669301918294350}
   - component: {fileID: 5505669301918294351}
   m_Layer: 5
-  m_Name: ManaText
+  m_Name: Mana Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

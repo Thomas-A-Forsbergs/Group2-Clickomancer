@@ -3714,7 +3714,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1468794681}
         m_TargetAssemblyTypeName: ManaBar, Assembly-CSharp
-        m_MethodName: Click
+        m_MethodName: SpellButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

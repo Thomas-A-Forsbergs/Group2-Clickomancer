@@ -7,8 +7,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ManaBar : MonoBehaviour {
-    // public TMPro.TMP_Text ManaText;
     private HelperClass helperClassRef;
+    
     public float currentMana = 100f;
     public int spellCost = 20;
     public float maxMana = 100f;
@@ -39,7 +39,7 @@ public class ManaBar : MonoBehaviour {
         Display();
     }
 
-    public void UseSpell() {
+    public void SpellRemoveMana() {
         if (!IsAffordable) {
             return;
         }
@@ -47,8 +47,8 @@ public class ManaBar : MonoBehaviour {
         currentMana -= spellCost;
     }
 
-    public void Click() {
-        UseSpell();
+    public void SpellButton() {
+        SpellRemoveMana();
         // Debug.Log((currentMana - maxMana) / 100);
         // meterImage.fillAmount = maxMana - currentMana / 100;
     }

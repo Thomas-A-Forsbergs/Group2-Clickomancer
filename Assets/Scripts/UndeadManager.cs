@@ -34,9 +34,6 @@ public class UndeadManager : MonoBehaviour {
 
     public double CalculateTotalUndeadProduction() {
         double totalProductionValue = 0;
-        // for (int i = 0; i < undeadChildren.Length; i++) {
-        //     totalProductionValue += undeadChildren[i].CalculateTotalProduction();
-        // }
         int i = 0;
         while (i < undeadChildren.Length)
         {

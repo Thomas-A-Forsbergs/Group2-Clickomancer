@@ -11,12 +11,6 @@ public class Rebirth : MonoBehaviour {
     [Header("Drag and Drop reference here")]
     private HelperClass helperClassRef;
 
-    // public SoulCount soulRef;
-    // public Undead zombieRef;
-
-    // public TMPro.TMP_Text rebirthText;
-    // public TMPro.TMP_Text bonusText;
-
     public double modifierFactor = 1f;
     public int rebirthThreshold = 1000;
 

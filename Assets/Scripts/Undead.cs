@@ -5,23 +5,15 @@
 // using UnityEngine.PlayerLoop;
 // using System;
 
+using System;
 using UnityEngine;
 
 public class Undead : MonoBehaviour {
     [Header("Drag and Drop references here")]
     private HelperClass helperClassRef;
 
-    // public SoulCount soulRef;
-    // public Rebirth rebirthRef;
-
-    // Trying TextMeshProUGUI 
-    // public TextMeshProUGUI statusText;
-    // public TextMeshProUGUI purchaseCostsText;
-    // public TextMeshProUGUI upgradeCostsText;
-    // public TextMeshProUGUI totalUndeadProductionText;
-
-    [Header("Configurable values")] [SerializeField]
-    private string name = "Zombie";
+    [Header("Configurable values")]
+    //private string name = "Zombie";
 
     [SerializeField] private Sprite spriteImage;
     [SerializeField] private int cost = 100;
@@ -72,21 +64,20 @@ public class Undead : MonoBehaviour {
         }
     }
 
-    private void Awake()
-    {
+    private void Awake() {
         helperClassRef = GetComponentInParent<HelperClass>();
     }
 
     void Start() {
         CalculateTotalCost();
         CalculateTotalProduction();
-        DisplayTexts();
+        DisplayUndead();
     }
 
     void Update() {
         ProductionTimer();
         CalculateTotalCost();
-        DisplayTexts();
+        DisplayUndead();
     }
 
     void ProductionTimer() {
@@ -98,7 +89,7 @@ public class Undead : MonoBehaviour {
     }
 
     private void CreateUndead() {
-        DisplayTexts();
+        DisplayUndead();
         if (PurchaseIsAffordable == 0) {
             return;
         }
@@ -107,11 +98,11 @@ public class Undead : MonoBehaviour {
         double tempDouble = helperClassRef.StringToDouble(helperClassRef.soulRef.Souls);
         tempDouble -= totalPurchaseCost;
         helperClassRef.DoubleToString(tempDouble, "Souls");
-        DisplayTexts();
+        DisplayUndead();
     }
 
     private void UpgradeUndead() {
-        DisplayTexts();
+        DisplayUndead();
         if (UpgradeIsAffordable == 0) {
             return;
         }
@@ -120,7 +111,7 @@ public class Undead : MonoBehaviour {
         double tempDouble = helperClassRef.StringToDouble(helperClassRef.soulRef.Souls);
         tempDouble -= totalUpgradeCost;
         helperClassRef.DoubleToString(tempDouble, "Souls");
-        DisplayTexts();
+        DisplayUndead();
     }
 
     public void UndeadProduction() {
@@ -149,6 +140,7 @@ public class Undead : MonoBehaviour {
         if (tempDouble != 0) {
             totalProduction *= tempDouble;
         }
+
         return totalProduction;
     }
 
@@ -160,11 +152,22 @@ public class Undead : MonoBehaviour {
         UpgradeUndead();
     }
 
-    public void DisplayTexts() {
-        helperClassRef.libraryRef.statusText.text =
-            $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
-        helperClassRef.libraryRef.purchaseCostsText.text = $"Zombie Purchase costs: {this.totalPurchaseCost} souls";
-        helperClassRef.libraryRef.upgradeCostsText.text = $"Zombie Upgrade costs: {this.totalUpgradeCost} souls";
-        helperClassRef.libraryRef.totalProductionText.text = $"Total production: {this.totalProduction} souls/second";
+    public void DisplayUndead() {
+        DisplayZombieText();
+        DisplayWraithText();
+    }
+
+    public void DisplayZombieText() {
+        helperClassRef.libraryRef.zombieStatusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
+        helperClassRef.libraryRef.zombiePurchaseCostsText.text = $"{name} Purchase costs: {this.totalPurchaseCost} souls";
+        helperClassRef.libraryRef.zombieUpgradeCostsText.text = $"{name} Upgrade costs: {this.totalUpgradeCost} souls";
+        helperClassRef.libraryRef.zombieTotalProductionText.text = $"Total {name} production: {this.totalProduction} souls/second";
+    }
+
+    public void DisplayWraithText() {
+        helperClassRef.libraryRef.wraithStatusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
+        helperClassRef.libraryRef.wraithPurchaseCostsText.text = $"{name} Purchase costs: {this.totalPurchaseCost} souls";
+        helperClassRef.libraryRef.wraithUpgradeCostsText.text = $"{name} Upgrade costs: {this.totalUpgradeCost} souls";
+        helperClassRef.libraryRef.wraithTotalProductionText.text = $"Total {name} production: {this.totalProduction} souls/second";
     }
 }
