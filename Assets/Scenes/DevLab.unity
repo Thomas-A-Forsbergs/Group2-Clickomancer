@@ -4888,10 +4888,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1453093325}
     - target: {fileID: 6503794762271823076, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
-      propertyPath: helperClassRef
-      value: 
-      objectReference: {fileID: 270050043}
-    - target: {fileID: 6503794762271823076, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
       propertyPath: TMP_upgradeCostsText
       value: 
       objectReference: {fileID: 199541289}
@@ -4903,10 +4899,6 @@ PrefabInstance:
       propertyPath: TMP_totalproductionText
       value: 
       objectReference: {fileID: 1993355473}
-    - target: {fileID: 6503794763304264829, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
-      propertyPath: helperClassRef
-      value: 
-      objectReference: {fileID: 270050043}
     - target: {fileID: 6503794763304264829, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
       propertyPath: offlineTimeText
       value: 
