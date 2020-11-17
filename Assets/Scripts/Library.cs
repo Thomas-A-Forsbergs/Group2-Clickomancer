@@ -1,34 +1,33 @@
 ﻿// using System;
+
 using UnityEngine;
 using TMPro;
 
-public class Library : MonoBehaviour
-{
-    public HelperClass helperClassRef;
-    
+public class Library : MonoBehaviour {
+    private HelperClass helperClassRef;
+
     [Header("Text reference for Soul text")]
     public TMP_Text soulText;
     public TMP_Text upgradeText;
     public TMP_Text soulsPerClickText;
-    
+
     [Header("Text reference for Rebirth text")]
     public TMP_Text rebirthText;
     public TMP_Text bonusText;
-    
+
     [Header("Text reference for Undead text")]
     public TMP_Text statusText;
     public TMP_Text purchaseCostsText;
     public TMP_Text upgradeCostsText;
     public TMP_Text totalProductionText;
-    
+
     [Header("Text reference for Mana text")]
     public TMP_Text manaText;
-    
-    [Header("Text reference for Mana text")]
+
+    [Header("Text reference for Total Undead Production text")]
     public TMP_Text totalUndeadProductionText;
-    
-    private void Awake()
-    {
+
+    private void Awake() {
         helperClassRef = GetComponentInParent<HelperClass>();
     }
 
