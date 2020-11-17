@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93c608fe34345de4e94273b04eb39544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulsRef: {fileID: 6503794763304264831}
+  soulRef: {fileID: 6503794763304264831}
   rebirthRef: {fileID: 6503794761929951945}
   undeadRef: {fileID: 6294146639574611035}
   libraryRef: {fileID: 2667484432612191040}
@@ -94,8 +94,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ac7d10bb249e344b9292a449420413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulRef: {fileID: 6503794763304264831}
-  zombieRef: {fileID: 6503794762271823076}
   modifierFactor: 0.1
   rebirthThreshold: 250
 --- !u!1 &6503794762271823077
@@ -141,9 +139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d4d8148eeaf0d4995ee747fd2effe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helperClassRef: {fileID: 0}
-  soulRef: {fileID: 6503794763304264831}
-  rebirthRef: {fileID: 6503794761929951945}
   name: Zombie
   spriteImage: {fileID: 0}
   cost: 100
@@ -207,6 +202,7 @@ MonoBehaviour:
   upgradeCostsText: {fileID: 0}
   totalProductionText: {fileID: 0}
   manaText: {fileID: 0}
+  totalUndeadProductionText: {fileID: 0}
 --- !u!1 &6503794763020109303
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +248,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   undeadChildren: []
-  totalProductionText: {fileID: 0}
 --- !u!1 &6503794763304264818
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,9 +292,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e70d286580eaec4e9d3afdd0e850509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helperClassRef: {fileID: 0}
-  soulRef: {fileID: 6503794763304264831}
-  zombieRef: {fileID: 6503794762271823076}
   offlineTimeText: {fileID: 0}
   offlineTimeTextString: 'You were offline for '
   offlineProductionText: {fileID: 0}

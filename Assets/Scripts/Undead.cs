@@ -3,22 +3,22 @@
 // using UnityEngine.UI;
 // using TMPro;
 // using UnityEngine.PlayerLoop;
+// using System;
 
-using System;
 using UnityEngine;
 
 public class Undead : MonoBehaviour {
     [Header("Drag and Drop references here")]
     private HelperClass helperClassRef;
 
-    public SoulCount soulRef;
-    public Rebirth rebirthRef;
+    // public SoulCount soulRef;
+    // public Rebirth rebirthRef;
 
     // Trying TextMeshProUGUI 
     // public TextMeshProUGUI statusText;
     // public TextMeshProUGUI purchaseCostsText;
     // public TextMeshProUGUI upgradeCostsText;
-    // public TextMeshProUGUI totalProductionText;
+    // public TextMeshProUGUI totalUndeadProductionText;
 
     [Header("Configurable values")] [SerializeField]
     private string name = "Zombie";
@@ -52,7 +52,7 @@ public class Undead : MonoBehaviour {
 
     private int PurchaseIsAffordable {
         get {
-            var tempDouble = helperClassRef.StringToDouble(soulRef.Souls);
+            var tempDouble = helperClassRef.StringToDouble(helperClassRef.soulRef.Souls);
             if (tempDouble >= totalPurchaseCost) {
                 return 1;
             } else {
@@ -63,7 +63,7 @@ public class Undead : MonoBehaviour {
 
     private int UpgradeIsAffordable {
         get {
-            var tempDouble = helperClassRef.StringToDouble(soulRef.Souls);
+            var tempDouble = helperClassRef.StringToDouble(helperClassRef.soulRef.Souls);
             if (tempDouble >= totalUpgradeCost) {
                 return 1;
             } else {
@@ -104,7 +104,7 @@ public class Undead : MonoBehaviour {
         }
 
         Count += 1;
-        double tempDouble = helperClassRef.StringToDouble(soulRef.Souls);
+        double tempDouble = helperClassRef.StringToDouble(helperClassRef.soulRef.Souls);
         tempDouble -= totalPurchaseCost;
         helperClassRef.DoubleToString(tempDouble, "Souls");
         DisplayTexts();
@@ -117,7 +117,7 @@ public class Undead : MonoBehaviour {
         }
 
         Level += 1;
-        double tempDouble = helperClassRef.StringToDouble(soulRef.Souls);
+        double tempDouble = helperClassRef.StringToDouble(helperClassRef.soulRef.Souls);
         tempDouble -= totalUpgradeCost;
         helperClassRef.DoubleToString(tempDouble, "Souls");
         DisplayTexts();
@@ -126,8 +126,8 @@ public class Undead : MonoBehaviour {
     public void UndeadProduction() {
         CalculateTotalProduction();
 
-        double amountOfSouls = helperClassRef.StringToDouble(soulRef.Souls);
-        double totalAmountOfSouls = helperClassRef.StringToDouble(soulRef.TotalSoulsOwned);
+        double amountOfSouls = helperClassRef.StringToDouble(helperClassRef.soulRef.Souls);
+        double totalAmountOfSouls = helperClassRef.StringToDouble(helperClassRef.soulRef.TotalSoulsOwned);
 
         var tempSoulDouble = amountOfSouls + totalProduction;
         var tempTotalDouble = totalAmountOfSouls + totalProduction;
@@ -148,7 +148,7 @@ public class Undead : MonoBehaviour {
         //Debug.Log(helperClassRef.rebirthRef.RebirthModifier);
         //Debug.Log(helperClassRef.StringToDouble(helperClassRef.rebirthRef.RebirthModifier));
         
-        double tempDouble = helperClassRef.StringToDouble(rebirthRef.RebirthModifier);
+        double tempDouble = helperClassRef.StringToDouble(helperClassRef.rebirthRef.RebirthModifier);
         if (tempDouble != 0) {
             totalProduction *= tempDouble;
         }

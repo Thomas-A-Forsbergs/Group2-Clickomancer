@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HelperClass : MonoBehaviour
 {
-    public SoulCount soulsRef;
+    public SoulCount soulRef;
     public Rebirth rebirthRef;
     public UndeadManager undeadRef;
     //public ManaBar manaRef;
@@ -20,11 +20,11 @@ public class HelperClass : MonoBehaviour
         string doubleValue = value.ToString();
         if (tempString == "Souls")
         {
-            soulsRef.Souls = doubleValue;
+            soulRef.Souls = doubleValue;
         }
         else if(tempString == "TotalSoulsOwned")
         {
-            soulsRef.TotalSoulsOwned = doubleValue;
+            soulRef.TotalSoulsOwned = doubleValue;
         }
         else if (tempString == "RebirthModifier")
         {

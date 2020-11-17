@@ -21,7 +21,16 @@
   <component name="ChangeListManager">
     <list default="true" id="f24a15b5-be68-4f9d-81cd-0b11710faf7c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Group2-Clickomancer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Group2-Clickomancer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameSystem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameSystem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DevLab.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DevLab.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GetOfflineCurrency.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GetOfflineCurrency.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HelperClass.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HelperClass.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Library.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Library.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ManaBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ManaBar.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SoulCount.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SoulCount.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Undead.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Undead.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UndeadManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UndeadManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,11 +41,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HelperClass.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UndeadData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Library.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ManaMeter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Undead.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GetOfflineCurrency.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HelperClass.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -44,15 +55,18 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/TestScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NewBehaviourScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AddSouls.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Undead.cs" />
         <option value="$PROJECT_DIR$/Assets/SoulCount.cs" />
         <option value="$USER_HOME$/Downloads/IdleRPG-main/IdleRPG-main/Assets/Scripts/Clicker/Purchasable.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SoulCount.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GetOfflineCurrency.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ManaFill.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ManaMeter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HelperClass.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Undead.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UndeadManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Library.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SoulCount.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ManaBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GetOfflineCurrency.cs" />
       </list>
     </option>
   </component>

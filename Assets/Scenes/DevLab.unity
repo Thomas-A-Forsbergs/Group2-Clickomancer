@@ -300,8 +300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d4d8148eeaf0d4995ee747fd2effe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulRef: {fileID: 2006190522}
-  rebirthRef: {fileID: 96364300}
   name: Zombie53
   spriteImage: {fileID: 0}
   cost: 150

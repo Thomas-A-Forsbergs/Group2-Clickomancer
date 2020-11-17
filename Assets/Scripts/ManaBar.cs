@@ -10,7 +10,7 @@ public class ManaBar : MonoBehaviour {
     // public TMPro.TMP_Text ManaText;
     public HelperClass helperClassRef;
     public float currentMana = 100f;
-    public int spellCost = 80;
+    public int spellCost = 20;
     public float maxMana = 100f;
     public float manaPerSec = 1f;
     float elapsedTime;
@@ -18,20 +18,11 @@ public class ManaBar : MonoBehaviour {
     [SerializeField] private Image meterImage;
     private bool IsAffordable => currentMana >= spellCost;
 
-    public void UseSpell() {
-        if (!IsAffordable) {
-            return;
-        }
-
-        currentMana -= spellCost;
+    private void Awake()
+    {
+        helperClassRef = GetComponentInParent<HelperClass>();
     }
-
-    public void Click() {
-        UseSpell();
-        // Debug.Log((currentMana - maxMana) / 100);
-        // meterImage.fillAmount = maxMana - currentMana / 100;
-    }
-
+    
     private void Update() {
         meterImage.fillAmount = currentMana / maxMana;
         this.elapsedTime += Time.deltaTime;
@@ -47,6 +38,20 @@ public class ManaBar : MonoBehaviour {
         }
 
         Display();
+    }
+    
+    public void UseSpell() {
+        if (!IsAffordable) {
+            return;
+        }
+
+        currentMana -= spellCost;
+    }
+
+    public void Click() {
+        UseSpell();
+        // Debug.Log((currentMana - maxMana) / 100);
+        // meterImage.fillAmount = maxMana - currentMana / 100;
     }
 
     private void Display() {
