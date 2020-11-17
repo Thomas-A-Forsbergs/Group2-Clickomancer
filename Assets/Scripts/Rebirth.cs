@@ -54,8 +54,7 @@ public class Rebirth : MonoBehaviour {
             helperClassRef.DoubleToString(0, "Souls");
             helperClassRef.DoubleToString(0, "TotalSoulsOwned");
             soulRef.UpgradeLevel = 0;
-            zombieRef.Count = 0;
-            zombieRef.Level = 0;
+            helperClassRef.undeadRef.ResetUndeadChildCountLevel();
         }
     }
 

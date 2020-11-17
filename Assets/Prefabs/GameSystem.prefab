@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soulsRef: {fileID: 6503794763304264831}
   rebirthRef: {fileID: 6503794761929951945}
-  zombieRef: {fileID: 6503794762271823076}
+  undeadRef: {fileID: 6294146639574611035}
   libraryRef: {fileID: 2667484432612191040}
 --- !u!1 &6503794761929951948
 GameObject:
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ac7d10bb249e344b9292a449420413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helperClassRef: {fileID: 0}
+  helperClassRef: {fileID: 6503794761601077054}
   soulRef: {fileID: 6503794763304264831}
   zombieRef: {fileID: 6503794762271823076}
   modifierFactor: 0.1
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d4d8148eeaf0d4995ee747fd2effe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helperClassRef: {fileID: 0}
+  helperClassRef: {fileID: 6503794761601077054}
   soulRef: {fileID: 6503794763304264831}
   rebirthRef: {fileID: 6503794761929951945}
   name: Zombie
@@ -252,6 +252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f9aba85186fb934b85064f6ff6f0d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  undeadChildren: []
+  totalProductionText: {fileID: 0}
 --- !u!1 &6503794763304264818
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e70d286580eaec4e9d3afdd0e850509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helperClassRef: {fileID: 0}
+  helperClassRef: {fileID: 6503794761601077054}
   soulRef: {fileID: 6503794763304264831}
   zombieRef: {fileID: 6503794762271823076}
   offlineTimeText: {fileID: 0}

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UndeadManager : MonoBehaviour
 {
-
     public Undead[] undeadChildren;
-    
+
+    public TextMeshProUGUI totalProductionText;
     
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,8 @@ public class UndeadManager : MonoBehaviour
             totalProductionValue += undeadChildren[i].CalculateTotalProduction();
         }  
         //TODO: Change Debug.Log to an In-Scene text-reference to show Total passive production value somewhere
-        Debug.Log("Total Child production is: " + totalProductionValue);
+        //Debug.Log("Total Child production is: " + totalProductionValue);
+        totalProductionText.text = $"Total production: {totalProductionValue}";
     }
     
     public void ResetUndeadChildCountLevel()
@@ -39,6 +41,6 @@ public class UndeadManager : MonoBehaviour
         {
             undeadChildren[i].Count = 0;
             undeadChildren[i].Level = 0;
-        }    
+        }
     }
 }
