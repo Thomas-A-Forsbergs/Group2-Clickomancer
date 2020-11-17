@@ -11,32 +11,19 @@ public class Undead : MonoBehaviour {
     public SoulCount soulRef;
     public Rebirth rebirthRef;
 
-
     // Trying TextMeshProUGUI 
     public TextMeshProUGUI TMP_statusText;
     public TextMeshProUGUI TMP_purchaseCostsText;
     public TextMeshProUGUI TMP_upgradeCostsText;
     public TextMeshProUGUI TMP_totalproductionText;
-    [SerializeField] private Sprite sprite;
+
 
     [Header("Configurable values")] [SerializeField]
     private string name = "Zombie";
-
+    [SerializeField] private Sprite spriteImage;
     [SerializeField] private int cost = 100;
     public int productionRate = 1;
-    [SerializeField] private int count = 0;
-    [SerializeField] private int level = 0;
-    [SerializeField] private float purchaseCostMultiplier = 1.05f;
-    [SerializeField] private float upgradeCostMultiplier = 1.05f;
-    [SerializeField] public float upgradeProductionMultiplier = 1.05f;
-
-    public double totalProduction;
-    private int totalPurchaseCost;
-    private int totalUpgradeCost;
-
-    public float undeadProductionPerSecond = 1f;
-    float elapsedTime;
-
+    
     public int Count {
         get => PlayerPrefs.GetInt("Owned" + name, 0);
         set => PlayerPrefs.SetInt("Owned" + name, value);
@@ -47,6 +34,20 @@ public class Undead : MonoBehaviour {
         set => PlayerPrefs.SetInt("Level" + name, value);
     }
 
+    
+    
+    
+    public double totalProduction;
+    
+    public float undeadProductionPerSecond = 1f;
+    float elapsedTime;
+    
+    private int totalPurchaseCost;
+    private int totalUpgradeCost;
+    
+    [SerializeField] private float purchaseCostMultiplier = 1.05f;
+    [SerializeField] private float upgradeCostMultiplier = 1.05f;
+    [SerializeField] public float upgradeProductionMultiplier = 1.05f;
     
     private int PurchaseIsAffordable
     {
@@ -109,6 +110,7 @@ public class Undead : MonoBehaviour {
     }
 
     private void CreateUndead() {
+        DisplayTexts();
         if (PurchaseIsAffordable == 0) {
             return;
         }
@@ -120,6 +122,7 @@ public class Undead : MonoBehaviour {
     }
 
     private void UpgradeUndead() {
+        DisplayTexts();
         if (UpgradeIsAffordable == 0) {
             return;
         }
