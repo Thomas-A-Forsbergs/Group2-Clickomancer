@@ -58,5 +58,4 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-.idea/.idea.Group2-Clickomancer/.idea/workspace.xml
-.idea/.idea.Group2-Clickomancer/.idea/workspace.xml
+*.idea/

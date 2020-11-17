@@ -32,17 +32,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/anton/Desktop/Github Forsbergs/Group2-Clickomancer/Assets/Scripts/SoulCount.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/anton/Desktop/Github Forsbergs/Group2-Clickomancer/Assets/Scripts/SoulCount.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GetOfflineCurrency.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/anton/Desktop/Github Forsbergs/Group2-Clickomancer/Assets/Scripts/SoulCount.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/anton/Desktop/Github Forsbergs/Group2-Clickomancer/Assets/Scripts/SoulCount.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/anton/Desktop/Github Forsbergs/Group2-Clickomancer/Assets/Scripts/SoulCount.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/Downloads/IdleRPG-main/IdleRPG-main/Assets/Scripts/Clicker/ResourceProduction/ResourceProducer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/anton/Desktop/Github Forsbergs/Group2-Clickomancer/Assets/Scripts/SoulCount.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HelperClass.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UndeadData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Undead.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/anton/Desktop/Github Forsbergs/Group2-Clickomancer/Assets/Scripts/SoulCount.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/Downloads/IdleRPG-main/IdleRPG-main/Assets/Scripts/Clicker/Purchasable.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -50,11 +44,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/TestScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NewBehaviourScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AddSouls.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Undead.cs" />
         <option value="$PROJECT_DIR$/Assets/SoulCount.cs" />
         <option value="$USER_HOME$/Downloads/IdleRPG-main/IdleRPG-main/Assets/Scripts/Clicker/Purchasable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SoulCount.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ManaBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GetOfflineCurrency.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Undead.cs" />
       </list>
     </option>
   </component>
@@ -113,6 +109,8 @@
       <workItem from="1605184305221" duration="3544000" />
       <workItem from="1605259295382" duration="4080000" />
       <workItem from="1605264831698" duration="9983000" />
+      <workItem from="1605529651438" duration="11561000" />
+      <workItem from="1605544539366" duration="9000" />
     </task>
     <servers />
   </component>
@@ -141,9 +139,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605277209947" />
-    <state x="1525" y="1034" width="672" height="678" key="search.everywhere.popup" timestamp="1605272084776">
+    <state x="1248" y="980" width="672" height="678" key="search.everywhere.popup" timestamp="1605541107814">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1525" y="1034" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605272084776" />
+    <state x="1248" y="980" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605541107814" />
   </component>
 </project>

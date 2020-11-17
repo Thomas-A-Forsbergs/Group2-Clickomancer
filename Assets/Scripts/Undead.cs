@@ -7,8 +7,8 @@ using UnityEngine.PlayerLoop;
 
 public class Undead : MonoBehaviour {
     [Header("Drag and Drop references here")]
+    public HelperClass _helperClassRef;
     public SoulCount soulRef;
-
     public Rebirth rebirthRef;
 
     // Trying TextMeshProUGUI 
@@ -16,26 +16,14 @@ public class Undead : MonoBehaviour {
     public TextMeshProUGUI TMP_purchaseCostsText;
     public TextMeshProUGUI TMP_upgradeCostsText;
     public TextMeshProUGUI TMP_totalproductionText;
-    [SerializeField] private Sprite sprite;
+
 
     [Header("Configurable values")] [SerializeField]
     private string name = "Zombie";
-
+    [SerializeField] private Sprite spriteImage;
     [SerializeField] private int cost = 100;
     public int productionRate = 1;
-    [SerializeField] private int count = 0;
-    [SerializeField] private int level = 0;
-    [SerializeField] private float purchaseCostMultiplier = 1.05f;
-    [SerializeField] private float upgradeCostMultiplier = 1.05f;
-    [SerializeField] public float upgradeProductionMultiplier = 1.05f;
-
-    public int totalProduction;
-    private int totalPurchaseCost;
-    private int totalUpgradeCost;
-
-    public float undeadProductionPerSecond = 1f;
-    float elapsedTime;
-
+    
     public int Count {
         get => PlayerPrefs.GetInt("Owned" + name, 0);
         set => PlayerPrefs.SetInt("Owned" + name, value);
@@ -46,9 +34,53 @@ public class Undead : MonoBehaviour {
         set => PlayerPrefs.SetInt("Level" + name, value);
     }
 
-    public bool PurchaseIsAffordable => soulRef.Souls >= this.totalPurchaseCost;
-    public bool UpgradeIsAffordable => soulRef.Souls >= this.totalUpgradeCost;
-
+    
+    
+    
+    public double totalProduction;
+    
+    public float undeadProductionPerSecond = 1f;
+    float elapsedTime;
+    
+    private int totalPurchaseCost;
+    private int totalUpgradeCost;
+    
+    [SerializeField] private float purchaseCostMultiplier = 1.05f;
+    [SerializeField] private float upgradeCostMultiplier = 1.05f;
+    [SerializeField] public float upgradeProductionMultiplier = 1.05f;
+    
+    private int PurchaseIsAffordable
+    {
+        get
+        {
+            var tempDouble = _helperClassRef.StringToDouble(soulRef.Souls);
+            if (tempDouble >= totalPurchaseCost)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+    } 
+    
+    private int UpgradeIsAffordable
+    {
+        get
+        {
+            var tempDouble = _helperClassRef.StringToDouble(soulRef.Souls);
+            if (tempDouble >= totalUpgradeCost)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+    } 
+    
     public void DisplayTexts() {
         this.TMP_statusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
         this.TMP_purchaseCostsText.text = $"Zombie Purchase costs: {this.totalPurchaseCost} souls";
@@ -56,7 +88,8 @@ public class Undead : MonoBehaviour {
         this.TMP_totalproductionText.text = $"Total production: {this.totalProduction} souls/second";
     }
 
-    void Start() {
+    void Start()
+    {
         CalculateTotalCost();
         CalculateTotalProduction();
         DisplayTexts();
@@ -77,28 +110,41 @@ public class Undead : MonoBehaviour {
     }
 
     private void CreateUndead() {
-        if (!PurchaseIsAffordable) {
+        DisplayTexts();
+        if (PurchaseIsAffordable == 0) {
             return;
         }
-
         Count += 1;
-        soulRef.Souls -= totalPurchaseCost;
+        double tempDouble = _helperClassRef.StringToDouble(soulRef.Souls);
+        tempDouble -= totalPurchaseCost;
+        _helperClassRef.DoubleToString(tempDouble, "Souls");
         DisplayTexts();
     }
 
     private void UpgradeUndead() {
-        if (!UpgradeIsAffordable) {
+        DisplayTexts();
+        if (UpgradeIsAffordable == 0) {
             return;
         }
 
         Level += 1;
-        soulRef.Souls -= totalUpgradeCost;
+        double tempDouble = _helperClassRef.StringToDouble(soulRef.Souls);
+        tempDouble -= totalUpgradeCost;
+        _helperClassRef.DoubleToString(tempDouble, "Souls");
         DisplayTexts();
     }
 
     public void UndeadProduction() {
         CalculateTotalProduction();
-        soulRef.Souls += totalProduction;
+
+        double amountOfSouls = _helperClassRef.StringToDouble(soulRef.Souls);
+        double totalAmountOfSouls = _helperClassRef.StringToDouble(soulRef.TotalSoulsOwned);
+        
+        var tempSoulDouble = amountOfSouls + totalProduction;
+        var tempTotalDouble = totalAmountOfSouls + totalProduction;
+        
+        _helperClassRef.DoubleToString(tempSoulDouble, "Souls");
+        _helperClassRef.DoubleToString(tempTotalDouble, "TotalSoulsOwned");
     }
 
     public void CalculateTotalCost() {
@@ -106,12 +152,13 @@ public class Undead : MonoBehaviour {
         totalUpgradeCost = Mathf.RoundToInt(this.cost * Mathf.Pow(upgradeCostMultiplier, Level));
     }
 
-    public int CalculateTotalProduction() {
+    public double CalculateTotalProduction() {
         totalProduction =
             Mathf.RoundToInt(this.Count * (this.productionRate * Mathf.Pow(upgradeProductionMultiplier, Level)));
-        if (rebirthRef.RebirthModifier != 0)
+        double tempDouble = _helperClassRef.StringToDouble(rebirthRef.RebirthModifier);
+        if (tempDouble != 0)
         {
-            totalProduction *= Mathf.RoundToInt(rebirthRef.RebirthModifier);
+            totalProduction *= tempDouble;
         }
         return totalProduction;
     }
