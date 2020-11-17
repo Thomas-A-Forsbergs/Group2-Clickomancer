@@ -52,5 +52,12 @@ public class ManaBar : MonoBehaviour
     {
         ManaText.text = "Mana:" + currentMana + "/" + MaxMana;
     }
+    private Image meterImage;
 
+    private void Awake()
+    {
+        meterImage = transform.Find("meter").GetComponent<Image>();
+
+        meterImage.fillAmount = currentMana;
+    }
 }

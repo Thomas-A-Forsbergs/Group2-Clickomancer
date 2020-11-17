@@ -50,9 +50,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SoulCount.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GetOfflineCurrency.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ManaBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ManaFill.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ManaMeter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ManaBar.cs" />
       </list>
     </option>
   </component>
@@ -114,7 +114,7 @@
       <workItem from="1605529651438" duration="11561000" />
       <workItem from="1605544539366" duration="9000" />
       <workItem from="1605602559029" duration="202000" />
-      <workItem from="1605605535443" duration="1888000" />
+      <workItem from="1605605535443" duration="3295000" />
     </task>
     <servers />
   </component>
