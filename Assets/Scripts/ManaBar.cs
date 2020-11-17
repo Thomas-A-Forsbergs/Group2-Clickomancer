@@ -1,52 +1,45 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿// using System;
+// using System.Collections;
+// using System.Collections.Generic;
+// using UnityEngine.Serialization;
+
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class ManaBar : MonoBehaviour
-{
-    public TMPro.TMP_Text ManaText;
+public class ManaBar : MonoBehaviour {
+    // public TMPro.TMP_Text ManaText;
+    public HelperClass helperClassRef;
     public float currentMana = 100f;
-    public int SpellCost = 80;
-    public float MaxMana = 100f;
+    public int spellCost = 80;
+    public float maxMana = 100f;
     public float manaPerSec = 1f;
     float elapsedTime;
     public float manaRegen = 1f;
     [SerializeField] private Image meterImage;
-    private bool IsAffordable => currentMana >= SpellCost;
+    private bool IsAffordable => currentMana >= spellCost;
 
-    public void UseSpell()
-    {
-        if (!IsAffordable)
-        {
+    public void UseSpell() {
+        if (!IsAffordable) {
             return;
         }
 
-        currentMana -= SpellCost;
+        currentMana -= spellCost;
     }
 
-    public void Click()
-    {
+    public void Click() {
         UseSpell();
-       // Debug.Log((currentMana - MaxMana) / 100);
-       // meterImage.fillAmount = MaxMana - currentMana / 100;
-
+        // Debug.Log((currentMana - maxMana) / 100);
+        // meterImage.fillAmount = maxMana - currentMana / 100;
     }
 
-    private void Update()
-    {
-        meterImage.fillAmount = currentMana / MaxMana;
+    private void Update() {
+        meterImage.fillAmount = currentMana / maxMana;
         this.elapsedTime += Time.deltaTime;
-        if (this.elapsedTime >= this.manaRegen)
-        {
-            if (currentMana >= MaxMana)
-            {
-                currentMana = MaxMana;
+        if (this.elapsedTime >= this.manaRegen) {
+            if (currentMana >= maxMana) {
+                currentMana = maxMana;
                 this.elapsedTime -= manaRegen;
                 return;
-
             }
 
             this.currentMana += manaPerSec;
@@ -56,9 +49,7 @@ public class ManaBar : MonoBehaviour
         Display();
     }
 
-    private void Display()
-    {
-        ManaText.text = "Mana:" + currentMana + "/" + MaxMana;
+    private void Display() {
+        helperClassRef.libraryRef.manaText.text = "Mana:" + currentMana + "/" + maxMana;
     }
-
 }

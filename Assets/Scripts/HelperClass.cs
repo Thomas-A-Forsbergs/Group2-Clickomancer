@@ -5,7 +5,7 @@ public class HelperClass : MonoBehaviour
 {
     public SoulCount soulsRef;
     public Rebirth rebirthRef;
-    public Undead Zombieref;
+    public Undead zombieRef;
     //public ManaBar manaRef;
     public Library libraryRef;
 

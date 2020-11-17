@@ -12,17 +12,17 @@ public class Library : MonoBehaviour
     public TMP_Text soulsPerClickText;
     
     [Header("Text reference for Rebirth text")]
-    public TMP_Text RebirthText;
-    public TMP_Text BonusText;
+    public TMP_Text rebirthText;
+    public TMP_Text bonusText;
     
     [Header("Text reference for Undead text")]
-    public TMP_Text TMP_statusText;
-    public TMP_Text TMP_purchaseCostsText;
-    public TMP_Text TMP_upgradeCostsText;
-    public TMP_Text TMP_totalproductionText;
+    public TMP_Text statusText;
+    public TMP_Text purchaseCostsText;
+    public TMP_Text upgradeCostsText;
+    public TMP_Text totalProductionText;
     
     [Header("Text reference for Mana text")]
-    public TMP_Text ManaText;
+    public TMP_Text manaText;
 
     // void Update() {
     //     SoulCountDisplay();
@@ -40,19 +40,19 @@ public class Library : MonoBehaviour
     //
     // private void RebirthDisplay()
     // {
-    //     RebirthText.text = "Rebirth:" + helperClassRef.rebirthRef.Reborn;
-    //     BonusText.text = "Bonus:" + helperClassRef.rebirthRef.RebirthModifier;
+    //     rebirthText.text = "Rebirth:" + helperClassRef.rebirthRef.Reborn;
+    //     bonusText.text = "Bonus:" + helperClassRef.rebirthRef.RebirthModifier;
     // }
     //
     // public void UndeadDisplay() {
-    //     this.TMP_statusText.text = $"{helperClassRef.Zombieref.Count}x {name} = {helperClassRef.Zombieref.productionRate * helperClassRef.Zombieref.Count} souls/second (Level{helperClassRef.Zombieref.Level})";
-    //     this.TMP_purchaseCostsText.text = $"Zombie Purchase costs: {this.helperClassRef.Zombieref.totalPurchaseCost} souls";
-    //     this.TMP_upgradeCostsText.text = $"Zombie Upgrade costs: {this.helperClassRef.Zombieref.totalUpgradeCost} souls";
-    //     this.TMP_totalproductionText.text = $"Total production: {this.helperClassRef.Zombieref.totalProduction} souls/second";
+    //     this.statusText.text = $"{helperClassRef.zombieRef.Count}x {name} = {helperClassRef.zombieRef.productionRate * helperClassRef.zombieRef.Count} souls/second (Level{helperClassRef.zombieRef.Level})";
+    //     this.purchaseCostsText.text = $"Zombie Purchase costs: {this.helperClassRef.zombieRef.totalPurchaseCost} souls";
+    //     this.upgradeCostsText.text = $"Zombie Upgrade costs: {this.helperClassRef.zombieRef.totalUpgradeCost} souls";
+    //     this.totalProductionText.text = $"Total production: {this.helperClassRef.zombieRef.totalProduction} souls/second";
     // }
     //
     // private void ManaDisplay()
     // {
-    //     ManaText.text = "Mana:" + helperClassRef.manaRef.currentMana + "/" + helperClassRef.manaRef.MaxMana;
+    //     manaText.text = "Mana:" + helperClassRef.manaRef.currentMana + "/" + helperClassRef.manaRef.maxMana;
     // }
 }
