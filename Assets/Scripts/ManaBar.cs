@@ -15,7 +15,7 @@ public class ManaBar : MonoBehaviour
     float elapsedTime;
     public float manaRegen = 1f;
     private bool IsAffordable => currentMana >= SpellCost;
-
+    
     public void UseSpell()
     {
         if (!IsAffordable)
