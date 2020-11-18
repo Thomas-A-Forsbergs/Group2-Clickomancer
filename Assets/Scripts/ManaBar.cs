@@ -23,6 +23,11 @@ public class ManaBar : MonoBehaviour
     float elapsedTime;
     public float manaRegen = 1f;
     [SerializeField] private Image meterImage;
+
+    public int spell1Multiplier = 30;
+    public float spell2Waitforseconds = 5f;
+    public int spell2DrainAmount = 6;
+    
     private bool IsAffordable1 => currentMana >= spellCost1;
     private bool IsAffordable2 => currentMana >= spellCost2;
     private bool IsAffordable3 => currentMana >= spellCost3;
@@ -119,7 +124,7 @@ public class ManaBar : MonoBehaviour
         double tempSouls = helperClassRef.StringToDouble(helperClassRef.soulRef.Souls);
         double tempTotalSouls = helperClassRef.StringToDouble(helperClassRef.soulRef.TotalSoulsOwned);
         double tempvalue = helperClassRef.undeadRef.CalculateTotalUndeadProduction();
-        double totalvalue = tempvalue * 30;
+        double totalvalue = tempvalue * spell1Multiplier;
         tempSouls += totalvalue;
         tempTotalSouls += totalvalue;
         helperClassRef.DoubleToString(tempSouls, "Souls");
@@ -135,11 +140,11 @@ public class ManaBar : MonoBehaviour
 
     private IEnumerator magicFingers()
     {
-        while (currentMana > 6)
+        while (currentMana > spell2DrainAmount)
         {
-            currentMana -= 6;
+            currentMana -= spell2DrainAmount;
             helperClassRef.soulRef.Click();
-            yield return new WaitForSeconds(5);  
+            yield return new WaitForSeconds(spell2Waitforseconds);  
         }
     }
     
