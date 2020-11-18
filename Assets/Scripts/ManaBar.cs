@@ -6,9 +6,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ManaBar : MonoBehaviour {
+public class ManaBar : MonoBehaviour
+{
     private HelperClass helperClassRef;
-    
+    [Header("Configurable values")] public double soulsPerClick = 1;
+
     public float currentMana = 100f;
     public int spellCost = 20;
     public float maxMana = 100f;
@@ -18,15 +20,19 @@ public class ManaBar : MonoBehaviour {
     [SerializeField] private Image meterImage;
     private bool IsAffordable => currentMana >= spellCost;
 
-    private void Awake() {
+    private void Awake()
+    {
         helperClassRef = GetComponentInParent<HelperClass>();
     }
 
-    private void Update() {
+    private void Update()
+    {
         meterImage.fillAmount = currentMana / maxMana;
         this.elapsedTime += Time.deltaTime;
-        if (this.elapsedTime >= this.manaRegen) {
-            if (currentMana >= maxMana) {
+        if (this.elapsedTime >= this.manaRegen)
+        {
+            if (currentMana >= maxMana)
+            {
                 currentMana = maxMana;
                 this.elapsedTime -= manaRegen;
                 return;
@@ -39,12 +45,21 @@ public class ManaBar : MonoBehaviour {
         Display();
     }
 
-    public void SpellRemoveMana() {
-        if (!IsAffordable) {
+    public void SpellRemoveMana()
+    {
+        if (!IsAffordable)
+        {
             return;
         }
 
         currentMana -= spellCost;
+        spell2();
+    }
+
+    public void spell2()
+    {
+        helperClassRef.soulRef.Click();
+        helperClassRef.soulRef.Click();
     }
 
     public void SpellButton() {
