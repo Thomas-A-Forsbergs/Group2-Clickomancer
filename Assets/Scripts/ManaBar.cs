@@ -13,7 +13,6 @@ public class ManaBar : MonoBehaviour
 
     public float currentMana = 100f;
     public int spellCost = 20;
-    public float spell1;
     public float maxMana = 100f;
     public float manaPerSec = 1f;
     float elapsedTime;

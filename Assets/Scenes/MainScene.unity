@@ -808,7 +808,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1672917698}
         m_TargetAssemblyTypeName: ManaBar, Assembly-CSharp
-        m_MethodName: Click
+        m_MethodName: SpellButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -907,7 +907,6 @@ MonoBehaviour:
   spriteImage: {fileID: 0}
   cost: 100
   productionRate: 500
-  totalProduction: 0
   undeadProductionPerSecond: 1
   purchaseCostMultiplier: 1.09
   upgradeCostMultiplier: 1.18
@@ -1795,7 +1794,6 @@ MonoBehaviour:
   spriteImage: {fileID: 0}
   cost: 100
   productionRate: 0
-  totalProduction: 0
   undeadProductionPerSecond: 1
   purchaseCostMultiplier: 1.09
   upgradeCostMultiplier: 1.18
@@ -2178,7 +2176,6 @@ MonoBehaviour:
   spriteImage: {fileID: 0}
   cost: 100
   productionRate: 0
-  totalProduction: 0
   undeadProductionPerSecond: 1
   purchaseCostMultiplier: 1.09
   upgradeCostMultiplier: 1.18
