@@ -7,16 +7,22 @@
 
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Undead : MonoBehaviour {
     [Header("Drag and Drop references here")]
     private HelperClass helperClassRef;
 
+    [SerializeField] private Image purchaseButtonOverLayImage;
+    [SerializeField] private Image upgradeButtonOverLayImage;
+    
     [Header("Configurable values")]
     //private string name = "Zombie";
     [SerializeField] private Sprite spriteImage;
     [SerializeField] private int cost = 100;
     public int productionRate = 1;
+    
+    
 
     public int Count {
         get => PlayerPrefs.GetInt("Owned" + name, 0);
@@ -26,6 +32,18 @@ public class Undead : MonoBehaviour {
     public int Level {
         get => PlayerPrefs.GetInt("Level" + name, 0);
         set => PlayerPrefs.SetInt("Level" + name, value);
+    }
+
+    private int PurchaseIsUnlocked
+    {
+        get => PlayerPrefs.GetInt("Purchase Unlocked" + name, 0);
+        set =>PlayerPrefs.SetInt("Purchase Unlocked" + name, value);
+    }
+    
+    private int UpgradeIsUnlocked
+    {
+        get => PlayerPrefs.GetInt("Upgrade Unlocked" + name, 0);
+        set =>PlayerPrefs.SetInt("Upgrade Unlocked" + name, value);
     }
     
     
@@ -41,6 +59,8 @@ public class Undead : MonoBehaviour {
     [SerializeField] public float upgradeProductionMultiplier = 1.05f;
 
     [System.NonSerialized] public double totalProduction;
+
+    
     
     private int PurchaseIsAffordable {
         get {
@@ -75,9 +95,98 @@ public class Undead : MonoBehaviour {
     }
 
     void Update() {
+
+        if (PurchaseIsAffordable == 1)
+        {
+            PurchaseIsUnlocked = 1;
+        }
+        if (this.Count >= 1)
+        {
+            UpgradeIsUnlocked = 1;
+        }
+
+        if (purchaseButtonOverLayImage != null)
+        {
+            UnlockPurchaseCheck();
+            UnlockUpgradeCheck();
+            CannotAffordPurchase();
+            CannotAffordUpgrade();
+        }
+
         ProductionTimer();
         CalculateTotalCost();
         DisplayUndead();
+    }
+
+    private void UnlockPurchaseCheck()
+    {
+        if (PurchaseIsUnlocked == 0)
+        {
+            return;
+        }
+        purchaseButtonOverLayImage.raycastTarget = false;
+        Color tempColor = new Color();
+        tempColor.a = 0;
+        purchaseButtonOverLayImage.color = tempColor;
+    }
+
+    private void CannotAffordPurchase()
+    {
+        if (PurchaseIsUnlocked == 0)
+        {
+            return;
+        }
+        if (PurchaseIsAffordable == 1) {
+            purchaseButtonOverLayImage.raycastTarget = false;
+            Color tempColor = new Color();
+            tempColor.a = 0;
+            tempColor.r = 0;
+            purchaseButtonOverLayImage.color = tempColor;
+        }
+        else
+        {
+            purchaseButtonOverLayImage.raycastTarget = false;
+            Color tempColor = new Color();
+            tempColor.a = 0.2f;
+            tempColor.r = 255;
+            purchaseButtonOverLayImage.color = tempColor;
+        }
+    }
+    
+    private void CannotAffordUpgrade()
+    {
+        if (UpgradeIsUnlocked == 0)
+        {
+            return;
+        }
+        if (UpgradeIsAffordable == 1) {
+            upgradeButtonOverLayImage.raycastTarget = false;
+            Color tempColor = new Color();
+            tempColor.a = 0;
+            tempColor.r = 0;
+            upgradeButtonOverLayImage.color = tempColor;
+        }
+        else
+        {
+            upgradeButtonOverLayImage.raycastTarget = false;
+            Color tempColor = new Color();
+            tempColor.a = 0.2f;
+            tempColor.r = 255;
+            upgradeButtonOverLayImage.color = tempColor;
+        }
+    }
+    
+    
+    private void UnlockUpgradeCheck()
+    {
+        if (UpgradeIsUnlocked == 0)
+        {
+            return;
+        }
+        upgradeButtonOverLayImage.raycastTarget = false;
+        Color tempColor = new Color();
+        tempColor.a = 0;
+        upgradeButtonOverLayImage.color = tempColor;
     }
 
     void ProductionTimer() {
