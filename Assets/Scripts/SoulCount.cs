@@ -2,6 +2,7 @@
 // using Unity.Mathematics;
 // using UnityEngine.UI;
 
+using System;
 using UnityEngine;
 
 public class SoulCount : MonoBehaviour {

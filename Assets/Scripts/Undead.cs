@@ -28,7 +28,7 @@ public class Undead : MonoBehaviour {
         set => PlayerPrefs.SetInt("Level" + name, value);
     }
     
-    public double totalProduction;
+    
 
     public float undeadProductionPerSecond = 1f;
     float elapsedTime;
@@ -40,6 +40,8 @@ public class Undead : MonoBehaviour {
     [SerializeField] private float upgradeCostMultiplier = 1.05f;
     [SerializeField] public float upgradeProductionMultiplier = 1.05f;
 
+    [System.NonSerialized] public double totalProduction;
+    
     private int PurchaseIsAffordable {
         get {
             var tempDouble = helperClassRef.StringToDouble(helperClassRef.soulRef.Souls);
@@ -136,9 +138,9 @@ public class Undead : MonoBehaviour {
 
         double tempDouble = helperClassRef.StringToDouble(helperClassRef.rebirthRef.RebirthModifier);
         if (tempDouble != 0) {
-            totalProduction *= tempDouble;
+            totalProduction *= Mathf.Round((float)tempDouble);
         }
-
+        
         return totalProduction;
     }
 
