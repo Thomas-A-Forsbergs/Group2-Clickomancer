@@ -33,13 +33,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UndeadData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HelperClass.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Library.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ManaMeter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Undead.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UndeadData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GetOfflineCurrency.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HelperClass.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -59,6 +59,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GetOfflineCurrency.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ManaBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Library.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PopUpBox.cs" />
       </list>
     </option>
   </component>
@@ -121,6 +122,7 @@
       <workItem from="1605544539366" duration="9000" />
       <workItem from="1605602559029" duration="202000" />
       <workItem from="1605605535443" duration="7580000" />
+      <workItem from="1605689972842" duration="4114000" />
     </task>
     <servers />
   </component>
@@ -149,9 +151,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605277209947" />
-    <state x="1248" y="980" width="672" height="678" key="search.everywhere.popup" timestamp="1605541107814">
+    <state x="1248" y="980" width="672" height="678" key="search.everywhere.popup" timestamp="1605690105475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1248" y="980" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605541107814" />
+    <state x="1248" y="980" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605690105475" />
   </component>
 </project>
