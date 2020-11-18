@@ -3,12 +3,13 @@
 // using System.Collections.Generic;
 // using TMPro;
 
+using System;
 using UnityEngine;
 
 public class UndeadManager : MonoBehaviour {
     private HelperClass helperClassRef;
 
-    public Undead[] undeadChildren;
+    [NonSerialized] Undead[] undeadChildren;
 
     // public TextMeshProUGUI totalUndeadProductionText;
 
