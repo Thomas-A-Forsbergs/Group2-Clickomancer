@@ -14,6 +14,8 @@ public class TutorialWindow : MonoBehaviour
     
     private void Awake()
     {
+        activateDeactivateTarget.SetActive(false);
+        
         helperClassRef = GameObject.Find("GameSystem").GetComponent<HelperClass>();
         GetOfflineCurrency offlineCurrencyRef = helperClassRef.GetComponentInChildren<GetOfflineCurrency>();
         if (offlineCurrencyRef.FirstTimePlaying != 1)
