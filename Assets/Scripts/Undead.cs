@@ -136,9 +136,9 @@ public class Undead : MonoBehaviour {
 
         double tempDouble = helperClassRef.StringToDouble(helperClassRef.rebirthRef.RebirthModifier);
         if (tempDouble != 0) {
-            totalProduction *= tempDouble;
+            totalProduction *= Mathf.Round((float)tempDouble);
         }
-
+        
         return totalProduction;
     }
 
