@@ -14,7 +14,6 @@ public class Undead : MonoBehaviour {
 
     [Header("Configurable values")]
     //private string name = "Zombie";
-
     [SerializeField] private Sprite spriteImage;
     [SerializeField] private int cost = 100;
     public int productionRate = 1;
@@ -28,8 +27,7 @@ public class Undead : MonoBehaviour {
         get => PlayerPrefs.GetInt("Level" + name, 0);
         set => PlayerPrefs.SetInt("Level" + name, value);
     }
-
-
+    
     public double totalProduction;
 
     public float undeadProductionPerSecond = 1f;
@@ -158,6 +156,10 @@ public class Undead : MonoBehaviour {
     }
 
     public void DisplayZombieText() {
+        if (this.name != "Zombie")
+        {
+            return;
+        }
         helperClassRef.libraryRef.zombieStatusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
         helperClassRef.libraryRef.zombiePurchaseCostsText.text = $"{name} Purchase costs: {this.totalPurchaseCost} souls";
         helperClassRef.libraryRef.zombieUpgradeCostsText.text = $"{name} Upgrade costs: {this.totalUpgradeCost} souls";
@@ -165,6 +167,10 @@ public class Undead : MonoBehaviour {
     }
 
     public void DisplayWraithText() {
+        if (this.name != "Wraith")
+        {
+            return;
+        }
         helperClassRef.libraryRef.wraithStatusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
         helperClassRef.libraryRef.wraithPurchaseCostsText.text = $"{name} Purchase costs: {this.totalPurchaseCost} souls";
         helperClassRef.libraryRef.wraithUpgradeCostsText.text = $"{name} Upgrade costs: {this.totalUpgradeCost} souls";
