@@ -20,9 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f24a15b5-be68-4f9d-81cd-0b11710faf7c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Group2-Clickomancer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Group2-Clickomancer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Library.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Library.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ManaBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ManaBar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DevLab.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DevLab.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MusicTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MusicTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +59,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GetOfflineCurrency.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ManaBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Library.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PopUpBox.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
       </list>
     </option>
   </component>
@@ -121,6 +123,7 @@
       <workItem from="1605544539366" duration="9000" />
       <workItem from="1605602559029" duration="202000" />
       <workItem from="1605605535443" duration="7580000" />
+      <workItem from="1605689972842" duration="4114000" />
     </task>
     <servers />
   </component>
@@ -149,9 +152,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605277209947" />
-    <state x="1248" y="980" width="672" height="678" key="search.everywhere.popup" timestamp="1605541107814">
+    <state x="1248" y="980" width="672" height="678" key="search.everywhere.popup" timestamp="1605690105475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1248" y="980" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605541107814" />
+    <state x="1248" y="980" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605690105475" />
   </component>
 </project>

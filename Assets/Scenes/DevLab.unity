@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 121517836}
   - component: {fileID: 121517832}
   m_Layer: 0
-  m_Name: SoulWellButton
+  m_Name: SoulWellCircleButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

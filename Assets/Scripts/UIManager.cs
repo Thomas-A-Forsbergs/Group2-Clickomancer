@@ -1,18 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class UIManager : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
+public class UIManager : MonoBehaviour {
+    public void FullScreenButton()
     {
-        
+        Screen.fullScreen = !Screen.fullScreen;
     }
 
-    // Update is called once per frame
+    public void ExitApplicationButton()
+    {
+        Application.Quit();
+    }
+
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }
