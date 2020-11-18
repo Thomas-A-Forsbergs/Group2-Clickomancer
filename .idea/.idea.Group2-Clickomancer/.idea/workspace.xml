@@ -20,8 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f24a15b5-be68-4f9d-81cd-0b11710faf7c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Group2-Clickomancer/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Group2-Clickomancer/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Group2-Clickomancer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Group2-Clickomancer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Library.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Library.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/ManaBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ManaBar.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,18 +33,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UndeadData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Library.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ManaMeter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HelperClass.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Undead.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GetOfflineCurrency.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HelperClass.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/TestScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NewBehaviourScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AddSouls.cs" />
         <option value="$PROJECT_DIR$/Assets/SoulCount.cs" />
@@ -54,11 +50,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/HelperClass.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Undead.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UndeadManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SoulCount.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GetOfflineCurrency.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ManaBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Library.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TestScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Spells.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SoulCount.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ManaBar.cs" />
       </list>
     </option>
   </component>
@@ -121,6 +119,7 @@
       <workItem from="1605544539366" duration="9000" />
       <workItem from="1605602559029" duration="202000" />
       <workItem from="1605605535443" duration="7580000" />
+      <workItem from="1605692347166" duration="5171000" />
     </task>
     <servers />
   </component>
