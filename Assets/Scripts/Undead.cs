@@ -22,8 +22,6 @@ public class Undead : MonoBehaviour {
     [SerializeField] private int cost = 100;
     public int productionRate = 1;
     
-    
-
     public int Count {
         get => PlayerPrefs.GetInt("Owned" + name, 0);
         set => PlayerPrefs.SetInt("Owned" + name, value);
