@@ -1,74 +1,64 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-using UnityEngine.PlayerLoop;
+﻿// using System;
+// using System.Collections;
+// using System.Collections.Generic;
+// using UnityEngine.UI;
+// using TMPro;
+// using UnityEngine.PlayerLoop;
 
-public class Rebirth : MonoBehaviour
-{
+using UnityEngine;
+
+public class Rebirth : MonoBehaviour {
     [Header("Drag and Drop reference here")]
-    public HelperClass _helperClassRef;
-    public SoulCount Soulref;
-    public Undead Zombieref;
- 
-    public TMPro.TMP_Text RebirthText;
-    public TMPro.TMP_Text BonusText;
-    public int rebirth;
+    private HelperClass helperClassRef;
 
     public double modifierFactor = 1f;
-    public int rebirthThreshold = 0;
+    public int rebirthThreshold = 1000;
 
-    public int Reborn
-    {
+    public int Reborn {
         get => PlayerPrefs.GetInt("Rebirth", 0);
         set => PlayerPrefs.SetInt("Rebirth", value);
     }
-    
-    public string RebirthModifier
-    {
+
+    public string RebirthModifier {
         get => PlayerPrefs.GetString("RebirthModifier", "0");
         set => PlayerPrefs.SetString("RebirthModifier", value);
     }
-    
-    void Update()
-    {
+
+    void Update() {
         Display();
     }
 
-    public void  RebirthButton()
+    private void Awake()
     {
-        calculateRebirthModifer();
+        helperClassRef = GetComponentInParent<HelperClass>();
     }
-    
-    void Start()
-    {
+
+    void Start() {
         Display();
     }
-    
-    private void calculateRebirthModifer()
-    {
-        double amountofsouls = _helperClassRef.StringToDouble(Soulref.TotalSoulsOwned);
-        if (rebirthThreshold < amountofsouls )
-        {
+
+    private void CalculateRebirthModifer() {
+        double amountofsouls = helperClassRef.StringToDouble(helperClassRef.soulRef.TotalSoulsOwned);
+        if (rebirthThreshold < amountofsouls) {
             Reborn++;
-            double modToAdd =  amountofsouls * modifierFactor;
-            double currentMod = _helperClassRef.StringToDouble(RebirthModifier);
+            double modToAdd = amountofsouls * modifierFactor;
+            double currentMod = helperClassRef.StringToDouble(RebirthModifier);
             double totalModToAdd = currentMod + modToAdd;
-            _helperClassRef.DoubleToString(totalModToAdd, "RebirthModifier");
+            helperClassRef.DoubleToString(totalModToAdd, "RebirthModifier");
             Display();
-            _helperClassRef.DoubleToString(0, "Souls");
-            _helperClassRef.DoubleToString(0, "TotalSoulsOwned");
-            Soulref.UpgradeLevel = 0;
-            Zombieref.Count = 0;
-            Zombieref.Level = 0;
+            helperClassRef.DoubleToString(0, "Souls");
+            helperClassRef.DoubleToString(0, "TotalSoulsOwned");
+            helperClassRef.soulRef.UpgradeLevel = 0;
+            helperClassRef.undeadRef.ResetUndeadChildCountLevel();
         }
     }
     
-    private void Display()
-    {
-        RebirthText.text = "Rebirth:" + Reborn;
-        BonusText.text = "Bonus:" + RebirthModifier;
+    public void RebirthButton() {
+        CalculateRebirthModifer();
+    }
+
+    private void Display() {
+        helperClassRef.libraryRef.rebirthText.text = "Rebirth:" + Reborn;
+        helperClassRef.libraryRef.bonusText.text = "Bonus:" + RebirthModifier;
     }
 }

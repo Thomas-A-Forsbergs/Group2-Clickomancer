@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &812897451960927509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8848460810954295036}
+  - component: {fileID: 4753950939613270838}
+  m_Layer: 5
+  m_Name: Mana
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8848460810954295036
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812897451960927509}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.71667, y: 0.71667, z: 0.71667}
+  m_Children: []
+  m_Father: {fileID: 6503794761601077055}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 344.2, y: 193.5}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4753950939613270838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812897451960927509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8315b0f9aba2ab74d941469dcd18ae11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMana: 100
+  spellCost: 20
+  maxMana: 100
+  manaPerSec: 1
+  manaRegen: 1
+  meterImage: {fileID: 0}
 --- !u!1 &6503794761601077052
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,6 +86,7 @@ Transform:
   - {fileID: 6503794763020109302}
   - {fileID: 6503794763304264828}
   - {fileID: 6503794761929951951}
+  - {fileID: 8848460810954295036}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,8 +102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93c608fe34345de4e94273b04eb39544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulsRef: {fileID: 6503794763304264831}
+  soulRef: {fileID: 6503794763304264831}
   rebirthRef: {fileID: 6503794761929951945}
+  undeadRef: {fileID: 6294146639574611035}
+  manaRef: {fileID: 4753950939613270838}
+  libraryRef: {fileID: 2667484432612191040}
 --- !u!1 &6503794761929951948
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,12 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ac7d10bb249e344b9292a449420413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _helperClassRef: {fileID: 6503794761601077054}
-  Soulref: {fileID: 6503794763304264831}
-  Zombieref: {fileID: 6503794762271823076}
-  RebirthText: {fileID: 0}
-  BonusText: {fileID: 0}
-  rebirth: 0
   modifierFactor: 0.1
   rebirthThreshold: 250
 --- !u!1 &6503794762271823077
@@ -143,13 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d4d8148eeaf0d4995ee747fd2effe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _helperClassRef: {fileID: 6503794761601077054}
-  soulRef: {fileID: 6503794763304264831}
-  rebirthRef: {fileID: 6503794761929951945}
-  TMP_statusText: {fileID: 0}
-  TMP_purchaseCostsText: {fileID: 0}
-  TMP_upgradeCostsText: {fileID: 0}
-  TMP_totalproductionText: {fileID: 0}
   name: Zombie
   spriteImage: {fileID: 0}
   cost: 100
@@ -202,6 +247,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b99acf202be70eb4b8763d791e2b9882, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soulText: {fileID: 0}
+  upgradeText: {fileID: 0}
+  soulsPerClickText: {fileID: 0}
+  rebirthText: {fileID: 0}
+  bonusText: {fileID: 0}
+  statusText: {fileID: 0}
+  purchaseCostsText: {fileID: 0}
+  upgradeCostsText: {fileID: 0}
+  totalProductionText: {fileID: 0}
+  manaText: {fileID: 0}
+  totalUndeadProductionText: {fileID: 0}
 --- !u!1 &6503794763020109303
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f9aba85186fb934b85064f6ff6f0d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  undeadChildren: []
 --- !u!1 &6503794763304264818
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,9 +347,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e70d286580eaec4e9d3afdd0e850509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulRef: {fileID: 6503794763304264831}
-  zombieRef: {fileID: 6503794762271823076}
-  _helperClassRef: {fileID: 6503794761601077054}
   offlineTimeText: {fileID: 0}
   offlineTimeTextString: 'You were offline for '
   offlineProductionText: {fileID: 0}
@@ -309,12 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4f6daed92533240b7807ab8801055b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _helperClassRef: {fileID: 6503794761601077054}
-  soulText: {fileID: 0}
-  upgradeText: {fileID: 0}
-  soulsPerClickText: {fileID: 0}
   soulsPerClick: 100
   upgradeMultiplier: 3
-  upgradeLevel: 0
   upgradeCost: 100
   upgradeCostMultiplier: 1.1

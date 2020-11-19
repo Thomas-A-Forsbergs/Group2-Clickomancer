@@ -1,18 +1,54 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿// using System;
+// using System.Collections;
+// using System.Collections.Generic;
+// using TMPro;
+
+using System;
 using UnityEngine;
 
-public class UndeadManager : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
+public class UndeadManager : MonoBehaviour {
+    private HelperClass helperClassRef;
+
+    [NonSerialized] Undead[] undeadChildren;
+
+    // public TextMeshProUGUI totalUndeadProductionText;
+
+    private double totalProductionValue;
+    public double TotalProductionValue
     {
-        
+        get => totalProductionValue;
+        private set => totalProductionValue = value;
+    }
+    
+    private void Awake() {
+        helperClassRef = GetComponentInParent<HelperClass>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Start() {
+        undeadChildren = GetComponentsInChildren<Undead>();
+        CalculateTotalUndeadProduction();
+    }
+
+    private void Update() {
+        CalculateTotalUndeadProduction();
+    }
+
+    public double CalculateTotalUndeadProduction() {
+        double totalProductionValue = 0;
+        int i = 0;
+        while (i < undeadChildren.Length)
+        {
+            totalProductionValue += undeadChildren[i].CalculateTotalProduction();
+            i++;
+        }
+        helperClassRef.libraryRef.totalUndeadProductionText.text = $"Total production: {totalProductionValue}";
+        return totalProductionValue;
+    }
+
+    public void ResetUndeadChildCountLevel() {
+        for (int i = 0; i < undeadChildren.Length; i++) {
+            undeadChildren[i].Count = 0;
+            undeadChildren[i].Level = 0;
+        }
     }
 }

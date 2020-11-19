@@ -1,29 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿// using System.Collections;
+// using System.Collections.Generic;
+// using UnityEngine.UI;
+// using TMPro;
+// using UnityEngine.PlayerLoop;
+// using System;
+
+using System;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using UnityEngine.PlayerLoop;
 
 public class Undead : MonoBehaviour {
     [Header("Drag and Drop references here")]
-    public HelperClass _helperClassRef;
-    public SoulCount soulRef;
-    public Rebirth rebirthRef;
+    private HelperClass helperClassRef;
 
-    // Trying TextMeshProUGUI 
-    public TextMeshProUGUI TMP_statusText;
-    public TextMeshProUGUI TMP_purchaseCostsText;
-    public TextMeshProUGUI TMP_upgradeCostsText;
-    public TextMeshProUGUI TMP_totalproductionText;
-
-
-    [Header("Configurable values")] [SerializeField]
-    private string name = "Zombie";
+    [SerializeField] private Image purchaseButtonOverLayImage;
+    [SerializeField] private Image upgradeButtonOverLayImage;
+    
+    [Header("Configurable values")]
+    //private string name = "Zombie";
     [SerializeField] private Sprite spriteImage;
     [SerializeField] private int cost = 100;
     public int productionRate = 1;
     
+    
+
     public int Count {
         get => PlayerPrefs.GetInt("Owned" + name, 0);
         set => PlayerPrefs.SetInt("Owned" + name, value);
@@ -34,71 +34,159 @@ public class Undead : MonoBehaviour {
         set => PlayerPrefs.SetInt("Level" + name, value);
     }
 
+    private int PurchaseIsUnlocked
+    {
+        get => PlayerPrefs.GetInt("Purchase Unlocked" + name, 0);
+        set =>PlayerPrefs.SetInt("Purchase Unlocked" + name, value);
+    }
+    
+    private int UpgradeIsUnlocked
+    {
+        get => PlayerPrefs.GetInt("Upgrade Unlocked" + name, 0);
+        set =>PlayerPrefs.SetInt("Upgrade Unlocked" + name, value);
+    }
     
     
-    
-    public double totalProduction;
-    
+
     public float undeadProductionPerSecond = 1f;
     float elapsedTime;
-    
+
     private int totalPurchaseCost;
     private int totalUpgradeCost;
-    
+
     [SerializeField] private float purchaseCostMultiplier = 1.05f;
     [SerializeField] private float upgradeCostMultiplier = 1.05f;
     [SerializeField] public float upgradeProductionMultiplier = 1.05f;
+
+    [System.NonSerialized] public double totalProduction;
+
     
-    private int PurchaseIsAffordable
-    {
-        get
-        {
-            var tempDouble = _helperClassRef.StringToDouble(soulRef.Souls);
-            if (tempDouble >= totalPurchaseCost)
-            {
+    
+    private int PurchaseIsAffordable {
+        get {
+            var tempDouble = helperClassRef.StringToDouble(helperClassRef.soulRef.Souls);
+            if (tempDouble >= totalPurchaseCost) {
                 return 1;
-            }
-            else
-            {
+            } else {
                 return 0;
             }
         }
-    } 
-    
-    private int UpgradeIsAffordable
-    {
-        get
-        {
-            var tempDouble = _helperClassRef.StringToDouble(soulRef.Souls);
-            if (tempDouble >= totalUpgradeCost)
-            {
-                return 1;
-            }
-            else
-            {
-                return 0;
-            }
-        }
-    } 
-    
-    public void DisplayTexts() {
-        this.TMP_statusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
-        this.TMP_purchaseCostsText.text = $"Zombie Purchase costs: {this.totalPurchaseCost} souls";
-        this.TMP_upgradeCostsText.text = $"Zombie Upgrade costs: {this.totalUpgradeCost} souls";
-        this.TMP_totalproductionText.text = $"Total production: {this.totalProduction} souls/second";
     }
 
-    void Start()
-    {
+    private int UpgradeIsAffordable {
+        get {
+            var tempDouble = helperClassRef.StringToDouble(helperClassRef.soulRef.Souls);
+            if (tempDouble >= totalUpgradeCost) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+    }
+
+    private void Awake() {
+        helperClassRef = GetComponentInParent<HelperClass>();
+    }
+
+    void Start() {
         CalculateTotalCost();
         CalculateTotalProduction();
-        DisplayTexts();
+        DisplayUndead();
     }
 
     void Update() {
+
+        if (PurchaseIsAffordable == 1)
+        {
+            PurchaseIsUnlocked = 1;
+        }
+        if (this.Count >= 1)
+        {
+            UpgradeIsUnlocked = 1;
+        }
+
+        if (purchaseButtonOverLayImage != null)
+        {
+            UnlockPurchaseCheck();
+            UnlockUpgradeCheck();
+            CannotAffordPurchase();
+            CannotAffordUpgrade();
+        }
+
         ProductionTimer();
         CalculateTotalCost();
-        DisplayTexts();
+        DisplayUndead();
+    }
+
+    private void UnlockPurchaseCheck()
+    {
+        if (PurchaseIsUnlocked == 0)
+        {
+            return;
+        }
+        purchaseButtonOverLayImage.raycastTarget = false;
+        Color tempColor = new Color();
+        tempColor.a = 0;
+        purchaseButtonOverLayImage.color = tempColor;
+    }
+
+    private void CannotAffordPurchase()
+    {
+        if (PurchaseIsUnlocked == 0)
+        {
+            return;
+        }
+        if (PurchaseIsAffordable == 1) {
+            purchaseButtonOverLayImage.raycastTarget = false;
+            Color tempColor = new Color();
+            tempColor.a = 0;
+            tempColor.r = 0;
+            purchaseButtonOverLayImage.color = tempColor;
+        }
+        else
+        {
+            purchaseButtonOverLayImage.raycastTarget = false;
+            Color tempColor = new Color();
+            tempColor.a = 0.2f;
+            tempColor.r = 255;
+            purchaseButtonOverLayImage.color = tempColor;
+        }
+    }
+    
+    private void CannotAffordUpgrade()
+    {
+        if (UpgradeIsUnlocked == 0)
+        {
+            return;
+        }
+        if (UpgradeIsAffordable == 1) {
+            upgradeButtonOverLayImage.raycastTarget = false;
+            Color tempColor = new Color();
+            tempColor.a = 0;
+            tempColor.r = 0;
+            upgradeButtonOverLayImage.color = tempColor;
+        }
+        else
+        {
+            upgradeButtonOverLayImage.raycastTarget = false;
+            Color tempColor = new Color();
+            tempColor.a = 0.2f;
+            tempColor.r = 255;
+            upgradeButtonOverLayImage.color = tempColor;
+        }
+    }
+    
+    
+    private void UnlockUpgradeCheck()
+    {
+        if (UpgradeIsUnlocked == 0)
+        {
+            return;
+        }
+        upgradeButtonOverLayImage.raycastTarget = false;
+        Color tempColor = new Color();
+        tempColor.a = 0;
+        upgradeButtonOverLayImage.color = tempColor;
     }
 
     void ProductionTimer() {
@@ -110,41 +198,42 @@ public class Undead : MonoBehaviour {
     }
 
     private void CreateUndead() {
-        DisplayTexts();
+        DisplayUndead();
         if (PurchaseIsAffordable == 0) {
             return;
         }
+
         Count += 1;
-        double tempDouble = _helperClassRef.StringToDouble(soulRef.Souls);
+        double tempDouble = helperClassRef.StringToDouble(helperClassRef.soulRef.Souls);
         tempDouble -= totalPurchaseCost;
-        _helperClassRef.DoubleToString(tempDouble, "Souls");
-        DisplayTexts();
+        helperClassRef.DoubleToString(tempDouble, "Souls");
+        DisplayUndead();
     }
 
     private void UpgradeUndead() {
-        DisplayTexts();
+        DisplayUndead();
         if (UpgradeIsAffordable == 0) {
             return;
         }
 
         Level += 1;
-        double tempDouble = _helperClassRef.StringToDouble(soulRef.Souls);
+        double tempDouble = helperClassRef.StringToDouble(helperClassRef.soulRef.Souls);
         tempDouble -= totalUpgradeCost;
-        _helperClassRef.DoubleToString(tempDouble, "Souls");
-        DisplayTexts();
+        helperClassRef.DoubleToString(tempDouble, "Souls");
+        DisplayUndead();
     }
 
     public void UndeadProduction() {
         CalculateTotalProduction();
 
-        double amountOfSouls = _helperClassRef.StringToDouble(soulRef.Souls);
-        double totalAmountOfSouls = _helperClassRef.StringToDouble(soulRef.TotalSoulsOwned);
-        
+        double amountOfSouls = helperClassRef.StringToDouble(helperClassRef.soulRef.Souls);
+        double totalAmountOfSouls = helperClassRef.StringToDouble(helperClassRef.soulRef.TotalSoulsOwned);
+
         var tempSoulDouble = amountOfSouls + totalProduction;
         var tempTotalDouble = totalAmountOfSouls + totalProduction;
-        
-        _helperClassRef.DoubleToString(tempSoulDouble, "Souls");
-        _helperClassRef.DoubleToString(tempTotalDouble, "TotalSoulsOwned");
+
+        helperClassRef.DoubleToString(tempSoulDouble, "Souls");
+        helperClassRef.DoubleToString(tempTotalDouble, "TotalSoulsOwned");
     }
 
     public void CalculateTotalCost() {
@@ -155,11 +244,12 @@ public class Undead : MonoBehaviour {
     public double CalculateTotalProduction() {
         totalProduction =
             Mathf.RoundToInt(this.Count * (this.productionRate * Mathf.Pow(upgradeProductionMultiplier, Level)));
-        double tempDouble = _helperClassRef.StringToDouble(rebirthRef.RebirthModifier);
-        if (tempDouble != 0)
-        {
-            totalProduction *= tempDouble;
+
+        double tempDouble = helperClassRef.StringToDouble(helperClassRef.rebirthRef.RebirthModifier);
+        if (tempDouble != 0) {
+            totalProduction *= Mathf.Round((float)tempDouble);
         }
+        
         return totalProduction;
     }
 
@@ -170,4 +260,69 @@ public class Undead : MonoBehaviour {
     public void UpgradeUndeadButton() {
         UpgradeUndead();
     }
+
+    public void DisplayUndead() {
+        DisplayZombieText();
+        DisplayWraithText();
+        DisplayDeathKnightText();
+        DisplayLichText();
+        DisplayMonstrosityText();
+    }
+
+    public void DisplayZombieText() {
+        if (this.name != "Zombie")
+        {
+            return;
+        }
+        helperClassRef.libraryRef.zombieStatusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
+        helperClassRef.libraryRef.zombiePurchaseCostsText.text = $"{name} Purchase costs: {this.totalPurchaseCost} souls";
+        helperClassRef.libraryRef.zombieUpgradeCostsText.text = $"{name} Upgrade costs: {this.totalUpgradeCost} souls";
+        helperClassRef.libraryRef.zombieTotalProductionText.text = $"Total {name} production: {this.totalProduction} souls/second";
+    }
+
+    public void DisplayWraithText() {
+        if (this.name != "Wraith")
+        {
+            return;
+        }
+        helperClassRef.libraryRef.wraithStatusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
+        helperClassRef.libraryRef.wraithPurchaseCostsText.text = $"{name} Purchase costs: {this.totalPurchaseCost} souls";
+        helperClassRef.libraryRef.wraithUpgradeCostsText.text = $"{name} Upgrade costs: {this.totalUpgradeCost} souls";
+        helperClassRef.libraryRef.wraithTotalProductionText.text = $"Total {name} production: {this.totalProduction} souls/second";
+    }
+    
+    public void DisplayDeathKnightText() {
+        if (this.name != "Death Knight")
+        {
+            return;
+        }
+        helperClassRef.libraryRef.deathknightStatusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
+        helperClassRef.libraryRef.deathknightPurchaseCostsText.text = $"{name} Purchase costs: {this.totalPurchaseCost} souls";
+        helperClassRef.libraryRef.deathknightUpgradeCostsText.text = $"{name} Upgrade costs: {this.totalUpgradeCost} souls";
+        helperClassRef.libraryRef.deathknightTotalProductionText.text = $"Total {name} production: {this.totalProduction} souls/second";
+    }
+    
+    public void DisplayLichText() {
+        if (this.name != "Lich")
+        {
+            return;
+        }
+        helperClassRef.libraryRef.lichStatusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
+        helperClassRef.libraryRef.lichPurchaseCostsText.text = $"{name} Purchase costs: {this.totalPurchaseCost} souls";
+        helperClassRef.libraryRef.lichUpgradeCostsText.text = $"{name} Upgrade costs: {this.totalUpgradeCost} souls";
+        helperClassRef.libraryRef.lichTotalProductionText.text = $"Total {name} production: {this.totalProduction} souls/second";
+    }
+    
+    public void DisplayMonstrosityText() {
+        if (this.name != "Monstrosity")
+        {
+            return;
+        }
+        helperClassRef.libraryRef.monstrosityStatusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
+        helperClassRef.libraryRef.monstrosityPurchaseCostsText.text = $"{name} Purchase costs: {this.totalPurchaseCost} souls";
+        helperClassRef.libraryRef.monstrosityUpgradeCostsText.text = $"{name} Upgrade costs: {this.totalUpgradeCost} souls";
+        helperClassRef.libraryRef.monstrosityTotalProductionText.text = $"Total {name} production: {this.totalProduction} souls/second";
+    }
+    
+
 }
