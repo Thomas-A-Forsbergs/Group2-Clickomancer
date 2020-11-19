@@ -11,6 +11,9 @@ public class Rebirth : MonoBehaviour {
     [Header("Drag and Drop reference here")]
     private HelperClass helperClassRef;
 
+    [SerializeField] private GameObject rebirthInfoBox; 
+    
+
     public double modifierFactor = 1f;
     public int rebirthThreshold = 1000;
 
@@ -40,6 +43,7 @@ public class Rebirth : MonoBehaviour {
     private void CalculateRebirthModifer() {
         double amountofsouls = helperClassRef.StringToDouble(helperClassRef.soulRef.TotalSoulsOwned);
         if (rebirthThreshold < amountofsouls) {
+            rebirthInfoBox.SetActive(false);
             Reborn++;
             double modToAdd = amountofsouls * modifierFactor;
             double currentMod = helperClassRef.StringToDouble(RebirthModifier);
@@ -57,6 +61,17 @@ public class Rebirth : MonoBehaviour {
         CalculateRebirthModifer();
     }
 
+    public void OpenRebirthInfoButton()
+    {
+        rebirthInfoBox.SetActive(true);
+    }
+
+    
+    public void CloseRebirthInfoButton() {
+        rebirthInfoBox.SetActive(false);
+    }
+
+    
     private void Display() {
         helperClassRef.libraryRef.rebirthText.text = "Rebirth:" + Reborn;
         helperClassRef.libraryRef.bonusText.text = "Bonus:" + RebirthModifier;

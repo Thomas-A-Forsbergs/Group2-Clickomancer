@@ -18,7 +18,7 @@ public class Undead : MonoBehaviour {
     
     [Header("Configurable values")]
     //private string name = "Zombie";
-    [SerializeField] private Sprite spriteImage;
+    [SerializeField] public GameObject fullSpriteImage;
     [SerializeField] private int cost = 100;
     public int productionRate = 1;
     
@@ -102,6 +102,10 @@ public class Undead : MonoBehaviour {
         }
         if (this.Count >= 1)
         {
+            if (fullSpriteImage != null)
+            {
+                fullSpriteImage.SetActive(true);
+            }
             UpgradeIsUnlocked = 1;
         }
 
@@ -275,9 +279,9 @@ public class Undead : MonoBehaviour {
             return;
         }
         helperClassRef.libraryRef.zombieStatusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
-        helperClassRef.libraryRef.zombiePurchaseCostsText.text = $"{name} Purchase costs: {this.totalPurchaseCost} souls";
-        helperClassRef.libraryRef.zombieUpgradeCostsText.text = $"{name} Upgrade costs: {this.totalUpgradeCost} souls";
-        helperClassRef.libraryRef.zombieTotalProductionText.text = $"Total {name} production: {this.totalProduction} souls/second";
+        helperClassRef.libraryRef.zombiePurchaseCostsText.text = $"Buy for: {this.totalPurchaseCost}";
+        helperClassRef.libraryRef.zombieUpgradeCostsText.text = $"Upgrade for: {this.totalUpgradeCost}";
+        helperClassRef.libraryRef.zombieTotalProductionText.text = $"Total production: {this.totalProduction} souls/second";
     }
 
     public void DisplayWraithText() {
@@ -286,9 +290,9 @@ public class Undead : MonoBehaviour {
             return;
         }
         helperClassRef.libraryRef.wraithStatusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
-        helperClassRef.libraryRef.wraithPurchaseCostsText.text = $"{name} Purchase costs: {this.totalPurchaseCost} souls";
-        helperClassRef.libraryRef.wraithUpgradeCostsText.text = $"{name} Upgrade costs: {this.totalUpgradeCost} souls";
-        helperClassRef.libraryRef.wraithTotalProductionText.text = $"Total {name} production: {this.totalProduction} souls/second";
+        helperClassRef.libraryRef.wraithPurchaseCostsText.text = $"Buy for: {this.totalPurchaseCost}";
+        helperClassRef.libraryRef.wraithUpgradeCostsText.text = $"Upgrade for: {this.totalUpgradeCost}";
+        helperClassRef.libraryRef.wraithTotalProductionText.text = $"Total production: {this.totalProduction} souls/second";
     }
     
     public void DisplayDeathKnightText() {
@@ -297,9 +301,9 @@ public class Undead : MonoBehaviour {
             return;
         }
         helperClassRef.libraryRef.deathknightStatusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
-        helperClassRef.libraryRef.deathknightPurchaseCostsText.text = $"{name} Purchase costs: {this.totalPurchaseCost} souls";
-        helperClassRef.libraryRef.deathknightUpgradeCostsText.text = $"{name} Upgrade costs: {this.totalUpgradeCost} souls";
-        helperClassRef.libraryRef.deathknightTotalProductionText.text = $"Total {name} production: {this.totalProduction} souls/second";
+        helperClassRef.libraryRef.deathknightPurchaseCostsText.text = $"Buy for: {this.totalPurchaseCost}";
+        helperClassRef.libraryRef.deathknightUpgradeCostsText.text = $"Upgrade for: {this.totalUpgradeCost}";
+        helperClassRef.libraryRef.deathknightTotalProductionText.text = $"Total production: {this.totalProduction} souls/second";
     }
     
     public void DisplayLichText() {
@@ -308,9 +312,9 @@ public class Undead : MonoBehaviour {
             return;
         }
         helperClassRef.libraryRef.lichStatusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
-        helperClassRef.libraryRef.lichPurchaseCostsText.text = $"{name} Purchase costs: {this.totalPurchaseCost} souls";
-        helperClassRef.libraryRef.lichUpgradeCostsText.text = $"{name} Upgrade costs: {this.totalUpgradeCost} souls";
-        helperClassRef.libraryRef.lichTotalProductionText.text = $"Total {name} production: {this.totalProduction} souls/second";
+        helperClassRef.libraryRef.lichPurchaseCostsText.text = $"Buy for: {this.totalPurchaseCost}";
+        helperClassRef.libraryRef.lichUpgradeCostsText.text = $"Upgrade for: {this.totalUpgradeCost}";
+        helperClassRef.libraryRef.lichTotalProductionText.text = $"Total production: {this.totalProduction} souls/second";
     }
     
     public void DisplayMonstrosityText() {
@@ -319,9 +323,9 @@ public class Undead : MonoBehaviour {
             return;
         }
         helperClassRef.libraryRef.monstrosityStatusText.text = $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
-        helperClassRef.libraryRef.monstrosityPurchaseCostsText.text = $"{name} Purchase costs: {this.totalPurchaseCost} souls";
-        helperClassRef.libraryRef.monstrosityUpgradeCostsText.text = $"{name} Upgrade costs: {this.totalUpgradeCost} souls";
-        helperClassRef.libraryRef.monstrosityTotalProductionText.text = $"Total {name} production: {this.totalProduction} souls/second";
+        helperClassRef.libraryRef.monstrosityPurchaseCostsText.text = $"Buy for: {this.totalPurchaseCost}";
+        helperClassRef.libraryRef.monstrosityUpgradeCostsText.text = $"Upgrade for: {this.totalUpgradeCost}";
+        helperClassRef.libraryRef.monstrosityTotalProductionText.text = $"Total production: {this.totalProduction} souls/second";
     }
     
 

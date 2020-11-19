@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7186665959874819851}
   - component: {fileID: 7186665959874819850}
   m_Layer: 5
-  m_Name: background
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 51, y: -286.6}
-  m_SizeDelta: {x: 284.67188, y: 221.61533}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 440, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7186665959874819851
 CanvasRenderer:
@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7186665960777150261}
   m_Layer: 5
-  m_Name: Pop Up Spells 1
+  m_Name: Pop Up Spells
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,8 +146,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -0.0002346}
-  m_SizeDelta: {x: 284.67203, y: 221.61478}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 440, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7186665961257636888
 CanvasRenderer:
@@ -180,9 +180,10 @@ MonoBehaviour:
   m_text: 'Super summon: Use your mana to draw souls from the soulwell equivalent
     to 30 seconds of your passive production, costs 20 mana.
 
-    Magic finger: Will
-    automatically click for you once every 5 seconds. Costs 1 mana every second to
-    keep active.'
+
+    Magic finger:
+    Will automatically click for you once every 5 seconds. Costs 1 mana every second
+    to keep active.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -212,7 +213,7 @@ MonoBehaviour:
   m_fontSize: 20
   m_fontSizeBase: 20
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0

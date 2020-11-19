@@ -1,5 +1,57 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &690300866962805571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6985851195088160464}
+  - component: {fileID: 1319126555783057372}
+  m_Layer: 0
+  m_Name: Monstrosity
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6985851195088160464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690300866962805571}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6503794763020109302}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1319126555783057372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690300866962805571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d4d8148eeaf0d4995ee747fd2effe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  purchaseButtonOverLayImage: {fileID: 0}
+  upgradeButtonOverLayImage: {fileID: 0}
+  fullSpriteImage: {fileID: 0}
+  cost: 100
+  productionRate: 0
+  undeadProductionPerSecond: 1
+  purchaseCostMultiplier: 1.09
+  upgradeCostMultiplier: 1.18
+  upgradeProductionMultiplier: 1.05
 --- !u!1 &812897451960927509
 GameObject:
   m_ObjectHideFlags: 0
@@ -26,14 +78,14 @@ RectTransform:
   m_GameObject: {fileID: 812897451960927509}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.71667, y: 0.71667, z: 0.71667}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6503794761601077055}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 344.2, y: 193.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4753950939613270838
@@ -48,12 +100,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8315b0f9aba2ab74d941469dcd18ae11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soulsPerClick: 1
   currentMana: 100
-  spellCost: 20
+  spellCost1: 20
+  spellCost2: 20
+  spellCost3: 20
+  spellCost4: 20
+  spellCost5: 20
   maxMana: 100
   manaPerSec: 1
   manaRegen: 1
   meterImage: {fileID: 0}
+  spell1Multiplier: 30
+  spell2Waitforseconds: 5
+  spell2DrainAmount: 6
+--- !u!1 &2121233917852020103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7159834360651250618}
+  - component: {fileID: 4158146422497124039}
+  m_Layer: 0
+  m_Name: Death Knight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7159834360651250618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121233917852020103}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6503794763020109302}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4158146422497124039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121233917852020103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d4d8148eeaf0d4995ee747fd2effe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  purchaseButtonOverLayImage: {fileID: 0}
+  upgradeButtonOverLayImage: {fileID: 0}
+  fullSpriteImage: {fileID: 0}
+  cost: 100
+  productionRate: 0
+  undeadProductionPerSecond: 1
+  purchaseCostMultiplier: 1.09
+  upgradeCostMultiplier: 1.18
+  upgradeProductionMultiplier: 1.05
 --- !u!1 &6503794761601077052
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,11 +307,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d4d8148eeaf0d4995ee747fd2effe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Zombie
-  spriteImage: {fileID: 0}
+  purchaseButtonOverLayImage: {fileID: 0}
+  upgradeButtonOverLayImage: {fileID: 0}
+  fullSpriteImage: {fileID: 0}
   cost: 100
   productionRate: 1
-  totalProduction: 0
   undeadProductionPerSecond: 1
   purchaseCostMultiplier: 1.09
   upgradeCostMultiplier: 1.18
@@ -252,10 +364,26 @@ MonoBehaviour:
   soulsPerClickText: {fileID: 0}
   rebirthText: {fileID: 0}
   bonusText: {fileID: 0}
-  statusText: {fileID: 0}
-  purchaseCostsText: {fileID: 0}
-  upgradeCostsText: {fileID: 0}
-  totalProductionText: {fileID: 0}
+  zombieStatusText: {fileID: 0}
+  zombiePurchaseCostsText: {fileID: 0}
+  zombieUpgradeCostsText: {fileID: 0}
+  zombieTotalProductionText: {fileID: 0}
+  wraithStatusText: {fileID: 0}
+  wraithPurchaseCostsText: {fileID: 0}
+  wraithUpgradeCostsText: {fileID: 0}
+  wraithTotalProductionText: {fileID: 0}
+  deathknightStatusText: {fileID: 0}
+  deathknightPurchaseCostsText: {fileID: 0}
+  deathknightUpgradeCostsText: {fileID: 0}
+  deathknightTotalProductionText: {fileID: 0}
+  lichStatusText: {fileID: 0}
+  lichPurchaseCostsText: {fileID: 0}
+  lichUpgradeCostsText: {fileID: 0}
+  lichTotalProductionText: {fileID: 0}
+  monstrosityStatusText: {fileID: 0}
+  monstrosityPurchaseCostsText: {fileID: 0}
+  monstrosityUpgradeCostsText: {fileID: 0}
+  monstrosityTotalProductionText: {fileID: 0}
   manaText: {fileID: 0}
   totalUndeadProductionText: {fileID: 0}
 --- !u!1 &6503794763020109303
@@ -287,6 +415,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6503794762271823079}
+  - {fileID: 8956565709678041968}
+  - {fileID: 5680441916896027240}
+  - {fileID: 7159834360651250618}
+  - {fileID: 6985851195088160464}
   m_Father: {fileID: 6503794761601077055}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -302,7 +434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f9aba85186fb934b85064f6ff6f0d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  undeadChildren: []
 --- !u!1 &6503794763304264818
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,3 +498,107 @@ MonoBehaviour:
   upgradeMultiplier: 3
   upgradeCost: 100
   upgradeCostMultiplier: 1.1
+--- !u!1 &8098281966805014551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5680441916896027240}
+  - component: {fileID: 6400287597418448197}
+  m_Layer: 0
+  m_Name: Lich
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5680441916896027240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8098281966805014551}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6503794763020109302}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6400287597418448197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8098281966805014551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d4d8148eeaf0d4995ee747fd2effe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  purchaseButtonOverLayImage: {fileID: 0}
+  upgradeButtonOverLayImage: {fileID: 0}
+  fullSpriteImage: {fileID: 0}
+  cost: 100
+  productionRate: 0
+  undeadProductionPerSecond: 1
+  purchaseCostMultiplier: 1.09
+  upgradeCostMultiplier: 1.18
+  upgradeProductionMultiplier: 1.05
+--- !u!1 &8680148422133474587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8956565709678041968}
+  - component: {fileID: 6114502894307308097}
+  m_Layer: 0
+  m_Name: Wraith
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8956565709678041968
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8680148422133474587}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6503794763020109302}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6114502894307308097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8680148422133474587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d4d8148eeaf0d4995ee747fd2effe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  purchaseButtonOverLayImage: {fileID: 0}
+  upgradeButtonOverLayImage: {fileID: 0}
+  fullSpriteImage: {fileID: 0}
+  cost: 100
+  productionRate: 500
+  undeadProductionPerSecond: 1
+  purchaseCostMultiplier: 1.09
+  upgradeCostMultiplier: 1.18
+  upgradeProductionMultiplier: 1.05
