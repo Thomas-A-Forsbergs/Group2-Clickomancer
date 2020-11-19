@@ -10,14 +10,15 @@ using UnityEngine.UI;
 public class ManaBar : MonoBehaviour
 {
     private HelperClass helperClassRef;
-    [Header("Configurable values")] public double soulsPerClick = 1;
+    [Header("Configurable values")]
+    public double soulsPerClick = 1;
 
     public float currentMana = 100f;
     public int spellCost1 = 20;
     public int spellCost2 = 20;
-    public int spellCost3 = 20;
-    public int spellCost4 = 20;
-    public int spellCost5 = 20;
+    // public int spellCost3 = 20;
+    // public int spellCost4 = 20;
+    // public int spellCost5 = 20;
     public float maxMana = 100f;
     public float manaPerSec = 1f;
     float elapsedTime;
@@ -30,9 +31,9 @@ public class ManaBar : MonoBehaviour
     
     private bool IsAffordable1 => currentMana >= spellCost1;
     private bool IsAffordable2 => currentMana >= spellCost2;
-    private bool IsAffordable3 => currentMana >= spellCost3;
-    private bool IsAffordable4 => currentMana >= spellCost4;
-    private bool IsAffordable5 => currentMana >= spellCost5;
+    // private bool IsAffordable3 => currentMana >= spellCost3;
+    // private bool IsAffordable4 => currentMana >= spellCost4;
+    // private bool IsAffordable5 => currentMana >= spellCost5;
 
     private void Awake()
     {
@@ -82,42 +83,42 @@ public class ManaBar : MonoBehaviour
             return;
         }
 
-        currentMana -= spellCost1;
+        //currentMana -= spellCost2;
         spell2();
     }
 
-    public void SpellRemoveMana3()
-    {
-        if (!IsAffordable3)
-        {
-            return;
-        }
-
-        currentMana -= spellCost1;
-        spell3();
-    }
-    
-    public void SpellRemoveMana4()
-    {
-        if (!IsAffordable4)
-        {
-            return;
-        }
-
-        currentMana -= spellCost1;
-        spell4();
-    }
-    
-    public void SpellRemoveMana5()
-    {
-        if (!IsAffordable5)
-        {
-            return;
-        }
-
-        currentMana -= spellCost1;
-        spell5();
-    }
+    // public void SpellRemoveMana3()
+    // {
+    //     if (!IsAffordable3)
+    //     {
+    //         return;
+    //     }
+    //
+    //     currentMana -= spellCost1;
+    //     spell3();
+    // }
+    //
+    // public void SpellRemoveMana4()
+    // {
+    //     if (!IsAffordable4)
+    //     {
+    //         return;
+    //     }
+    //
+    //     currentMana -= spellCost1;
+    //     spell4();
+    // }
+    //
+    // public void SpellRemoveMana5()
+    // {
+    //     if (!IsAffordable5)
+    //     {
+    //         return;
+    //     }
+    //
+    //     currentMana -= spellCost1;
+    //     spell5();
+    // }
     
     public void spell1()
     {
@@ -148,23 +149,23 @@ public class ManaBar : MonoBehaviour
         }
     }
     
-    public void spell3()
-    {
-        helperClassRef.soulRef.Click();
-        helperClassRef.soulRef.Click();
-    }
-    
-    public void spell4()
-    {
-        helperClassRef.soulRef.Click();
-        helperClassRef.soulRef.Click();
-    }
-    
-    public void spell5()
-    {
-        helperClassRef.soulRef.Click();
-        helperClassRef.soulRef.Click();
-    }
+    // public void spell3()
+    // {
+    //     helperClassRef.soulRef.Click();
+    //     helperClassRef.soulRef.Click();
+    // }
+    //
+    // public void spell4()
+    // {
+    //     helperClassRef.soulRef.Click();
+    //     helperClassRef.soulRef.Click();
+    // }
+    //
+    // public void spell5()
+    // {
+    //     helperClassRef.soulRef.Click();
+    //     helperClassRef.soulRef.Click();
+    // }
 
     public void SpellButton1() {
         SpellRemoveMana1();
@@ -173,17 +174,17 @@ public class ManaBar : MonoBehaviour
     public void SpellButton2() {
         SpellRemoveMana2();
     }
-
-    public void SpellButton3() {
-        SpellRemoveMana3();
-    }
     
-    public void SpellButton4() {
-        SpellRemoveMana4();
-
-    }
-    
-    public void SpellButton5() {
-        SpellRemoveMana5();
-    }
+    // public void SpellButton3() {
+    //     SpellRemoveMana3();
+    // }
+    //
+    // public void SpellButton4() {
+    //     SpellRemoveMana4();
+    //
+    // }
+    //
+    // public void SpellButton5() {
+    //     SpellRemoveMana5();
+    // }
 }

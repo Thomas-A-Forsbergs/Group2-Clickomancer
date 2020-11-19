@@ -264,7 +264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rebirthInfoBox: {fileID: 0}
   modifierFactor: 0.05
-  rebirthThreshold: 100000
+  rebirthThreshold: 1000000
 --- !u!1 &6503794762271823077
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,18 +365,20 @@ MonoBehaviour:
   soulsPerClickText: {fileID: 0}
   rebirthText: {fileID: 0}
   bonusText: {fileID: 0}
+  manaText: {fileID: 0}
+  totalUndeadProductionText: {fileID: 0}
   zombieStatusText: {fileID: 0}
   zombiePurchaseCostsText: {fileID: 0}
   zombieUpgradeCostsText: {fileID: 0}
   zombieTotalProductionText: {fileID: 0}
-  wraithStatusText: {fileID: 0}
-  wraithPurchaseCostsText: {fileID: 0}
-  wraithUpgradeCostsText: {fileID: 0}
-  wraithTotalProductionText: {fileID: 0}
   deathknightStatusText: {fileID: 0}
   deathknightPurchaseCostsText: {fileID: 0}
   deathknightUpgradeCostsText: {fileID: 0}
   deathknightTotalProductionText: {fileID: 0}
+  wraithStatusText: {fileID: 0}
+  wraithPurchaseCostsText: {fileID: 0}
+  wraithUpgradeCostsText: {fileID: 0}
+  wraithTotalProductionText: {fileID: 0}
   lichStatusText: {fileID: 0}
   lichPurchaseCostsText: {fileID: 0}
   lichUpgradeCostsText: {fileID: 0}
@@ -385,8 +387,6 @@ MonoBehaviour:
   monstrosityPurchaseCostsText: {fileID: 0}
   monstrosityUpgradeCostsText: {fileID: 0}
   monstrosityTotalProductionText: {fileID: 0}
-  manaText: {fileID: 0}
-  totalUndeadProductionText: {fileID: 0}
 --- !u!1 &6503794763020109303
 GameObject:
   m_ObjectHideFlags: 0

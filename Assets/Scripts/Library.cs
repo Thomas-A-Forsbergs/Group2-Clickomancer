@@ -14,6 +14,7 @@ public class Library : MonoBehaviour {
     [Header("Text reference for Rebirth text")]
     public TMP_Text rebirthText;
     public TMP_Text bonusText;
+    public TMP_Text rebirthThreshold;
     
     [Header("Text reference for Mana text")]
     public TMP_Text manaText;

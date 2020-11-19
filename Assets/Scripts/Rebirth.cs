@@ -75,5 +75,6 @@ public class Rebirth : MonoBehaviour {
     private void Display() {
         helperClassRef.libraryRef.rebirthText.text = "Rebirth:" + Reborn;
         helperClassRef.libraryRef.bonusText.text = "Bonus:" + RebirthModifier;
+        helperClassRef.libraryRef.rebirthThreshold.text = "Souls needed for rebirth:" + rebirthThreshold.ToString(format:"1 mil");
     }
 }
