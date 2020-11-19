@@ -5,20 +5,20 @@ using UnityEngine.UI;
 
 public class PopUpScreen : MonoBehaviour {
     public GameObject popUpBox;
-    private bool _showingPopUp;
+    private bool _showingPopUp = false;
 
     public void ToggleScreen()
     {
-        if (_showingPopUp)
+        if (!_showingPopUp)
         {
             Show();
+            _showingPopUp = !_showingPopUp;
         }
         else
         {
             Hide();
+            _showingPopUp = !_showingPopUp;
         }
-
-        _showingPopUp = !_showingPopUp;
     }
     private void Show()
     {

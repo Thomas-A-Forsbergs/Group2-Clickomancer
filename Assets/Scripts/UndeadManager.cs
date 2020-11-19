@@ -41,7 +41,7 @@ public class UndeadManager : MonoBehaviour {
             totalProductionValue += undeadChildren[i].CalculateTotalProduction();
             i++;
         }
-        helperClassRef.libraryRef.totalUndeadProductionText.text = $"Total production: {totalProductionValue}";
+        helperClassRef.libraryRef.totalUndeadProductionText.text = $"Total souls/s: {totalProductionValue}";
         return totalProductionValue;
     }
 
