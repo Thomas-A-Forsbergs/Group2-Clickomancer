@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   purchaseButtonOverLayImage: {fileID: 0}
   upgradeButtonOverLayImage: {fileID: 0}
-  spriteImage: {fileID: 0}
+  fullSpriteImage: {fileID: 0}
   cost: 100
   productionRate: 0
   undeadProductionPerSecond: 1
@@ -85,7 +85,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 344.2, y: 193.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4753950939613270838
@@ -143,7 +143,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6503794763020109302}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4158146422497124039
 MonoBehaviour:
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   purchaseButtonOverLayImage: {fileID: 0}
   upgradeButtonOverLayImage: {fileID: 0}
-  spriteImage: {fileID: 0}
+  fullSpriteImage: {fileID: 0}
   cost: 100
   productionRate: 0
   undeadProductionPerSecond: 1
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   purchaseButtonOverLayImage: {fileID: 0}
   upgradeButtonOverLayImage: {fileID: 0}
-  spriteImage: {fileID: 0}
+  fullSpriteImage: {fileID: 0}
   cost: 100
   productionRate: 1
   undeadProductionPerSecond: 1
@@ -416,8 +416,8 @@ Transform:
   m_Children:
   - {fileID: 6503794762271823079}
   - {fileID: 8956565709678041968}
-  - {fileID: 7159834360651250618}
   - {fileID: 5680441916896027240}
+  - {fileID: 7159834360651250618}
   - {fileID: 6985851195088160464}
   m_Father: {fileID: 6503794761601077055}
   m_RootOrder: 1
@@ -527,7 +527,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6503794763020109302}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6400287597418448197
 MonoBehaviour:
@@ -543,7 +543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   purchaseButtonOverLayImage: {fileID: 0}
   upgradeButtonOverLayImage: {fileID: 0}
-  spriteImage: {fileID: 0}
+  fullSpriteImage: {fileID: 0}
   cost: 100
   productionRate: 0
   undeadProductionPerSecond: 1
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   purchaseButtonOverLayImage: {fileID: 0}
   upgradeButtonOverLayImage: {fileID: 0}
-  spriteImage: {fileID: 0}
+  fullSpriteImage: {fileID: 0}
   cost: 100
   productionRate: 500
   undeadProductionPerSecond: 1
