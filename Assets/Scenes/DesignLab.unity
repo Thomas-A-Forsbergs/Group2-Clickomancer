@@ -1315,7 +1315,7 @@ GameObject:
   - component: {fileID: 522970481}
   - component: {fileID: 522970480}
   m_Layer: 0
-  m_Name: Point Light 2D (4)
+  m_Name: Light-GuardTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1726,18 +1726,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d4d8148eeaf0d4995ee747fd2effe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _helperClassRef: {fileID: 0}
-  soulRef: {fileID: 2006190522}
-  rebirthRef: {fileID: 0}
-  TMP_statusText: {fileID: 1453093325}
-  TMP_purchaseCostsText: {fileID: 0}
-  TMP_upgradeCostsText: {fileID: 0}
-  TMP_totalproductionText: {fileID: 0}
-  name: Zombie
+  purchaseButtonOverLayImage: {fileID: 0}
+  upgradeButtonOverLayImage: {fileID: 0}
   spriteImage: {fileID: 0}
   cost: 100
   productionRate: 1
-  totalProduction: 0
   undeadProductionPerSecond: 1
   purchaseCostMultiplier: 1.05
   upgradeCostMultiplier: 1.05
@@ -1856,7 +1849,7 @@ GameObject:
   - component: {fileID: 697413997}
   - component: {fileID: 697413996}
   m_Layer: 0
-  m_Name: Point Light 2D (2)
+  m_Name: Light-CottageLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1928,7 +1921,7 @@ GameObject:
   - component: {fileID: 744677395}
   - component: {fileID: 744677394}
   m_Layer: 0
-  m_Name: Point Light 2D (1)
+  m_Name: Light-Church Pointlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2674,7 +2667,7 @@ GameObject:
   - component: {fileID: 1071497877}
   - component: {fileID: 1071497876}
   m_Layer: 0
-  m_Name: Point Light 2D (5)
+  m_Name: Light-MoonGlare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5023,7 +5016,7 @@ GameObject:
   - component: {fileID: 1812933036}
   - component: {fileID: 1812933035}
   m_Layer: 0
-  m_Name: Point Light 2D (3)
+  m_Name: Light-ChurchTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5402,7 +5395,7 @@ GameObject:
   - component: {fileID: 1973672710}
   - component: {fileID: 1973672709}
   m_Layer: 0
-  m_Name: Freeform Light 2D
+  m_Name: Light-SoulWell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5588,9 +5581,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e70d286580eaec4e9d3afdd0e850509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulRef: {fileID: 0}
-  zombieRef: {fileID: 673052961}
-  _helperClassRef: {fileID: 0}
   offlineTimeText: {fileID: 1111739416}
   offlineTimeTextString: 'You were offline for '
   offlineProductionText: {fileID: 862871184}
@@ -5621,13 +5611,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4f6daed92533240b7807ab8801055b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _helperClassRef: {fileID: 0}
-  soulText: {fileID: 1606802110}
-  upgradeText: {fileID: 0}
-  soulsPerClickText: {fileID: 0}
   soulsPerClick: 1
   upgradeMultiplier: 1.5
-  upgradeLevel: 0
   upgradeCost: 100
   upgradeCostMultiplier: 1.1
 --- !u!1 &2106426936
