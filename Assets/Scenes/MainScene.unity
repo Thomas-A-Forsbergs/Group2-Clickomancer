@@ -967,12 +967,12 @@ MonoBehaviour:
   purchaseButtonOverLayImage: {fileID: 7257409019806804695}
   upgradeButtonOverLayImage: {fileID: 7859229800947581551}
   spriteImage: {fileID: 0}
-  cost: 100
-  productionRate: 500
+  cost: 125
+  productionRate: 6
   undeadProductionPerSecond: 1
-  purchaseCostMultiplier: 1.09
-  upgradeCostMultiplier: 1.18
-  upgradeProductionMultiplier: 1.05
+  purchaseCostMultiplier: 1.15
+  upgradeCostMultiplier: 10
+  upgradeProductionMultiplier: 2
 --- !u!1 &876075091
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,12 +1454,12 @@ MonoBehaviour:
   purchaseButtonOverLayImage: {fileID: 0}
   upgradeButtonOverLayImage: {fileID: 0}
   spriteImage: {fileID: 0}
-  cost: 100
-  productionRate: 0
+  cost: 5600
+  productionRate: 204
   undeadProductionPerSecond: 1
-  purchaseCostMultiplier: 1.09
-  upgradeCostMultiplier: 1.18
-  upgradeProductionMultiplier: 1.05
+  purchaseCostMultiplier: 1.15
+  upgradeCostMultiplier: 10
+  upgradeProductionMultiplier: 2
 --- !u!1 &1102864099
 GameObject:
   m_ObjectHideFlags: 0
@@ -2326,6 +2326,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1588949662}
     - target: {fileID: 6503794762271823076, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+      propertyPath: upgradeCostMultiplier
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503794762271823076, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+      propertyPath: purchaseCostMultiplier
+      value: 1.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503794762271823076, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
       propertyPath: upgradeButtonOverLayImage
       value: 
       objectReference: {fileID: 519063289}
@@ -2333,6 +2341,10 @@ PrefabInstance:
       propertyPath: purchaseButtonOverLayImage
       value: 
       objectReference: {fileID: 1334438867}
+    - target: {fileID: 6503794762271823076, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+      propertyPath: upgradeProductionMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6503794763304264829, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
       propertyPath: offlineTimeText
       value: 
@@ -2341,6 +2353,18 @@ PrefabInstance:
       propertyPath: offlineProductionText
       value: 
       objectReference: {fileID: 672663755}
+    - target: {fileID: 6503794763304264831, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+      propertyPath: soulsPerClick
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503794763304264831, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+      propertyPath: upgradeMultiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503794763304264831, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+      propertyPath: upgradeCostMultiplier
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
 --- !u!1 &1567646544
@@ -2389,12 +2413,12 @@ MonoBehaviour:
   purchaseButtonOverLayImage: {fileID: 0}
   upgradeButtonOverLayImage: {fileID: 0}
   spriteImage: {fileID: 0}
-  cost: 100
-  productionRate: 0
+  cost: 1800
+  productionRate: 66
   undeadProductionPerSecond: 1
-  purchaseCostMultiplier: 1.09
-  upgradeCostMultiplier: 1.18
-  upgradeProductionMultiplier: 1.05
+  purchaseCostMultiplier: 1.15
+  upgradeCostMultiplier: 10
+  upgradeProductionMultiplier: 2
 --- !u!1 &1588949660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2860,12 +2884,12 @@ MonoBehaviour:
   purchaseButtonOverLayImage: {fileID: 0}
   upgradeButtonOverLayImage: {fileID: 0}
   spriteImage: {fileID: 0}
-  cost: 100
-  productionRate: 0
+  cost: 600
+  productionRate: 20
   undeadProductionPerSecond: 1
-  purchaseCostMultiplier: 1.09
-  upgradeCostMultiplier: 1.18
-  upgradeProductionMultiplier: 1.05
+  purchaseCostMultiplier: 1.15
+  upgradeCostMultiplier: 10
+  upgradeProductionMultiplier: 2
 --- !u!114 &1889572730 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6503794762271823076, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
