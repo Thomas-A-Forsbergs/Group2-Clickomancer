@@ -24,13 +24,6 @@ public class GetOfflineCurrency : MonoBehaviour {
  
     }
 
-    private void Start()
-    {
-        if (FirstTimePlaying != 1) {
-            CalculateOfflineProduction();
-        }
-        FirstTimePlaying = 0;
-    }
 
     public string OfflineTime {
         get => PlayerPrefs.GetString("SoulsEarnedOffline", "0000-00-00");
@@ -40,6 +33,15 @@ public class GetOfflineCurrency : MonoBehaviour {
     public int FirstTimePlaying {
         get => PlayerPrefs.GetInt("FirstTimePlaying", 1);
         private set => PlayerPrefs.SetInt("FirstTimePlaying", value);
+    }
+    
+    
+    private void Start()
+    {
+        if (FirstTimePlaying != 0) {
+            CalculateOfflineProduction();
+        }
+        FirstTimePlaying = 0;
     }
 
     private void OnApplicationQuit() {

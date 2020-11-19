@@ -18,11 +18,10 @@ public class TutorialWindow : MonoBehaviour
         
         helperClassRef = GameObject.Find("GameSystem").GetComponent<HelperClass>();
         GetOfflineCurrency offlineCurrencyRef = helperClassRef.GetComponentInChildren<GetOfflineCurrency>();
-        if (offlineCurrencyRef.FirstTimePlaying != 1)
+        if (offlineCurrencyRef.FirstTimePlaying == 1)
         {
-            return;
+            DisplayWindow();
         }
-        DisplayWindow();
     }
 
     // Start is called before the first frame update
