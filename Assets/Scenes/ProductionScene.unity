@@ -5068,7 +5068,7 @@ PrefabInstance:
     - target: {fileID: 1478955680653789095, guid: 18de4bc9d0e628c4ab5098e4731bcb96, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e2203ae3d865a564eaa7b2276cfbc12a, type: 3}
+      objectReference: {fileID: 21300000, guid: 69f5748169636b84895c5390b4f9dedc, type: 3}
     - target: {fileID: 3548047906071811489, guid: 18de4bc9d0e628c4ab5098e4731bcb96, type: 3}
       propertyPath: m_Name
       value: Buy Undead Button Icon
@@ -19713,10 +19713,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1478955680653789095, guid: 18de4bc9d0e628c4ab5098e4731bcb96, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 69f5748169636b84895c5390b4f9dedc, type: 3}
     - target: {fileID: 3548047906071811489, guid: 18de4bc9d0e628c4ab5098e4731bcb96, type: 3}
       propertyPath: m_Name
       value: Buy Undead Button Icon
@@ -26041,6 +26037,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1478955680653789095, guid: 18de4bc9d0e628c4ab5098e4731bcb96, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 82d6a0828d1c62141b974bce3ece4ee6, type: 3}
     - target: {fileID: 3548047906071811489, guid: 18de4bc9d0e628c4ab5098e4731bcb96, type: 3}
       propertyPath: m_Name
       value: Buy Undead Button Icon

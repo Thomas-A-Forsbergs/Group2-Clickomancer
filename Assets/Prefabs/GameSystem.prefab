@@ -104,9 +104,6 @@ MonoBehaviour:
   currentMana: 100
   spellCost1: 20
   spellCost2: 20
-  spellCost3: 20
-  spellCost4: 20
-  spellCost5: 20
   maxMana: 100
   manaPerSec: 1
   manaRegen: 1
@@ -265,6 +262,7 @@ MonoBehaviour:
   rebirthInfoBox: {fileID: 0}
   modifierFactor: 0.05
   rebirthThreshold: 1000000
+  rebirthThresholdModifier: 10
 --- !u!1 &6503794762271823077
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,6 +363,7 @@ MonoBehaviour:
   soulsPerClickText: {fileID: 0}
   rebirthText: {fileID: 0}
   bonusText: {fileID: 0}
+  rebirthThreshold: {fileID: 0}
   manaText: {fileID: 0}
   totalUndeadProductionText: {fileID: 0}
   zombieStatusText: {fileID: 0}
@@ -420,6 +419,7 @@ Transform:
   - {fileID: 7159834360651250618}
   - {fileID: 5680441916896027240}
   - {fileID: 6985851195088160464}
+  - {fileID: 699890262356208472}
   m_Father: {fileID: 6503794761601077055}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -603,3 +603,46 @@ MonoBehaviour:
   purchaseCostMultiplier: 1.15
   upgradeCostMultiplier: 10
   upgradeProductionMultiplier: 2
+--- !u!1 &8793620669362300986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 699890262356208472}
+  - component: {fileID: 7317667228821703348}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &699890262356208472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8793620669362300986}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6503794763020109302}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7317667228821703348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8793620669362300986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40faa9d59422ee0478a8bb01afc874c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
