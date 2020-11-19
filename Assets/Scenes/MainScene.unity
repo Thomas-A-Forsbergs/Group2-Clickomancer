@@ -1100,7 +1100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   purchaseButtonOverLayImage: {fileID: 7257409019806804695}
   upgradeButtonOverLayImage: {fileID: 7859229800947581551}
-  spriteImage: {fileID: 0}
+  fullSpriteImage: {fileID: 0}
   cost: 125
   productionRate: 6
   undeadProductionPerSecond: 1
@@ -1733,7 +1733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   purchaseButtonOverLayImage: {fileID: 0}
   upgradeButtonOverLayImage: {fileID: 0}
-  spriteImage: {fileID: 0}
+  fullSpriteImage: {fileID: 0}
   cost: 5600
   productionRate: 204
   undeadProductionPerSecond: 1
@@ -2604,6 +2604,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503794762271823076, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+      propertyPath: spriteImage
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503794762271823076, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
       propertyPath: buttonOverLayImage
       value: 
       objectReference: {fileID: 1588949662}
@@ -2694,7 +2698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   purchaseButtonOverLayImage: {fileID: 0}
   upgradeButtonOverLayImage: {fileID: 0}
-  spriteImage: {fileID: 0}
+  fullSpriteImage: {fileID: 0}
   cost: 1800
   productionRate: 66
   undeadProductionPerSecond: 1
@@ -3165,7 +3169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   purchaseButtonOverLayImage: {fileID: 0}
   upgradeButtonOverLayImage: {fileID: 0}
-  spriteImage: {fileID: 0}
+  fullSpriteImage: {fileID: 0}
   cost: 600
   productionRate: 20
   undeadProductionPerSecond: 1
