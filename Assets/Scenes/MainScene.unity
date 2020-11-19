@@ -5275,6 +5275,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6503794761929951945, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+      propertyPath: modifierFactor
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503794761929951945, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+      propertyPath: rebirthThreshold
+      value: 100000
+      objectReference: {fileID: 0}
     - target: {fileID: 6503794762271823076, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
       propertyPath: buttonOverLayImage
       value: 
