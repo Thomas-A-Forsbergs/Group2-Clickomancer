@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Globalization;
 using UnityEngine;
 using TMPro;
 
@@ -47,7 +48,7 @@ public class GetOfflineCurrency : MonoBehaviour {
     private void OnApplicationQuit()
     {
         FirstTimePlaying = 0;
-        OfflineTime = DateTime.Now.ToString();
+        OfflineTime = DateTime.Now.ToString(CultureInfo.InvariantCulture);
     }
 
     private void CalculateOfflineProduction() {
