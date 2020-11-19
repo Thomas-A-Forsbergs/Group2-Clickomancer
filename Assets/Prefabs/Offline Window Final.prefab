@@ -102,7 +102,7 @@ RectTransform:
   m_GameObject: {fileID: 780546608346114610}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.95658076, y: 0.95658076, z: 0.95658076}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3118762902507644974}
   m_RootOrder: 3
@@ -1005,7 +1005,7 @@ GameObject:
   - component: {fileID: 4433899901645386114}
   - component: {fileID: 7938214436587717894}
   m_Layer: 5
-  m_Name: Offline Window 1
+  m_Name: Offline Window Final
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1072,7 +1072,7 @@ RectTransform:
   m_GameObject: {fileID: 8813771336385201502}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.95658076, y: 0.95658076, z: 0.95658076}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3118762902507644974}
   m_RootOrder: 4

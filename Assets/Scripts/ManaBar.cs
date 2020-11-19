@@ -60,7 +60,7 @@ public class ManaBar : MonoBehaviour
     }
     
     private void Display() {
-        helperClassRef.libraryRef.manaText.text = "Mana:" + currentMana + "/" + maxMana;
+        helperClassRef.libraryRef.manaText.text = currentMana + "/" + maxMana;
     }
     
     public void SpellRemoveMana1()
