@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ac7d10bb249e344b9292a449420413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rebirthInfoBox: {fileID: 0}
   modifierFactor: 0.1
   rebirthThreshold: 250
 --- !u!1 &6503794762271823077
@@ -494,7 +495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4f6daed92533240b7807ab8801055b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulsPerClick: 100
+  soulsPerClick: 10
   upgradeMultiplier: 3
   upgradeCost: 100
   upgradeCostMultiplier: 1.1
