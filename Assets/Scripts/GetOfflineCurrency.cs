@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using TMPro;
 
@@ -38,13 +39,14 @@ public class GetOfflineCurrency : MonoBehaviour {
     
     private void Start()
     {
-        if (FirstTimePlaying != 0) {
+        if (FirstTimePlaying == 0) {
             CalculateOfflineProduction();
         }
-        FirstTimePlaying = 0;
     }
 
-    private void OnApplicationQuit() {
+    private void OnApplicationQuit()
+    {
+        FirstTimePlaying = 0;
         OfflineTime = DateTime.Now.ToString();
     }
 
