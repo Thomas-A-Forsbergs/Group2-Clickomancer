@@ -6617,7 +6617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   purchaseButtonOverLayImage: {fileID: 0}
   upgradeButtonOverLayImage: {fileID: 0}
-  spriteImage: {fileID: 0}
+  fullSpriteImage: {fileID: 0}
   cost: 100
   productionRate: 1
   undeadProductionPerSecond: 1
