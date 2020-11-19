@@ -18,7 +18,7 @@ public class Undead : MonoBehaviour {
     
     [Header("Configurable values")]
     //private string name = "Zombie";
-    [SerializeField] private Sprite spriteImage;
+    [SerializeField] public GameObject fullSpriteImage;
     [SerializeField] private int cost = 100;
     public int productionRate = 1;
     
@@ -102,6 +102,10 @@ public class Undead : MonoBehaviour {
         }
         if (this.Count >= 1)
         {
+            if (fullSpriteImage != null)
+            {
+                fullSpriteImage.SetActive(true);
+            }
             UpgradeIsUnlocked = 1;
         }
 
