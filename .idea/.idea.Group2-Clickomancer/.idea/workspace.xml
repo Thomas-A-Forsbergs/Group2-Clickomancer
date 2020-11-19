@@ -32,8 +32,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HelperClass.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Rebirth.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HelperClass.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Undead.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GetOfflineCurrency.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -56,6 +56,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Spells.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SoulCount.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ManaBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PopUpScreen.cs" />
       </list>
     </option>
   </component>
@@ -119,6 +120,7 @@
       <workItem from="1605602559029" duration="202000" />
       <workItem from="1605605535443" duration="7580000" />
       <workItem from="1605692347166" duration="8929000" />
+      <workItem from="1605780371217" duration="1580000" />
     </task>
     <servers />
   </component>
