@@ -47,18 +47,18 @@ public class GetOfflineCurrency : MonoBehaviour {
 
     private void OnApplicationQuit()
     {
-        Debug.Log("currentTime is: " + DateTime.Now.ToString(CultureInfo.InvariantCulture));
+        // Debug.Log("currentTime is: " + DateTime.Now.ToString(CultureInfo.InvariantCulture));
         FirstTimePlaying = 0;
         OfflineTime = DateTime.Now.ToString(CultureInfo.InvariantCulture);
     }
 
     private void CalculateOfflineProduction() {
         var currentTime = DateTime.Now;
-        Debug.Log("currentTime is: " + currentTime);
+        // Debug.Log("currentTime is: " + currentTime);
         var offlineTime = Convert.ToDateTime(OfflineTime);
-        Debug.Log("offlineTime is: " + offlineTime);
+        // Debug.Log("offlineTime is: " + offlineTime);
         var interval = currentTime - offlineTime;
-        Debug.Log("intervalTime is: " + interval);
+        // Debug.Log("intervalTime is: " + interval);
         
         double totalProduction = helperClassRef.undeadRef.CalculateTotalUndeadProduction();
         //Debug.Log(helperClassRef.undeadRef.CalculateTotalUndeadProduction());
