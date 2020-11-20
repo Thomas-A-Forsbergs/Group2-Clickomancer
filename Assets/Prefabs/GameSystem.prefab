@@ -60,7 +60,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8848460810954295036}
+  - component: {fileID: 2615590979974573269}
   - component: {fileID: 4753950939613270838}
   m_Layer: 5
   m_Name: Mana
@@ -69,8 +69,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &8848460810954295036
-RectTransform:
+--- !u!4 &2615590979974573269
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -83,11 +83,6 @@ RectTransform:
   m_Father: {fileID: 6503794761601077055}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4753950939613270838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +190,8 @@ Transform:
   - {fileID: 6503794763020109302}
   - {fileID: 6503794763304264828}
   - {fileID: 6503794761929951951}
-  - {fileID: 8848460810954295036}
+  - {fileID: 2615590979974573269}
+  - {fileID: 699890262356208472}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -419,7 +415,6 @@ Transform:
   - {fileID: 7159834360651250618}
   - {fileID: 5680441916896027240}
   - {fileID: 6985851195088160464}
-  - {fileID: 699890262356208472}
   m_Father: {fileID: 6503794761601077055}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -627,11 +622,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8793620669362300986}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6503794763020109302}
+  m_Father: {fileID: 6503794761601077055}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7317667228821703348

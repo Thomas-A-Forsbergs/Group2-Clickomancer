@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6396499426933912352}
+  - component: {fileID: 3026196371399508717}
   - component: {fileID: 4478125610591283007}
   m_Layer: 5
   m_Name: SE-Super Summon
@@ -17,8 +17,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &6396499426933912352
-RectTransform:
+--- !u!4 &3026196371399508717
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -31,11 +31,6 @@ RectTransform:
   m_Father: {fileID: 5019325469840933481}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &4478125610591283007
 AudioSource:
   m_ObjectHideFlags: 0
@@ -140,16 +135,16 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7665386234901135372}
+  - component: {fileID: 8251076908491096190}
   - component: {fileID: 9013496891910447339}
   m_Layer: 0
-  m_Name: SE- Forge 2
+  m_Name: SE-Forge 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7665386234901135372
+--- !u!4 &8251076908491096190
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -415,7 +410,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4721679845677484461}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &2525087412476747114
 AudioSource:
@@ -542,7 +537,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4721679845677484461}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &6853737873244252140
 AudioSource:
@@ -648,16 +643,16 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 535608516288776803}
+  - component: {fileID: 2380619120400861660}
   - component: {fileID: 4834240906765879198}
   m_Layer: 0
-  m_Name: SE- Spell_Unknown
+  m_Name: SE-Spell Unknown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &535608516288776803
+--- !u!4 &2380619120400861660
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -665,7 +660,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3800099816590409485}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 939.5492, y: 117.48959, z: -67.39869}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5019325469840933481}
@@ -775,7 +770,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 936851594213533071}
+  - component: {fileID: 8241973838255047022}
   - component: {fileID: 4467568149269566541}
   m_Layer: 5
   m_Name: SE-Death Knight
@@ -784,8 +779,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &936851594213533071
-RectTransform:
+--- !u!4 &8241973838255047022
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -796,13 +791,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4721679845677484461}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &4467568149269566541
 AudioSource:
   m_ObjectHideFlags: 0
@@ -926,11 +916,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 936851594213533071}
-  - {fileID: 7431982262716180840}
-  - {fileID: 62187046250074582}
   - {fileID: 9043284719322800000}
   - {fileID: 2136577380455947634}
+  - {fileID: 8241973838255047022}
+  - {fileID: 2421875341809408923}
+  - {fileID: 62187046250074582}
   m_Father: {fileID: 5019325469840933481}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -996,10 +986,10 @@ RectTransform:
   m_Children:
   - {fileID: 6339543979186456583}
   - {fileID: 4721679845677484461}
-  - {fileID: 6767138761026111143}
-  - {fileID: 6396499426933912352}
-  - {fileID: 7665386234901135372}
-  - {fileID: 535608516288776803}
+  - {fileID: 6260694152766156010}
+  - {fileID: 3026196371399508717}
+  - {fileID: 8251076908491096190}
+  - {fileID: 2380619120400861660}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1016,7 +1006,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7431982262716180840}
+  - component: {fileID: 2421875341809408923}
   - component: {fileID: 8529614960008852449}
   m_Layer: 5
   m_Name: SE-Lich
@@ -1025,8 +1015,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &7431982262716180840
-RectTransform:
+--- !u!4 &2421875341809408923
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1037,13 +1027,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4721679845677484461}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &8529614960008852449
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1151,7 +1136,7 @@ GameObject:
   - component: {fileID: 2136577380455947634}
   - component: {fileID: 5857394543845392605}
   m_Layer: 0
-  m_Name: SE- Wraith
+  m_Name: SE-Wraith
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1169,7 +1154,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4721679845677484461}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &5857394543845392605
 AudioSource:
@@ -1278,7 +1263,7 @@ GameObject:
   - component: {fileID: 616876099621980839}
   - component: {fileID: 3140845467137579802}
   m_Layer: 0
-  m_Name: SE- Magic pageflip 2
+  m_Name: SE-Magic pageflip 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1292,7 +1277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7316362811384798657}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 939.5492, y: 117.48959, z: -67.39869}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6339543979186456583}
@@ -1405,7 +1390,7 @@ GameObject:
   - component: {fileID: 7078863258262433258}
   - component: {fileID: 3584605490507659688}
   m_Layer: 0
-  m_Name: SE- Magic pageflip 3
+  m_Name: SE-Magic pageflip 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1419,7 +1404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7459545437525294908}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 939.5492, y: 117.48959, z: -67.39869}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6339543979186456583}
@@ -1529,7 +1514,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6767138761026111143}
+  - component: {fileID: 6260694152766156010}
   - component: {fileID: 7575286644857404544}
   m_Layer: 5
   m_Name: SE-Choir
@@ -1538,8 +1523,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &6767138761026111143
-RectTransform:
+--- !u!4 &6260694152766156010
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1552,11 +1537,6 @@ RectTransform:
   m_Father: {fileID: 5019325469840933481}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &7575286644857404544
 AudioSource:
   m_ObjectHideFlags: 0
