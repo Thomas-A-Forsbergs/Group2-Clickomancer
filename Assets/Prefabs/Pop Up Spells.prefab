@@ -178,12 +178,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Super summon: Use your mana to draw souls from the soul well equivalent
-    to 30 seconds of your total production. Costs 20 mana.
+    to 10 seconds of your total production. Costs 20 mana.
 
 
     Magic fingers: Will
-    automatically click for you once every 5 seconds. Costs 6 mana every second to
-    keep active until mana is empty.'
+    automatically click for you once every 1 second. Costs 2 mana every second to
+    keep active, until mana is empty.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
