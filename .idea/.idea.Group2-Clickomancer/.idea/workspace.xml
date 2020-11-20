@@ -19,7 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f24a15b5-be68-4f9d-81cd-0b11710faf7c" name="Default Changelist" comment="" />
+    <list default="true" id="f24a15b5-be68-4f9d-81cd-0b11710faf7c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GameSystem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameSystem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MusicAndSounds/Music.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MusicAndSounds/Music.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MusicAndSounds/Sound Effects.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MusicAndSounds/Sound Effects.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ProductionScene Backup.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ProductionScene Backup.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ProductionScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ProductionScene.unity" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
