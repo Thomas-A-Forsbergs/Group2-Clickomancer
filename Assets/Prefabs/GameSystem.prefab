@@ -103,9 +103,9 @@ MonoBehaviour:
   manaPerSec: 1
   manaRegen: 1
   meterImage: {fileID: 0}
-  spell1Multiplier: 30
-  spell2Waitforseconds: 5
-  spell2DrainAmount: 6
+  spell1Multiplier: 10
+  spell2Waitforseconds: 1
+  spell2DrainAmount: 2
 --- !u!1 &2121233917852020103
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rebirthInfoBox: {fileID: 0}
-  modifierFactor: 0.05
+  modifierFactor: 0.00012
   rebirthThreshold: 1000000
   rebirthThresholdModifier: 10
 --- !u!1 &6503794762271823077
