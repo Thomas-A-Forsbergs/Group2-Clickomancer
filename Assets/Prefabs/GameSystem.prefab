@@ -475,9 +475,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offlineTimeText: {fileID: 0}
-  offlineTimeTextString: 'You were offline for '
+  offlineTimeTextString: 'While you were away for '
   offlineProductionText: {fileID: 0}
-  offlineProductionTextString: 'You produced this many souls: '
+  offlineProductionTextString: They gathered
 --- !u!114 &6503794763304264831
 MonoBehaviour:
   m_ObjectHideFlags: 0
