@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TutorialWindow : MonoBehaviour
 {
@@ -9,8 +6,6 @@ public class TutorialWindow : MonoBehaviour
 
     public GameObject activateDeactivateTarget;
     public Sprite dennisSprite;
-    
-    
     
     private void Awake()
     {

@@ -1,20 +1,16 @@
 ﻿using UnityEngine;
 
 public class UIManager : MonoBehaviour {
-    public void FullScreenButton()
-    {
+    public void FullScreenButton() {
         Screen.fullScreen = !Screen.fullScreen;
     }
 
-    public void ExitApplicationButton()
-    {
+    public void ExitApplicationButton() {
         Application.Quit();
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
             Application.Quit();
         }
     }

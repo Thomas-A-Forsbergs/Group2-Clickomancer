@@ -1,24 +1,17 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PopUpBox : MonoBehaviour
-{
+public class PopUpBox : MonoBehaviour {
     public GameObject popUpText;
-    public void Start()
-    {
+
+    public void Start() {
         popUpText.SetActive(false);
     }
 
-    public void OnMouseOver()
-    {
+    public void OnMouseOver() {
         popUpText.SetActive(true);
     }
 
-    public void OnMouseExit()
-    {
+    public void OnMouseExit() {
         popUpText.SetActive(false);
     }
 }

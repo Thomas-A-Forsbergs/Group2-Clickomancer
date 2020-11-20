@@ -1,32 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class PopUpScreen : MonoBehaviour {
     public GameObject popUpBox;
     private bool _showingPopUp = false;
 
-    public void ToggleScreen()
-    {
-        if (!_showingPopUp)
-        {
+    public void ToggleScreen() {
+        if (!_showingPopUp) {
             Show();
             _showingPopUp = !_showingPopUp;
-        }
-        else
-        {
+        } else {
             Hide();
             _showingPopUp = !_showingPopUp;
         }
     }
-    private void Show()
-    {
+
+    private void Show() {
         popUpBox.SetActive(true);
     }
 
-    private void Hide()
-    {
+    private void Hide() {
         popUpBox.SetActive(false);
     }
 }

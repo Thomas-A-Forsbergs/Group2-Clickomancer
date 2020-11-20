@@ -1,25 +1,16 @@
-﻿// using System;
-// using System.Collections;
-// using System.Collections.Generic;
-// using TMPro;
-
-using System;
+﻿using System;
 using UnityEngine;
 
 public class UndeadManager : MonoBehaviour {
     private HelperClass helperClassRef;
-
     [NonSerialized] Undead[] undeadChildren;
-
-    // public TextMeshProUGUI totalUndeadProductionText;
-
     private double totalProductionValue;
-    public double TotalProductionValue
-    {
+
+    public double TotalProductionValue {
         get => totalProductionValue;
         private set => totalProductionValue = value;
     }
-    
+
     private void Awake() {
         helperClassRef = GetComponentInParent<HelperClass>();
     }
@@ -36,11 +27,11 @@ public class UndeadManager : MonoBehaviour {
     public double CalculateTotalUndeadProduction() {
         double totalProductionValue = 0;
         int i = 0;
-        while (i < undeadChildren.Length)
-        {
+        while (i < undeadChildren.Length) {
             totalProductionValue += undeadChildren[i].CalculateTotalProduction();
             i++;
         }
+
         helperClassRef.libraryRef.totalUndeadProductionText.text = $"Total souls/s: {totalProductionValue}";
         return totalProductionValue;
     }

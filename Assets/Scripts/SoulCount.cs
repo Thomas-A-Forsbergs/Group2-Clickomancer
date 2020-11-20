@@ -1,14 +1,9 @@
-// using System;
-// using Unity.Mathematics;
-// using UnityEngine.UI;
-
-using System;
 using UnityEngine;
 
 public class SoulCount : MonoBehaviour {
     [Header("Drag and Drop reference here")]
     private HelperClass helperClassRef;
-    
+
     [Header("Configurable values")]
     public double soulsPerClick = 1;
     public float upgradeMultiplier = 1.5f;
@@ -26,9 +21,8 @@ public class SoulCount : MonoBehaviour {
             }
         }
     }
-    
-    private void Awake()
-    {
+
+    private void Awake() {
         helperClassRef = GetComponentInParent<HelperClass>();
     }
 
@@ -36,7 +30,7 @@ public class SoulCount : MonoBehaviour {
         Display();
         CalculateTotalCost();
     }
-    
+
     public void Update() {
         Display();
         CalculateTotalCost();

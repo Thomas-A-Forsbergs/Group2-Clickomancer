@@ -1,38 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class OfflineBoxWindow : MonoBehaviour
-{
+public class OfflineBoxWindow : MonoBehaviour {
     private HelperClass helperClassRef;
 
     public GameObject activateDeactivateTarget;
     public Sprite dennisSprite;
-    
-    
-    
-    private void Awake()
-    {
+
+    private void Awake() {
         activateDeactivateTarget.SetActive(false);
-        
+
         helperClassRef = GameObject.Find("GameSystem").GetComponent<HelperClass>();
         GetOfflineCurrency offlineCurrencyRef = helperClassRef.GetComponentInChildren<GetOfflineCurrency>();
         var getFirstTimePlaying = offlineCurrencyRef.FirstTimePlaying;
-        Debug.Log(getFirstTimePlaying);
-        
-        if (getFirstTimePlaying == 0)
-        {
+        // Debug.Log(getFirstTimePlaying);
+
+        if (getFirstTimePlaying == 0) {
             DisplayWindow();
         }
     }
-    
-    void DisplayWindow()
-    {
+
+    void DisplayWindow() {
         activateDeactivateTarget.SetActive(true);
     }
-    
-    public void CloseWindow()
-    {
+
+    public void CloseWindow() {
         activateDeactivateTarget.SetActive(false);
     }
 }

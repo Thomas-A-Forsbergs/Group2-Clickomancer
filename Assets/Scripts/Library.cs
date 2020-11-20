@@ -1,6 +1,4 @@
-﻿// using System;
-
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class Library : MonoBehaviour {
@@ -15,7 +13,7 @@ public class Library : MonoBehaviour {
     public TMP_Text rebirthText;
     public TMP_Text bonusText;
     public TMP_Text rebirthThreshold;
-    
+
     [Header("Text reference for Mana text")]
     public TMP_Text manaText;
 
@@ -27,7 +25,7 @@ public class Library : MonoBehaviour {
     public TMP_Text zombiePurchaseCostsText;
     public TMP_Text zombieUpgradeCostsText;
     public TMP_Text zombieTotalProductionText;
-    
+
     [Header("Text reference for Death Knight text")]
     public TMP_Text deathknightStatusText;
     public TMP_Text deathknightPurchaseCostsText;
@@ -35,19 +33,19 @@ public class Library : MonoBehaviour {
     public TMP_Text deathknightTotalProductionText;
 
     [Header("Text reference for Wraith text")]
-    public TMP_Text wraithStatusText; 
+    public TMP_Text wraithStatusText;
     public TMP_Text wraithPurchaseCostsText;
     public TMP_Text wraithUpgradeCostsText;
     public TMP_Text wraithTotalProductionText;
-    
+
     [Header("Text reference for Lich text")]
-    public TMP_Text lichStatusText; 
+    public TMP_Text lichStatusText;
     public TMP_Text lichPurchaseCostsText;
     public TMP_Text lichUpgradeCostsText;
     public TMP_Text lichTotalProductionText;
-    
+
     [Header("Text reference for Monstrosity text")]
-    public TMP_Text monstrosityStatusText; 
+    public TMP_Text monstrosityStatusText;
     public TMP_Text monstrosityPurchaseCostsText;
     public TMP_Text monstrosityUpgradeCostsText;
     public TMP_Text monstrosityTotalProductionText;

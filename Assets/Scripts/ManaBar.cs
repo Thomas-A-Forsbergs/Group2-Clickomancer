@@ -1,21 +1,15 @@
-﻿// using System;
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine.Serialization;
-
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ManaBar : MonoBehaviour
-{
+public class ManaBar : MonoBehaviour {
     private HelperClass helperClassRef;
     [Header("Configurable values")]
     public double soulsPerClick = 1;
-
     public float currentMana = 100f;
     public int spellCost1 = 20;
     public int spellCost2 = 20;
+
     // public int spellCost3 = 20;
     // public int spellCost4 = 20;
     // public int spellCost5 = 20;
@@ -28,26 +22,22 @@ public class ManaBar : MonoBehaviour
     public int spell1Multiplier = 30;
     public float spell2Waitforseconds = 5f;
     public int spell2DrainAmount = 6;
-    
+
     private bool IsAffordable1 => currentMana >= spellCost1;
     private bool IsAffordable2 => currentMana >= spellCost2;
     // private bool IsAffordable3 => currentMana >= spellCost3;
     // private bool IsAffordable4 => currentMana >= spellCost4;
     // private bool IsAffordable5 => currentMana >= spellCost5;
 
-    private void Awake()
-    {
+    private void Awake() {
         helperClassRef = GetComponentInParent<HelperClass>();
     }
 
-    private void Update()
-    {
+    private void Update() {
         meterImage.fillAmount = currentMana / maxMana;
         this.elapsedTime += Time.deltaTime;
-        if (this.elapsedTime >= this.manaRegen)
-        {
-            if (currentMana >= maxMana)
-            {
+        if (this.elapsedTime >= this.manaRegen) {
+            if (currentMana >= maxMana) {
                 currentMana = maxMana;
                 this.elapsedTime -= manaRegen;
                 return;
@@ -59,27 +49,22 @@ public class ManaBar : MonoBehaviour
 
         Display();
     }
-    
+
     private void Display() {
         helperClassRef.libraryRef.manaText.text = currentMana + "/" + maxMana;
     }
-    
-    public void SpellRemoveMana1()
-    {
-        if (!IsAffordable1)
-        {
+
+    public void SpellRemoveMana1() {
+        if (!IsAffordable1) {
             return;
         }
 
         currentMana -= spellCost1;
         spell1();
-
     }
-    
-    public void SpellRemoveMana2()
-    {
-        if (!IsAffordable2)
-        {
+
+    public void SpellRemoveMana2() {
+        if (!IsAffordable2) {
             return;
         }
 
@@ -119,9 +104,8 @@ public class ManaBar : MonoBehaviour
     //     currentMana -= spellCost1;
     //     spell5();
     // }
-    
-    public void spell1()
-    {
+
+    public void spell1() {
         double tempSouls = helperClassRef.StringToDouble(helperClassRef.soulRef.Souls);
         double tempTotalSouls = helperClassRef.StringToDouble(helperClassRef.soulRef.TotalSoulsOwned);
         double tempvalue = helperClassRef.undeadRef.CalculateTotalUndeadProduction();
@@ -131,24 +115,19 @@ public class ManaBar : MonoBehaviour
         helperClassRef.DoubleToString(tempSouls, "Souls");
         helperClassRef.DoubleToString(tempTotalSouls, "TotalSoulsOwned");
     }
-    
-    public void spell2()
-    {
-        
-        StartCoroutine(magicFingers());
 
+    public void spell2() {
+        StartCoroutine(magicFingers());
     }
 
-    private IEnumerator magicFingers()
-    {
-        while (currentMana > spell2DrainAmount)
-        {
+    private IEnumerator magicFingers() {
+        while (currentMana > spell2DrainAmount) {
             currentMana -= spell2DrainAmount;
             helperClassRef.soulRef.Click();
-            yield return new WaitForSeconds(spell2Waitforseconds);  
+            yield return new WaitForSeconds(spell2Waitforseconds);
         }
     }
-    
+
     // public void spell3()
     // {
     //     helperClassRef.soulRef.Click();
@@ -170,11 +149,11 @@ public class ManaBar : MonoBehaviour
     public void SpellButton1() {
         SpellRemoveMana1();
     }
-    
+
     public void SpellButton2() {
         SpellRemoveMana2();
     }
-    
+
     // public void SpellButton3() {
     //     SpellRemoveMana3();
     // }

@@ -1,22 +1,13 @@
-﻿// using System;
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine.UI;
-// using TMPro;
-// using UnityEngine.PlayerLoop;
-
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Rebirth : MonoBehaviour {
-    [Header("Drag and Drop reference here")]
     private HelperClass helperClassRef;
+    [SerializeField] private GameObject rebirthInfoBox;
 
-    [SerializeField] private GameObject rebirthInfoBox; 
-    
-
+    [Header("Drag and Drop reference here")]
     public double modifierFactor = 1f;
     public int rebirthThreshold = 1000;
-    public int rebirthThresholdModifier = 10;
+    // public int rebirthThresholdModifier = 10;
 
     public int Reborn {
         get => PlayerPrefs.GetInt("Rebirth", 0);
@@ -32,8 +23,7 @@ public class Rebirth : MonoBehaviour {
         Display();
     }
 
-    private void Awake()
-    {
+    private void Awake() {
         helperClassRef = GetComponentInParent<HelperClass>();
     }
 
@@ -41,9 +31,9 @@ public class Rebirth : MonoBehaviour {
         Display();
     }
 
-    private void CalculateRebirthThresholdModifer() {
-        rebirthThreshold *= rebirthThresholdModifier;
-    }
+    // private void CalculateRebirthThresholdModifer() {
+    //     rebirthThreshold *= rebirthThresholdModifier;
+    // }
 
     private void CalculateRebirthModifer() {
         double amountofsouls = helperClassRef.StringToDouble(helperClassRef.soulRef.TotalSoulsOwned);
@@ -61,25 +51,23 @@ public class Rebirth : MonoBehaviour {
             rebirthInfoBox.SetActive(false);
         }
     }
-    
+
     public void RebirthButton() {
         CalculateRebirthModifer();
     }
 
-    public void OpenRebirthInfoButton()
-    {
+    public void OpenRebirthInfoButton() {
         rebirthInfoBox.SetActive(true);
     }
 
-    
     public void CloseRebirthInfoButton() {
         rebirthInfoBox.SetActive(false);
     }
 
-    
     private void Display() {
         helperClassRef.libraryRef.rebirthText.text = "Rebirth:" + Reborn;
         helperClassRef.libraryRef.bonusText.text = "Bonus:" + RebirthModifier;
-        helperClassRef.libraryRef.rebirthThreshold.text = "Souls needed for rebirth:" + rebirthThreshold.ToString(format:"1 mil");
+        helperClassRef.libraryRef.rebirthThreshold.text =
+            "Souls needed for rebirth:" + rebirthThreshold.ToString(format: "1 mil");
     }
 }
