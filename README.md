@@ -1,7 +1,4 @@
 # Group2-Clickomancer
- 
-# IdleRPG
- Idle RPG of Forsbergs class
 
 # Click O' Mancer - trailer
 https://youtu.be/fwiH7eOd65c
@@ -9,11 +6,10 @@ https://youtu.be/fwiH7eOd65c
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Setup](#setup)
 
 ## General info
-This project is idle clicker game created as a school project during 8 days.
-	
+This project is idle clicker game created as a school project during 8 days, at Forsbergs school.
+
 ## Technologies
 Project is created with:
 * Unity 2020.1.12.f1
