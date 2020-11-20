@@ -14590,6 +14590,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344479280}
   m_CullTransparentMesh: 0
+--- !u!114 &1353213128 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6503794761929951945, guid: 4f61a531407b0944f9a6d3a2364fc9e9, type: 3}
+  m_PrefabInstance: {fileID: 1223699262}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ac7d10bb249e344b9292a449420413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1360710010
 GameObject:
   m_ObjectHideFlags: 0
@@ -15012,6 +15023,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1267473232}
     m_Modifications:
+    - target: {fileID: 1046581646331807474, guid: bbe2ff9605c41384686005993ea8b765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1353213128}
+    - target: {fileID: 1046581646331807474, guid: bbe2ff9605c41384686005993ea8b765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseRebirthInfoButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046581646884160687, guid: bbe2ff9605c41384686005993ea8b765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1353213128}
+    - target: {fileID: 1046581646884160687, guid: bbe2ff9605c41384686005993ea8b765, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RebirthButton
+      objectReference: {fileID: 0}
     - target: {fileID: 2236834420318525138, guid: bbe2ff9605c41384686005993ea8b765, type: 3}
       propertyPath: m_Name
       value: Pop Up Rebirth Info
