@@ -74,8 +74,7 @@ public class GetOfflineCurrency : MonoBehaviour {
         helperClassRef.DoubleToString(tempSoulDouble, "Souls");
         helperClassRef.DoubleToString(tempTotalDouble, "TotalSoulsOwned");
 
-        offlineTimeText.text =
-            $"{offlineTimeTextString} {interval.Days}d, {interval.Hours}h, {interval.Minutes}m, {interval.Seconds}s!";
-        offlineProductionText.text = $"{offlineProductionTextString} {totalOfflineProduction}!";
+        offlineTimeText.text = $"{offlineTimeTextString}{interval.Days}d, {interval.Hours}h, {interval.Minutes}m, {interval.Seconds}s, your undead minions worked to the bones!";
+        offlineProductionText.text = $"{offlineProductionTextString}\n {totalOfflineProduction} \nsouls for you!";
     }
 }
