@@ -49,7 +49,7 @@ public class Rebirth : MonoBehaviour {
         double amountofsouls = helperClassRef.StringToDouble(helperClassRef.soulRef.TotalSoulsOwned);
         if (rebirthThreshold < amountofsouls) {
             Reborn++;
-            double modToAdd = amountofsouls * modifierFactor;
+            double modToAdd = amountofsouls * modifierFactor / 100;
             double currentMod = helperClassRef.StringToDouble(RebirthModifier);
             double totalModToAdd = currentMod + modToAdd;
             helperClassRef.DoubleToString(totalModToAdd, "RebirthModifier");
