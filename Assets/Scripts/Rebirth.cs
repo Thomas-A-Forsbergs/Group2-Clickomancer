@@ -24,7 +24,7 @@ public class Rebirth : MonoBehaviour {
     }
 
     public string RebirthModifier {
-        get => PlayerPrefs.GetString("RebirthModifier", "0");
+        get => PlayerPrefs.GetString("RebirthModifier", "1");
         set => PlayerPrefs.SetString("RebirthModifier", value);
     }
 
@@ -49,7 +49,7 @@ public class Rebirth : MonoBehaviour {
         double amountofsouls = helperClassRef.StringToDouble(helperClassRef.soulRef.TotalSoulsOwned);
         if (rebirthThreshold < amountofsouls) {
             Reborn++;
-            double modToAdd = amountofsouls * modifierFactor / 100;
+            double modToAdd = amountofsouls * modifierFactor / 1000;
             double currentMod = helperClassRef.StringToDouble(RebirthModifier);
             double totalModToAdd = currentMod + modToAdd;
             helperClassRef.DoubleToString(totalModToAdd, "RebirthModifier");
