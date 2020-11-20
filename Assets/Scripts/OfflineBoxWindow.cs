@@ -17,25 +17,20 @@ public class OfflineBoxWindow : MonoBehaviour
         
         helperClassRef = GameObject.Find("GameSystem").GetComponent<HelperClass>();
         GetOfflineCurrency offlineCurrencyRef = helperClassRef.GetComponentInChildren<GetOfflineCurrency>();
-        if (offlineCurrencyRef.FirstTimePlaying != 0)
-        {
-            return;
-        }
-        DisplayWindow();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
+        var getFirstTimePlaying = offlineCurrencyRef.FirstTimePlaying;
+        Debug.Log(getFirstTimePlaying);
         
+        if (getFirstTimePlaying == 0)
+        {
+            DisplayWindow();
+        }
     }
-
+    
     void DisplayWindow()
     {
         activateDeactivateTarget.SetActive(true);
     }
-
-
+    
     public void CloseWindow()
     {
         activateDeactivateTarget.SetActive(false);

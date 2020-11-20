@@ -9,7 +9,8 @@ public class SoulCount : MonoBehaviour {
     [Header("Drag and Drop reference here")]
     private HelperClass helperClassRef;
     
-    [Header("Configurable values")] public double soulsPerClick = 1;
+    [Header("Configurable values")]
+    public double soulsPerClick = 1;
     public float upgradeMultiplier = 1.5f;
     public int upgradeCost = 100;
     public float upgradeCostMultiplier = 1.1f;

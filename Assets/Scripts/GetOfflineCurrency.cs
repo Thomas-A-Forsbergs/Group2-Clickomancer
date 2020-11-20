@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Globalization;
 using UnityEngine;
 using TMPro;
 
@@ -24,13 +26,6 @@ public class GetOfflineCurrency : MonoBehaviour {
  
     }
 
-    private void Start()
-    {
-        if (FirstTimePlaying != 1) {
-            CalculateOfflineProduction();
-        }
-        FirstTimePlaying = 0;
-    }
 
     public string OfflineTime {
         get => PlayerPrefs.GetString("SoulsEarnedOffline", "0000-00-00");
@@ -41,15 +36,29 @@ public class GetOfflineCurrency : MonoBehaviour {
         get => PlayerPrefs.GetInt("FirstTimePlaying", 1);
         private set => PlayerPrefs.SetInt("FirstTimePlaying", value);
     }
+    
+    
+    private void Start()
+    {
+        if (FirstTimePlaying == 0) {
+            CalculateOfflineProduction();
+        }
+    }
 
-    private void OnApplicationQuit() {
-        OfflineTime = DateTime.Now.ToString();
+    private void OnApplicationQuit()
+    {
+        Debug.Log("currentTime is: " + DateTime.Now.ToString(CultureInfo.InvariantCulture));
+        FirstTimePlaying = 0;
+        OfflineTime = DateTime.Now.ToString(CultureInfo.InvariantCulture);
     }
 
     private void CalculateOfflineProduction() {
         var currentTime = DateTime.Now;
+        Debug.Log("currentTime is: " + currentTime);
         var offlineTime = Convert.ToDateTime(OfflineTime);
+        Debug.Log("offlineTime is: " + offlineTime);
         var interval = currentTime - offlineTime;
+        Debug.Log("intervalTime is: " + interval);
         
         double totalProduction = helperClassRef.undeadRef.CalculateTotalUndeadProduction();
         //Debug.Log(helperClassRef.undeadRef.CalculateTotalUndeadProduction());
