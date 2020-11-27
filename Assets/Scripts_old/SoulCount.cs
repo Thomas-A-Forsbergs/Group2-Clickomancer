@@ -13,7 +13,7 @@ public class SoulCount : MonoBehaviour {
 
     private int IsAffordable {
         get {
-            var tempDouble = Souls;
+            var tempDouble = helperClassRef.StringToDouble(Souls);
             if (tempDouble >= totalCost) {
                 return 1;
             } else {
@@ -41,9 +41,9 @@ public class SoulCount : MonoBehaviour {
         set => PlayerPrefs.SetInt("UpgradeLevel", value);
     }
 
-    public double Souls {
-        get => double.Parse(PlayerPrefs.GetString("Souls", "0"));
-        set => PlayerPrefs.SetString("Souls", value.ToString());
+    public string Souls {
+        get => PlayerPrefs.GetString("Souls", "0");
+        set => PlayerPrefs.SetString("Souls", value);
     }
 
     public string TotalSoulsOwned {

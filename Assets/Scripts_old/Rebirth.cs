@@ -5,7 +5,6 @@ public class Rebirth : MonoBehaviour {
     [SerializeField] private GameObject rebirthInfoBox;
 
     [Header("Drag and Drop reference here")]
-    public SoulCount SoulRef;
     public double modifierFactor = 1f;
     public int rebirthThreshold = 1000;
     // public int rebirthThresholdModifier = 10;
@@ -28,41 +27,29 @@ public class Rebirth : MonoBehaviour {
         helperClassRef = GetComponentInParent<HelperClass>();
     }
 
+    void Start() {
+        Display();
+    }
+
     // private void CalculateRebirthThresholdModifer() {
     //     rebirthThreshold *= rebirthThresholdModifier;
     // }
 
     private void CalculateRebirthModifer() {
-        double amountOfSouls = helperClassRef.StringToDouble(helperClassRef.soulRef.TotalSoulsOwned);
-        if (rebirthThreshold < amountOfSouls) {
+        double amountofsouls = helperClassRef.StringToDouble(helperClassRef.soulRef.TotalSoulsOwned);
+        if (rebirthThreshold < amountofsouls) {
             Reborn++;
-            IncreaseRebirthModifier(amountOfSouls);
+            double modToAdd = amountofsouls * modifierFactor / 1000;
+            double currentMod = helperClassRef.StringToDouble(RebirthModifier);
+            double totalModToAdd = currentMod + modToAdd;
+            helperClassRef.DoubleToString(totalModToAdd, "RebirthModifier");
             Display();
-            ResetSession();
+            helperClassRef.DoubleToString(0, "Souls");
+            helperClassRef.DoubleToString(0, "TotalSoulsOwned");
+            helperClassRef.soulRef.UpgradeLevel = 0;
+            helperClassRef.undeadRef.ResetUndeadChildCountLevel();
             rebirthInfoBox.SetActive(false);
         }
-    }
-
-    void ResetSession() {
-        var souls = FindObjectOfType<SoulCount>();
-        souls.Souls = 0;
-        // int = -2 billion <-> + 2 billion
-        // long = -2 billion * 2 billion <-> + 2 billion * 2 billion
-        // double = inaccurate, allows for decimal numbers, and much higher numbers, but then very inaccurate
-        // float = like double, but half as accurate
-        // BigInt = int, but endless
-        this.helperClassRef.DoubleToString(0, "Souls");
-        this.helperClassRef.DoubleToString(0, "TotalSoulsOwned");
-        this.helperClassRef.soulRef.UpgradeLevel = 0;
-        this.helperClassRef.undeadRef.ResetUndeadChildCountLevel();
-    }
-
-    void IncreaseRebirthModifier(double amountOfSouls) {
-        double modToAdd = amountOfSouls * this.modifierFactor / 1000;
-        double currentMod = this.helperClassRef.StringToDouble(this.RebirthModifier);
-        double totalModToAdd = currentMod + modToAdd;
-        this.RebirthModifier = totalModToAdd.ToString();
-        helperClassRef.DoubleToString(totalModToAdd, "RebirthModifier");
     }
 
     public void RebirthButton() {

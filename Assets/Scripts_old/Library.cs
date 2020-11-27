@@ -1,7 +1,5 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 
 public class Library : MonoBehaviour {
     private HelperClass helperClassRef;
@@ -52,47 +50,6 @@ public class Library : MonoBehaviour {
     public TMP_Text monstrosityUpgradeCostsText;
     public TMP_Text monstrosityTotalProductionText;
 
-    // alternatively a MonoBehaviour that is then hooked up.
-    // GameObject Lich (Undead) ==> GameObject LichUI (UndeadUI)
-    [Serializable]
-    public class ClassTextElements {
-        public Text StatusText;
-        public Text PurchaseCostsText;
-        public Text UpgradeCostsText;
-        public Text TotalProductionText;
-    }
-    
-    /*
-     * NEW:
-     * Lich
-     *     Status Text
-     *     Purchase Costs Text
-     *     ...
-     * Death Knight
-     *     Status Text
-     *     Purchase Costs Text
-     *
-     * OLD:
-     * [Text reference for Lich text]
-     * Lich Status Text
-     * Lich Purchase Costs Text
-     *
-     * [Tex...
-     */
-
-    public ClassTextElements Deathknight;
-    public ClassTextElements Lich;
-    
-    public ClassTextElements GetClassTextElements(string name) {
-        switch (name) {
-            case "Lich":
-                return this.Lich;
-            case "DeathKnight":
-                return this.Deathknight;
-        }
-        throw new System.Exception();
-    }
-    
     private void Awake() {
         helperClassRef = GetComponentInParent<HelperClass>();
     }

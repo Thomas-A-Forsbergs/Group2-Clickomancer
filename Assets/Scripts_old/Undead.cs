@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Undead : MonoBehaviour {
@@ -121,11 +120,14 @@ public class Undead : MonoBehaviour {
         if (PurchaseIsAffordable == 1) {
             purchaseButtonOverLayImage.raycastTarget = false;
             Color tempColor = new Color();
+            tempColor.a = 0;
+            tempColor.r = 0;
             purchaseButtonOverLayImage.color = tempColor;
         } else {
             purchaseButtonOverLayImage.raycastTarget = false;
-            Color tempColor = Color.red;
+            Color tempColor = new Color();
             tempColor.a = 0.2f;
+            tempColor.r = 255;
             purchaseButtonOverLayImage.color = tempColor;
         }
     }
@@ -233,10 +235,7 @@ public class Undead : MonoBehaviour {
         UpgradeUndead();
     }
 
-    
     public void DisplayUndead() {
-        SetClassTexts(helperClassRef.libraryRef.GetClassTextElements(this.name));
-        // HACK!
         DisplayZombieText();
         DisplayWraithText();
         DisplayDeathKnightText();
@@ -270,27 +269,30 @@ public class Undead : MonoBehaviour {
             $"Total production: {this.totalProduction} souls/second";
     }
 
-    void SetClassTexts(Library.ClassTextElements elements) {
-        elements.StatusText.text =
-            $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
-        elements.PurchaseCostsText.text = $"Buy for: {this.totalPurchaseCost}";
-        elements.UpgradeCostsText.text = $"Upgrade for: {this.totalUpgradeCost}";
-        elements.TotalProductionText.text =
-            $"Total production: {this.totalProduction} souls/second";
-    }
-    
     public void DisplayDeathKnightText() {
         if (this.name != "Death Knight") {
             return;
         }
-        SetClassTexts(this.Deathknight);
+
+        helperClassRef.libraryRef.deathknightStatusText.text =
+            $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
+        helperClassRef.libraryRef.deathknightPurchaseCostsText.text = $"Buy for: {this.totalPurchaseCost}";
+        helperClassRef.libraryRef.deathknightUpgradeCostsText.text = $"Upgrade for: {this.totalUpgradeCost}";
+        helperClassRef.libraryRef.deathknightTotalProductionText.text =
+            $"Total production: {this.totalProduction} souls/second";
     }
 
     public void DisplayLichText() {
         if (this.name != "Lich") {
             return;
         }
-        SetClassTexts(this.Lich);
+
+        helperClassRef.libraryRef.lichStatusText.text =
+            $"{Count}x {name} = {productionRate * Count} souls/second (Level{Level})";
+        helperClassRef.libraryRef.lichPurchaseCostsText.text = $"Buy for: {this.totalPurchaseCost}";
+        helperClassRef.libraryRef.lichUpgradeCostsText.text = $"Upgrade for: {this.totalUpgradeCost}";
+        helperClassRef.libraryRef.lichTotalProductionText.text =
+            $"Total production: {this.totalProduction} souls/second";
     }
 
     public void DisplayMonstrosityText() {

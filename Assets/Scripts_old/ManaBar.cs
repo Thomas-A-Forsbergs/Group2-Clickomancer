@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +7,6 @@ public class ManaBar : MonoBehaviour {
     [Header("Configurable values")]
     public double soulsPerClick = 1;
     public float currentMana = 100f;
-    public int[] spellCosts;
     public int spellCost1 = 20;
     public int spellCost2 = 20;
 
@@ -39,7 +37,13 @@ public class ManaBar : MonoBehaviour {
         meterImage.fillAmount = currentMana / maxMana;
         this.elapsedTime += Time.deltaTime;
         if (this.elapsedTime >= this.manaRegen) {
-            this.currentMana = Mathf.Clamp(currentMana+this.manaPerSec, 0f, maxMana);
+            if (currentMana >= maxMana) {
+                currentMana = maxMana;
+                this.elapsedTime -= manaRegen;
+                return;
+            }
+
+            this.currentMana += manaPerSec;
             this.elapsedTime -= manaRegen;
         }
 
@@ -142,10 +146,6 @@ public class ManaBar : MonoBehaviour {
     //     helperClassRef.soulRef.Click();
     // }
 
-    public void SpellButton(int number) {
-        
-    }
-    
     public void SpellButton1() {
         SpellRemoveMana1();
     }
