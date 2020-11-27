@@ -2,7 +2,6 @@
 
 # Click O' Mancer - trailer
 [![Trailer](http://img.youtube.com/vi/fwiH7eOd65c/0.jpg)](http://www.youtube.com/watch?v=fwiH7eOd65c)
-https://youtu.be/fwiH7eOd65c
 
 ## Table of contents
 * [General info](#general-info)
